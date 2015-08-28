@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ua.imperial.dao.ItemDAO;
+import ua.imperial.dao.CategoryDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Item;
 import ua.imperial.entities.Subcategory;
@@ -18,81 +18,56 @@ import ua.imperial.service.ImperialService;
 public class ImperialServiceImpl implements ImperialService {
  
     @Autowired
-    private ItemDAO itemDAO;
+    private CategoryDAO categoryDAO;
 
     @Transactional
 	public void addCategory(Category category) {
-		itemDAO.addCategory(category);
+		categoryDAO.addCategory(category);
 	}
     
     @Transactional
    	public void addSubcategory(Subcategory subcategory) {
-   		itemDAO.addSubcategory(subcategory);
+   		categoryDAO.addSubcategory(subcategory);
    	}
 
     @Transactional
-	public void addItem(Item item) {
-		itemDAO.addItem(item);
-	}
-
-    @Transactional
 	public Category getCategory(Integer id) {
-		return itemDAO.getCategory(id);
+		return categoryDAO.getCategory(id);
 	}
     
     @Transactional
 	public Subcategory getSubcategory(Integer id) {
-		return itemDAO.getSubcategory(id);
-	}
-
-    @Transactional
-	public Item getItem(Integer id) {
-		return itemDAO.getItem(id);
+		return categoryDAO.getSubcategory(id);
 	}
 
     @Transactional
 	public List<Category> listCategory() {
-		return itemDAO.listCategory();
+		return categoryDAO.listCategory();
 	}
     
     @Transactional
 	public List<Subcategory> listSubcategory() {
-		return itemDAO.listSubcategory();
+		return categoryDAO.listSubcategory();
 	}
-
-    @Transactional
-	public List<Item> listItem() {
-		return itemDAO.listItem();
-	}
-
+    
     @Transactional
 	public void updateCategory(Category category) {
-		itemDAO.updateCategory(category);
+		categoryDAO.updateCategory(category);
 	}
     
     @Transactional
 	public void updateSubcategory(Subcategory subcategory) {
-		itemDAO.updateSubcategory(subcategory);
-	}
-
-    @Transactional
-	public void updateItem(Item item) {
-		itemDAO.updateItem(item);
+		categoryDAO.updateSubcategory(subcategory);
 	}
 
     @Transactional
 	public void removeCategory(Integer id) {
-		itemDAO.removeCategory(id);
+		categoryDAO.removeCategory(id);
 	}
     
     @Transactional
 	public void removeSubcategory(Integer id) {
-		itemDAO.removeSubcategory(id);
-	}
-
-    @Transactional
-	public void removeItem(Integer id) {
-		itemDAO.removeItem(id);
+		categoryDAO.removeSubcategory(id);
 	}
 
 

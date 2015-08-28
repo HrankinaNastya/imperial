@@ -24,11 +24,17 @@ public class Category {
 	@Column(name = "NAME", unique = true, nullable = false)
 	private String name;
 	
-	@Column(name = "NAME_EN", unique = true, nullable = false)
+	@Column(name = "NAME_EN", unique = true)
 	private String name_en;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
-	private List<Item> items = new ArrayList<Item>();
+	@Column(name = "CONTENT")
+	private String content;
+	
+	@Column(name = "CONTENT_EN")
+	private String content_en;
+	
+	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+	//private List<Subcategory> subcategories = new ArrayList<Subcategory>();
 
 	public Category() {
 		super();
@@ -50,12 +56,37 @@ public class Category {
 		this.name = name;
 	}
 
-	public List<Item> getItems() {
-		return items;
+	public String getName_en() {
+		return name_en;
 	}
 
-	public void setItems(List<Item> items) {
-		this.items = items;
+	public void setName_en(String name_en) {
+		this.name_en = name_en;
 	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getContent_en() {
+		return content_en;
+	}
+
+	public void setContent_en(String content_en) {
+		this.content_en = content_en;
+	}
+
+	//public List<Subcategory> getSubcategories() {
+	//	return subcategories;
+	//}
+
+	//public void setSubcategories(List<Subcategory> subcategories) {
+	//	this.subcategories = subcategories;
+	//}
+
 	
 }

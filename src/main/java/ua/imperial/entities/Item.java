@@ -11,20 +11,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "ITEMS")
+//@Entity
+//@Table(name = "ITEMS")
 public class Item {
 	
-	@Id
-	@Column(name = "ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@Id
+	//@Column(name = "ID")
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "NAME", unique = true, nullable=false)
+	//@Column(name = "NAME", unique = true, nullable=false)
 	private String name;
 	
-	@ManyToOne(cascade={CascadeType.REFRESH}, fetch = FetchType.EAGER)
-	@JoinColumn(name = "category_id")
+	//@ManyToOne(cascade={CascadeType.REFRESH}, fetch = FetchType.EAGER)
+	//@JoinColumn(name = "category_id")
 	private Category category;
 
 	public Item() {
