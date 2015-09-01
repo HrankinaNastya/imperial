@@ -23,6 +23,8 @@
 		<tr>
 			<td><form:label path="name">Name</form:label></td>
 			<td><form:input path="name" required="required" /></td>
+			<td><form:label path="content">Content</form:label></td>
+			<td><form:textarea path="content"></form:textarea></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Save category" /></td>

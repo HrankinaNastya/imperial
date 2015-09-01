@@ -12,6 +12,7 @@
 <body>
 
 <a href="add">Add category or item</a>
+<jsp:include page="add.jsp" />
 
 <h3>Categories</h3>
 <c:if test="${!empty categoryList}">

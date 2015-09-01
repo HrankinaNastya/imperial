@@ -42,6 +42,17 @@ public class ImperialController {
 		
 	}
 	
+	@RequestMapping("/admin")
+	public String admin(Map<String, Object> map) {
+
+		map.put("category", new Category());
+		map.put("categoryList", imperialService.listCategory());
+		//map.put("item", new Item());
+		
+		return "listOfCategories";
+		
+	}
+	
 	@RequestMapping("/")
 	public String home() {
 		return "redirect:/index";
