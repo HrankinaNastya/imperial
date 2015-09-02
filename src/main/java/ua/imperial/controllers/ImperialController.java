@@ -31,18 +31,18 @@ public class ImperialController {
 		
 	}
 	
-	@RequestMapping("/add")
+	@RequestMapping("/addCat")
 	public String add(Map<String, Object> map) {
 
 		map.put("category", new Category());
 		map.put("categoryList", imperialService.listCategory());
 		//map.put("item", new Item());
 		
-		return "add";
+		return "addCategory";
 		
 	}
 	
-	@RequestMapping("/admin")
+	@RequestMapping("/categories")
 	public String admin(Map<String, Object> map) {
 
 		map.put("category", new Category());
@@ -65,7 +65,7 @@ public class ImperialController {
 		
 		imperialService.addCategory(category);
 
-		return "redirect:/add";
+		return "redirect:/addCat";
 	}
 	
 	
@@ -85,7 +85,7 @@ public class ImperialController {
 		
 		imperialService.updateCategory(category);
 
-		return "redirect:/index";
+		return "redirect:/categories";
 	}
 
 	
@@ -94,7 +94,7 @@ public class ImperialController {
 
 		imperialService.removeCategory(categoryId);
 
-		return "redirect:/index";
+		return "redirect:/categories";
 	}
 
 }

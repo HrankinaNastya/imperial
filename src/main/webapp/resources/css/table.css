@@ -100,3 +100,46 @@
 .table tr:first-child td:last-child{
 	border-width:0px 0px 1px 1px;
 }
+form table tbody{
+	font-size:14px;
+	font-family:Arial;
+}
+form table tbody tr{
+	font-size:14px;
+	font-family:Arial;
+}
+form table tbody tr td:first-child{
+	width:15%;
+	font-weight:bold;
+	color:#1B548D;
+	vertical-align:middle;	
+}
+input, textarea,label {
+	margin:5px;
+}
+form table tbody tr td:last-child{
+	width:85%;
+}
+textarea{
+	width:500px;
+	height:180px;
+}
+.input_width{
+	width:500px;
+}
+.btn {
+  	background: #3498db;
+  	background-image: -webkit-linear-gradient(top, #3498db, #1B548D);
+  	background-image: -moz-linear-gradient(top, #3498db, #1B548D);
+  	background-image: -ms-linear-gradient(top, #3498db, #1B548D);
+  	background-image: -o-linear-gradient(top, #3498db, #1B548D);
+  	background-image: linear-gradient(to bottom, #3498db, #1B548D);
+  	-webkit-border-radius: 15;
+  	-moz-border-radius: 15;
+  	border-radius: 15px;
+  	font-family: Arial;
+  	color: #fff;
+}
+.btn:hover {
+  	background: #2E5E79;
+}

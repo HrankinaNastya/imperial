@@ -21,7 +21,7 @@
         <div class="grid_12 header-repeat">
             <div id="branding">
                 <div class="floatleft logo">
-					<a href="#">Imperial Admin</a></div>
+					<a href="../categories">Imperial Admin</a></div>
                 <div class="floatright">
                     <div class="floatleft">
                         <img src="<c:url value="/resources/img/img-profile.jpg" />" alt="Profile Pic" /></div>
