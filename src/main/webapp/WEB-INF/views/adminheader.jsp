@@ -26,7 +26,7 @@
 		<div class="grid_12 header-repeat">
 			<div id="branding">
 				<div class="floatleft logo">
-					<a href="../categories">Imperial Admin</a>
+					<a href="../../admin/categories">Imperial Admin</a>
 				</div>
 				<div class="floatright">
 					<div class="floatleft">

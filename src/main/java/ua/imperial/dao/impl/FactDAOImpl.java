@@ -9,12 +9,16 @@ import org.springframework.stereotype.Repository;
 import ua.imperial.dao.FactDAO;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Section;
+import ua.imperial.service.ImperialService;
 
 @Repository
 public class FactDAOImpl implements FactDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+	@Autowired
+	ImperialService imperialService;
 
 	@Override
 	public void addSection(Section section) {
@@ -23,6 +27,9 @@ public class FactDAOImpl implements FactDAO {
 
 	@Override
 	public void addFact(Fact fact) {
+		Section section = imperialService.getSection(fact.getSection().getId());
+		fact.setSection(section);
+		
 		sessionFactory.getCurrentSession().save(fact);
 	}
 
@@ -60,6 +67,9 @@ public class FactDAOImpl implements FactDAO {
 
 	@Override
 	public void updateFact(Fact fact) {
+		Section section = imperialService.getSection(fact.getSection().getId());
+		fact.setSection(section);
+		
 		sessionFactory.getCurrentSession().merge(fact);	
 		sessionFactory.getCurrentSession().flush();
 	}

@@ -9,27 +9,29 @@
 
 <div class="grid_10">
 	<div class="box round first">
-		<h2>Список категорий</h2>
+		<h2>Список "А знаете ли Вы?"</h2>
 		<div class="block">
-			<c:if test="${!empty categoryList}">
+			<c:if test="${!empty factList}">
 				<div class="table">
 					<table>
 						<tr>
 							<td>ID</td>
-							<td>Name</td>
-							<td>Name_en</td>
+							<td>Section</td>
+							<td>Description</td>
+							<td>Description_en</td>
 							<td>Content</td>
 							<td>Content_en</td>
 							<td></td>
 							<td></td>
 						</tr>
-						<c:forEach items="${categoryList}" var="category">
+						<c:forEach items="${factList}" var="fact">
 							<tr>
-								<td>${category.id}</td>
-								<td>${category.name}</td>
-								<td>${category.name_en}</td>
+								<td>${fact.id}</td>
+								<td>${fact.section.name}</td>
+								<td>${fact.description}</td>
+								<td>${fact.description_en}</td>
 								<c:choose>
-									<c:when test="${!empty category.content}">
+									<c:when test="${!empty fact.content}">
 										<td>yes</td>
 									</c:when>
 									<c:otherwise>
@@ -37,15 +39,15 @@
 									</c:otherwise>
 								</c:choose>
 								<c:choose>
-									<c:when test="${!empty category.content_en}">
+									<c:when test="${!empty fact.content_en}">
 										<td>yes</td>
 									</c:when>
 									<c:otherwise>
 										<td>-</td>
 									</c:otherwise>
 								</c:choose>
-								<td><a href="/admin/getCategory/${category.id}">Edit</a></td>
-								<td><a href="/admin/deleteCategory/${category.id}">Delete</a></td>
+								<td><a href="/admin/getFact/${fact.id}">Edit</a></td>
+								<td><a href="/admin/deleteFact/${fact.id}">Delete</a></td>
 							</tr>
 						</c:forEach>
 					</table>

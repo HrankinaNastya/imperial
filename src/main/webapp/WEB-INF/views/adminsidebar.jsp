@@ -8,10 +8,10 @@
 	<div class="box sidemenu">
 		<div class="block" id="section-menu">
 			<ul class="section menu">
-				<li><a class="menuitem" href="categories">Категории</a>
+				<li><a class="menuitem" href="../../admin/categories">Категории</a>
 					<ul class="submenu">
-						<li><a href="../categories">Список</a></li>
-						<li><a href="../addCat">Добавить</a></li>
+						<li><a href="../../admin/categories">Список</a></li>
+						<li><a href="../../admin/addCat">Добавить</a></li>
 					</ul></li>
 				<li><a class="menuitem">Подкатегории</a>
 					<ul class="submenu">
@@ -20,6 +20,7 @@
 					</ul></li>
 				<li><a class="menuitem">А знаете ли вы?</a>
 					<ul class="submenu">
+						<li><a>Разделы</a></li>
 						<li><a>Список</a></li>
 						<li><a>Добавить</a></li>
 					</ul></li>

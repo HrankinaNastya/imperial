@@ -7,5 +7,6 @@
 	<session-factory>
 		<mapping class="ua.imperial.entities.Category" />
 		<mapping class="ua.imperial.entities.Section" />
+		<mapping class="ua.imperial.entities.Fact" />
 	</session-factory>
 </hibernate-configuration>
