@@ -87,7 +87,7 @@ public class ImperialServiceImpl implements ImperialService {
 	public void removeSubcategory(Integer id) {
 		categoryDAO.removeSubcategory(id);
 	}
-
+    
     /*
 	 * FactDAO
 	 */
