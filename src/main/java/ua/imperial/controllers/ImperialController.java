@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Section;
+import ua.imperial.entities.Subcategory;
 import ua.imperial.service.ImperialService;
 
 
@@ -100,6 +101,66 @@ public class ImperialController {
 		imperialService.removeCategory(categoryId);
 
 		return "redirect:/admin/categories";
+	}
+	
+	/*
+	 * SubcategoryController
+	 */
+	
+	@RequestMapping("admin/addSubcat")
+	public String addSubcat(Map<String, Object> map) {
+
+		map.put("subcategory", new Subcategory());
+		map.put("categoryList", imperialService.listCategory());
+		
+		return "addSubcategory";
+	}
+	
+	@RequestMapping(value = "admin/addSubcategory", method = RequestMethod.POST)
+	public String addSubcategory(@ModelAttribute("subcategory") Subcategory subcategory,
+			BindingResult result) {
+		
+		imperialService.addSubcategory(subcategory);
+
+		return "redirect:/admin/addSubcat";
+	}
+	
+	@RequestMapping(value = "admin/getSubcategory/{id}", method = RequestMethod.GET)
+	public String getSubcategory(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+		Subcategory subcategory = imperialService.getSubcategory(id);
+
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategory", subcategory);
+		
+        return "getSubcategory";
+	}
+	
+	@RequestMapping("admin/subcategories")
+	public String subcategories(Map<String, Object> map) {
+
+		map.put("subcategoryList", imperialService.listSubcategory());
+		
+		return "listOfSubcategories";
+	}
+	
+	@RequestMapping(value = "admin/editSubcategory", method = RequestMethod.POST)
+	public String editSubcategory(@ModelAttribute("subcategory") Subcategory subcategory, 
+			Map<String, Object> map, BindingResult result) {
+		
+		map.put("categoryList", imperialService.listCategory());
+		
+		imperialService.updateSubcategory(subcategory);
+
+		return "redirect:/admin/subcategories";
+	}
+
+	@RequestMapping("admin/deleteSubcategory/{subcategoryId}")
+	public String deleteSubcategory(@PathVariable("subcategoryId") Integer subcategoryId) {
+
+		imperialService.removeSubcategory(subcategoryId);
+
+		return "redirect:/admin/subcategories";
 	}
 	
 	/*

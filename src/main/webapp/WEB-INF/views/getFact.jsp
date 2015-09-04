@@ -11,13 +11,11 @@
 	<div class="box round first">
 		<h2>Редактировать "А знаете ли вы?"</h2>
 		<div class="block">
-			<form:form method="post" action="/admin/editFact"
-				commandName="fact">
+			<form:form method="post" action="/admin/editFact" commandName="fact">
 				<table>
 					<tr>
 						<td></td>
-						<td><form:input path="id" value="${fact.id}"
-								hidden="true" /></td>
+						<td><form:input path="id" value="${fact.id}" hidden="true" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="section">Section</form:label></td>

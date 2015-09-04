@@ -18,11 +18,12 @@
 						<li><a href="">Список</a></li>
 						<li><a>Добавить</a></li>
 					</ul></li>
-				<li><a class="menuitem">А знаете ли вы?</a>
+				<li><a href="../../admin/facts" class="menuitem">А знаете
+						ли вы?</a>
 					<ul class="submenu">
-						<li><a>Разделы</a></li>
-						<li><a>Список</a></li>
-						<li><a>Добавить</a></li>
+						<li><a href="../../admin/sections">Разделы</a></li>
+						<li><a href="../../admin/facts">Список</a></li>
+						<li><a href="../../admin/addFact">Добавить</a></li>
 					</ul></li>
 				<li><a class="menuitem">Новости</a>
 					<ul class="submenu">

@@ -91,7 +91,7 @@ h1 a {
 }
 
 .header-repeat {
-	background: url(../img/header-repeat.jpg) repeat-x;
+	background: url(../images/header-repeat.jpg) repeat-x;
 }
 
 #branding a {
@@ -165,7 +165,7 @@ h2#page-heading {
 
 .box h2 a, .box h2 a.visible {
 	color: #1B548D;
-	background: url("../img/switch_minus.gif") 97% 50% no-repeat;
+	background: url("../images/switch_minus.gif") 97% 50% no-repeat;
 	display: block;
 	padding: 6px 12px;
 	margin: -6px -12px;
@@ -284,17 +284,17 @@ ul.section li {
 }
 
 ul.section li a {
-	background: url(../img/sidemenu-repeat.jpg) repeat-x;
+	background: url(../images/sidemenu-repeat.jpg) repeat-x;
 	line-height: 26px;
 }
 
 ul.section li a:hover {
-	background: url(../img/sidemenu-repeat-hover.jpg) repeat-x;
+	background: url(../images/sidemenu-repeat-hover.jpg) repeat-x;
 }
 
 ul.section li a:active {
 	color: #1B548D;
-	background: url(../img/sidemenu-repeat-hover.jpg) repeat-x;
+	background: url(../images/sidemenu-repeat-hover.jpg) repeat-x;
 }
 
 ul.section li li a {
@@ -330,17 +330,17 @@ ul.section ul.current li a:active {
 
 ul.section li a.current {
 	color: #1B548D;
-	background: url(../img/sidemenu-repeat-hover.jpg) repeat-x;
+	background: url(../images/sidemenu-repeat-hover.jpg) repeat-x;
 }
 
 ul.section li a.current:hover {
 	color: #1B548D;
-	background: url(../img/sidemenu-repeat-hover.jpg) repeat-x;
+	background: url(../images/sidemenu-repeat-hover.jpg) repeat-x;
 }
 
 ul.section li a.current:active {
 	color: #1B548D;
-	background: url(../img/sidemenu-repeat-hover.jpg) repeat-x;
+	background: url(../images/sidemenu-repeat-hover.jpg) repeat-x;
 }
 
 ul.section li a.active {

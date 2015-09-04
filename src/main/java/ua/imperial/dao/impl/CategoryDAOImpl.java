@@ -10,12 +10,13 @@ import ua.imperial.dao.CategoryDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Item;
 import ua.imperial.entities.Subcategory;
+import ua.imperial.service.ImperialService;
 
 @Repository
 public class CategoryDAOImpl implements CategoryDAO {
 	
-	//@Autowired
-	//ItemService itemService;
+	@Autowired
+	ImperialService imperialService;
 
 	@Autowired
 	private SessionFactory sessionFactory;

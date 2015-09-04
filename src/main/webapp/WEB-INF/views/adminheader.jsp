@@ -30,7 +30,7 @@
 				</div>
 				<div class="floatright">
 					<div class="floatleft">
-						<img src="<c:url value="/resources/img/img-profile.jpg" />"
+						<img src="<c:url value="/resources/images/img-profile.jpg" />"
 							alt="Profile Pic" />
 					</div>
 					<div class="floatleft marginleft10">

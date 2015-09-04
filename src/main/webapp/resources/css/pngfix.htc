@@ -1,0 +1,14 @@
+<public:component>
+	<script language="JavaScript">
+		if(element.src.substr(element.src.length-4, element.src.length).toLowerCase()==".png"&&element.src.substr(0, 8).toLowerCase()!="file:///")
+		{
+			if(Defined(element.transparent))element.runtimeStyle.filter="progid:DXImageTransform.Microsoft.Chroma(Color='"+element.transparent+"')";
+			else
+			{
+				element.oldSrc=element.src;
+				element.src="publication/images/blank.gif";
+				element.runtimeStyle.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+element.oldSrc+"',sizingMethod='image')";
+			}
+		}
+	</script>
+</public:component>

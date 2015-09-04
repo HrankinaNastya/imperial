@@ -1,0 +1,10 @@
+<public:component>
+	<script language="JavaScript">
+
+		var url=currentStyle.backgroundImage;
+		url=url.substring(5, url.length-2);
+		element.runtimeStyle.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+url+"',sizingMethod='crop')";
+		element.style.backgroundImage='none';
+
+	</script>
+</public:component>
