@@ -11,7 +11,7 @@
 	<div class="box round first">
 		<h2>Добавить подкатегорию</h2>
 		<div class="block">
-			<form:form method="post" action="addSubcategory" 
+			<form:form method="post" action="addSubcategory"
 				commandName="subcategory">
 				<table>
 					<tr>

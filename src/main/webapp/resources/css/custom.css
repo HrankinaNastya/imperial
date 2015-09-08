@@ -1,45 +1,85 @@
 .red {
-	FONT-SIZE: 15px; COLOR: #ff0000
+	FONT-SIZE: 15px;
+	COLOR: #ff0000
 }
+
 .movedown {
-	PADDING-LEFT: 37px; COLOR: #ffffff; POSITION: relative; TOP: 25px
+	PADDING-LEFT: 37px;
+	COLOR: #ffffff;
+	POSITION: relative;
+	TOP: 25px
 }
+
 A.newbut {
 	COLOR: #405870
 }
+
 .new {
-	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #800000; TEXT-DECORATION: underline
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 13px;
+	COLOR: #800000;
+	TEXT-DECORATION: underline
 }
+
 .usual {
-	FONT-SIZE: 13px; COLOR: #000000
+	FONT-SIZE: 13px;
+	COLOR: #000000
 }
+
 .black {
-	FONT-SIZE: 13px; COLOR: #000000
+	FONT-SIZE: 13px;
+	COLOR: #000000
 }
+
 .link {
-	FONT-SIZE: 13px; COLOR: #405870
+	FONT-SIZE: 13px;
+	COLOR: #405870
 }
+
 .fruit_zagolovok {
 	FONT-WEIGHT: bold
 }
+
 .moshn {
-	FONT-SIZE: 11px; COLOR: #004080; LINE-HEIGHT: 0.9
+	FONT-SIZE: 11px;
+	COLOR: #004080;
+	LINE-HEIGHT: 0.9
 }
+
 .zagol {
-	FONT-SIZE: 12px; COLOR: #000000; FONT-STYLE: italic; TEXT-DECORATION: underline
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+	FONT-STYLE: italic;
+	TEXT-DECORATION: underline
 }
+
 .grafik {
-	FONT-SIZE: 11px; COLOR: #006c36; LINE-HEIGHT: 0.8
+	FONT-SIZE: 11px;
+	COLOR: #006c36;
+	LINE-HEIGHT: 0.8
 }
+
 .zagol1 {
-	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #ffff00
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 13px;
+	COLOR: #ffff00
 }
+
 .prais {
-	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #800000; LINE-HEIGHT: 0.9
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 11px;
+	COLOR: #800000;
+	LINE-HEIGHT: 0.9
 }
+
 .vac {
-	FONT-SIZE: 14px; COLOR: #ffffff; FONT-STYLE: italic
+	FONT-SIZE: 14px;
+	COLOR: #ffffff;
+	FONT-STYLE: italic
 }
+
 .graf_zagl {
-	FONT-SIZE: 11px; COLOR: #ffff00; LINE-HEIGHT: 0.9
+	FONT-SIZE: 11px;
+	COLOR: #ffff00;
+	LINE-HEIGHT: 0.9
 }

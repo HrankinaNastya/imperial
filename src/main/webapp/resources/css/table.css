@@ -156,7 +156,8 @@ textarea {
 .input_width {
 	width: 500px;
 }
-select{
+
+select {
 	width: 502px;
 }
 
@@ -173,8 +174,8 @@ select{
 	font-family: Arial;
 	color: #fff;
 	width: 150px;
-    height: 35px;
-    margin-top:10px;
+	height: 35px;
+	margin-top: 10px;
 }
 
 .btn:hover {

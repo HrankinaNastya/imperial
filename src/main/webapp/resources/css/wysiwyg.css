@@ -1,6 +1,29 @@
-div.wysiwyg a { border:none; }
-div.wysiwyg img { border:none; vertical-align:middle; }
-div.wysiwyg iframe, div.wysiwyg div.toolbar { border: 1px solid #999999; }
-div.wysiwyg iframe { width:100%; }
-div.wysiwyg div.toolbar { background: #ECE9D8; padding:4px; border-bottom:none; }
-div.wysiwyg div.sp { margin-right:3px; border-left: 2px solid #999999; display:inline; height:100%; }
+div.wysiwyg a {
+	border: none;
+}
+
+div.wysiwyg images {
+	border: none;
+	vertical-align: middle;
+}
+
+div.wysiwyg iframe, div.wysiwyg div.toolbar {
+	border: 1px solid #999999;
+}
+
+div.wysiwyg iframe {
+	width: 100%;
+}
+
+div.wysiwyg div.toolbar {
+	background: #ECE9D8;
+	padding: 4px;
+	border-bottom: none;
+}
+
+div.wysiwyg div.sp {
+	margin-right: 3px;
+	border-left: 2px solid #999999;
+	display: inline;
+	height: 100%;
+}

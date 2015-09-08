@@ -1,18 +1,61 @@
-table.calendarTable { background-color: #ffec9f; }
-table.calendarBodyTable { background-color: #b92525; }
+table.calendarTable {
+	background-color: #ffec9f;
+}
 
-td.calendarBD, td.calendarST, td.calendarSU, td.calendarWD, td.calendarSTa, td.calendarSUa, td.calendarWDa, td.calendarWST, td.calendarWSU, td.calendarWWD { padding: 2px; }
-td.calendarBD, td.calendarST, td.calendarSU, td.calendarWD, td.calendarSTa, td.calendarSUa, td.calendarWDa { font-size: 11px; }
-td.calendarSTa, td.calendarSUa, td.calendarWDa { background-color: #ffda63; }
-td.calendarWST, td.calendarWSU, td.calendarWWD { font-size: 12px; font-weight: bold; background-color: #cda902; }
-td.calendarHead { padding: 3px 6px; }
-td.calendarST, a.calendarST, td.calendarSTa, td.calendarWST { color: #426e00; }
-td.calendarSU, a.calendarSU, td.calendarSUa, td.calendarWSU { color: #b92525; }
-td.calendarWD, a.calendarWD, td.calendarWDa, td.calendarWWD { color: black; }
+table.calendarBodyTable {
+	background-color: #b92525;
+}
 
-a.calendarHead, td.calendarHead { color: white; text-decoration: none; }
+td.calendarBD, td.calendarST, td.calendarSU, td.calendarWD, td.calendarSTa,
+	td.calendarSUa, td.calendarWDa, td.calendarWST, td.calendarWSU, td.calendarWWD
+	{
+	padding: 2px;
+}
 
-a.calendarST, a.calendarSU, a.calendarWD { text-decoration: none; }
-a.calendarST:hover, a.calendarSU:hover, a.calendarWD:hover { text-decoration: underline overline; }
+td.calendarBD, td.calendarST, td.calendarSU, td.calendarWD, td.calendarSTa,
+	td.calendarSUa, td.calendarWDa {
+	font-size: 11px;
+}
 
-select.calendar, option.calendar { font-size: 11px }
+td.calendarSTa, td.calendarSUa, td.calendarWDa {
+	background-color: #ffda63;
+}
+
+td.calendarWST, td.calendarWSU, td.calendarWWD {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #cda902;
+}
+
+td.calendarHead {
+	padding: 3px 6px;
+}
+
+td.calendarST, a.calendarST, td.calendarSTa, td.calendarWST {
+	color: #426e00;
+}
+
+td.calendarSU, a.calendarSU, td.calendarSUa, td.calendarWSU {
+	color: #b92525;
+}
+
+td.calendarWD, a.calendarWD, td.calendarWDa, td.calendarWWD {
+	color: black;
+}
+
+a.calendarHead, td.calendarHead {
+	color: white;
+	text-decoration: none;
+}
+
+a.calendarST, a.calendarSU, a.calendarWD {
+	text-decoration: none;
+}
+
+a.calendarST:hover, a.calendarSU:hover, a.calendarWD:hover {
+	text-decoration: underline overline;
+}
+
+select.calendar, option.calendar {
+	font-size: 11px
+}
