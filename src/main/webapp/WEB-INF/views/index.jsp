@@ -22,7 +22,9 @@
 <link href="<c:url value="/resources/css/custom.css?nocache" />"
 	rel="stylesheet" media="screen">
 
-<link rel="icon" href="<c:url value="/resources/images/favicon.ico" />"
+<link rel="icon"
+	href="<c:url value=
+"/resources/images/favicon.ico" />"
 	type="image/x-icon">
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
@@ -34,7 +36,7 @@
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
-<title>Империал &mdash; холдинговая компания - О компании</title>
+<title><spring:message code="label.imperial" /></title>
 </head>
 <body>
 
@@ -58,7 +60,8 @@
 				<div class="phone">
 					<img src="/resources/images/r1.png" hspace="0">
 					<div>
-						Горячая линия &mdash; <b>8 (048) <i>780-14-05</i></b>
+						<spring:message code="label.hotline" />
+						&mdash; <b>8 (048) <i>780-14-05</i></b>
 					</div>
 					<img src="/resources/images/l1.png" hspace="0">
 				</div>
@@ -72,24 +75,31 @@
 				</div>
 
 
-
 				<div class="menu">
 					<div style="width: 100%;">
 						<ul>
 
 							<li style="text-align: left;" class="cur"><a
 								href="about_us.html"><img src="/resources/images/l4.png"
-									hspace="0"><b>О компании</b><img
-									src="/resources/images/r4.png" hspace="0"></a></li>
+									hspace="0"><b><c:forEach items="${categoryList}"
+											var="category">
+											<c:if test="${category.id==1}">${category.name}</c:if>
+										</c:forEach></b><img src="/resources/images/r4.png" hspace="0"></a></li>
 							<li><a href="partnership.html"><img
-									src="/resources/images/l2.png" hspace="0"><b>Партнерство</b><img
-									src="/resources/images/r2.png" hspace="0"></a></li>
+									src="/resources/images/l2.png" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==4}">${category.name}</c:if>
+										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
 							<li><a href="news.html"><img
-									src="/resources/images/l2.png" hspace="0"><b>Новости</b><img
-									src="/resources/images/r2.png" hspace="0"></a></li>
+									src="/resources/images/l2.png" hspace="0" alt=""><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==5}">${category.name}</c:if>
+										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
 							<li style="text-align: right;"><a href="contacts.html"><img
-									src="/resources/images/l2.png" hspace="0"><b>Контакты</b><img
-									src="/resources/images/r2.png" hspace="0"></a></li>
+									src="/resources/images/l2.png" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==6}">${category.name}</c:if>
+										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
 
 
 						</ul>
@@ -109,7 +119,10 @@
 								</ul> </a>
 							<div class="meat_n">
 								<h2 class="h2_roboto">
-									<a href="meat.html">Мясная продукция</a>
+									<a href="meat.html"><c:forEach items="${categoryList}"
+											var="category">
+											<c:if test="${category.id==7}">${category.name}</c:if>
+										</c:forEach></a>
 								</h2>
 							</div></td>
 
@@ -121,7 +134,10 @@
 						</a>
 							<div class="fruit_n">
 								<h2 class="h2_roboto">
-									<a href="fruits.html">Фрукты</a>
+									<a href="fruits.html"><c:forEach items="${categoryList}"
+											var="category">
+											<c:if test="${category.id==8}">${category.name}</c:if>
+										</c:forEach></a>
 								</h2>
 							</div>
 						</td>
@@ -135,27 +151,32 @@
 						</a>
 							<div class="trans_n">
 								<h2 class="h2_roboto">
-									<a href="logistics.html">Автологистика</a>
+									<a href="logistics.html"><c:forEach items="${categoryList}"
+											var="category">
+											<c:if test="${category.id==9}">${category.name}</c:if>
+										</c:forEach></a>
 								</h2>
 							</div>
 						</td>
 					</tr>
-
 				</table>
 				<table cellspacing="0" cellpadding="0" id="submain">
+
 					<tr valign="top">
 						<td width="30%">
-							<h3 class="h3_roboto">Последние новости</h3>
+							<h3 class="h3_roboto">
+								<spring:message code="label.lastnews" />
+							</h3>
 							<div id="sidebar">
 								<ul class="spy">
 
 								</ul>
 							</div> <a
 							href="http://imperial.ua/index.php?PublicationID=6&Language=rus"
-							style="color: #9acfe9; display: block; margin: 37px 47px 41px;">Все
-								новости</a> <img src="/resources/images/tl.png" hspace="0"
-							style="float: left;"><img src="/resources/images/tr.png"
-							hspace="0" style="float: right;">
+							style="color: #9acfe9; display: block; margin: 37px 47px 41px;"><spring:message
+									code="label.allnews" /></a> <img src="/resources/images/tl.png"
+							hspace="0" style="float: left;"><img
+							src="/resources/images/tr.png" hspace="0" style="float: right;">
 							<div class="t"></div>
 
 							<div class="m">
@@ -175,9 +196,9 @@
 											src="http://www.google.com/cse/brand?form=cse-search-box&lang=ru"></script>
 
 										<input type="text" name="q" class="shadow text"
-											style="width: 100%; display: block; color: #b8b8b8; padding-left: 26px;"
-											value="Поиск по сайту"
-											onfocus="if(this.value='Поиск по сайту')this.value='';" />
+											style="width: 90%; display: block; color: #b8b8b8; padding-left: 26px;"
+											value="<spring:message code="label.sitesearch" />"
+											onfocus="if(this.value='<spring:message code="label.sitesearch" />')this.value='';" />
 
 										<div>
 											<img src="/resources/images/search.gif"
@@ -186,7 +207,8 @@
 										<div style="padding-top: 15px">
 
 											<a class="newbut" href=""
-												onclick="document.getElementById('cse-search-box').submit(); return false;">Поиск<span></span></a>
+												onclick="document.getElementById('cse-search-box').submit(); return false;"><spring:message
+													code="label.search" /><span></span></a>
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -204,48 +226,18 @@
 
 							<div style="padding: 0 23px;">
 
-								<h1 class="h1_roboto">Мы имеем доступ в любую страну, в
-									каждый офис мира</h1>
+								<h1 class="h1_roboto">
+									<spring:message code="label.h1index" />
+								</h1>
 								<div align="justify">
-
-									<P>Финансово промышленный холдинг «Империал» – один из
-										крупных импортеров продуктов питания на украинском рынке. ФПХ
-										«Империал» обеспечивают поставки широкого ассортимента
-										продуктов из Европы, Азии, Африки и Южной Америки.
-										Деятельность компании охватывает разные направления
-										фруктово-овощного, импорт мясопродуктов: оптовые закупки,
-										транспортную и складскую логистику, реализацию продукции на
-										украинском рынке.</P>
-									<P>Команда специалистов ФПХ «Империал» складывалась на
-										протяжении десяти лет. Многие менеджеры и специалисты накопили
-										уникальный опыт профессиональной деятельности в сфере бизнеса
-										продуктов питания. Сегодня ФПХ «Империал» - сеть
-										представительств в 9 регионах Украины, сотрудники которой
-										представляют интересы компании во всех областях Украины и
-										соседних странах СНГ.</P>
-									<P>Специалисты ФПХ «Империал» тщательно контролируют каждый
-										этап технологического цикла - от контроля качества продукции
-										на складах поставщика до выгрузки товара с судна и реализации
-										товара покупателю нашего товара. Успешно развивая несколько
-										различных направлений деятельности, компания создала
-										эффективную схему закупок, контроля качества, логистики и
-										дистрибуции. Мы используем наиболее современные технологии
-										транспортировки и хранения продукции, которые гарантируют
-										высокое качество овощей, фруктов, мясопродуктов.</P>
-									<P>Цели компании: укрепление и развитие достигнутых позиций
-										(торгово-закупочная деятельность; складская логистика;
-										внедрение новых технологий хранения продуктов; транспортная
-										логистика; таможенная служба и экспедирование грузов) на
-										украинском рынке продуктов питания; диверсификация
-										коммерческих рисков и получение дополнительной прибыли за счет
-										создания и развития взаимно связанных направлений бизнеса.</P>
+									<c:if test="${!empty category}">${category.content}</c:if>
 									<div></div>
 
 								</div>
 								<br> <br> <br>
 								<div id="mapfirstpage" align="center">
 									<h2>
-										<a href="#">Карта с отображением мощностей ФПХ Империал</a>
+										<a href="#">Карта с отображением филиалов ФПХ Империал</a>
 									</h2>
 								</div>
 							</div>
@@ -253,7 +245,9 @@
 
 							<div
 								style="clear: both; padding: 53px 0 22px 23px; _padding-top: 27px;">
-								<h3 class="h3_roboto">Узнайте о нас больше</h3>
+								<h3 class="h3_roboto">
+									<spring:message code="label.Learnmoreaboutus" />
+								</h3>
 							</div> <img src="/resources/images/tl.png" hspace="0"
 							style="float: left;"><img src="/resources/images/tr.png"
 							hspace="0" style="float: right;">
@@ -264,36 +258,38 @@
 
 								<tr valign="top">
 
-									<td width="45%" class="lh">Информационный текст о рассылке</td>
+									<td width="45%" class="lh"><spring:message
+											code="label.info" /></td>
 
 									<td width="7%;"></td>
 
 
 									<script>
+										var adr = 'Адрес Вашей электронной почты';
 
-			var adr='Адрес Вашей электронной почты';
+										var _check_field = "Проверьте поле";
 
-			var _check_field="Проверьте поле";
+										function ChaeckSubscribe()
 
-			function ChaeckSubscribe()
+										{
 
-			{
+											if (!checkMail(document.subscribe.mail.value))
 
-				if(!checkMail(document.subscribe.mail.value))
+											{
 
-				{
+												alert(_check_field + ' "' + adr
+														+ '"!');
 
-					alert(_check_field+' "'+adr+'"!');
+												return false;
 
-					return false;
+											}
 
-				}
+											return CheckFormByArray(
+													"subscribe", Array("name",
+															"company", "city"));
 
-				return CheckFormByArray("subscribe", Array("name", "company", "city"));
-
-			}
-
-		</script>
+										}
+									</script>
 
 									<form name="subscribe"
 										action="publication/modules/subscribe/index.php"
@@ -356,26 +352,44 @@
 							</div>
 							<div id="scht2">
 								<script type="text/javascript" language="javascript">
-hotlog_js="1.0"; hotlog_r=""+Math.random()+"&s=2063094&im=101&r="+
-escape(document.referrer)+"&pg="+escape(window.location.href);
-document.cookie="hotlog=1; path=/"; hotlog_r+="&c="+(document.cookie?"Y":"N");
-</script>
+									hotlog_js = "1.0";
+									hotlog_r = "" + Math.random()
+											+ "&s=2063094&im=101&r="
+											+ escape(document.referrer)
+											+ "&pg="
+											+ escape(window.location.href);
+									document.cookie = "hotlog=1; path=/";
+									hotlog_r += "&c="
+											+ (document.cookie ? "Y" : "N");
+								</script>
 								<script type="text/javascript" language="javascript1.1">
-hotlog_js="1.1"; hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N");
-</script>
+									hotlog_js = "1.1";
+									hotlog_r += "&j="
+											+ (navigator.javaEnabled() ? "Y"
+													: "N");
+								</script>
 								<script type="text/javascript" language="javascript1.2">
-hotlog_js="1.2"; hotlog_r+="&wh="+screen.width+"x"+screen.height+"&px="+
-(((navigator.appName.substring(0,3)=="Mic"))?screen.colorDepth:screen.pixelDepth);
-</script>
+									hotlog_js = "1.2";
+									hotlog_r += "&wh="
+											+ screen.width
+											+ "x"
+											+ screen.height
+											+ "&px="
+											+ (((navigator.appName.substring(0,
+													3) == "Mic")) ? screen.colorDepth
+													: screen.pixelDepth);
+								</script>
 								<script type="text/javascript" language="javascript1.3">
-hotlog_js="1.3";
-</script>
+									hotlog_js = "1.3";
+								</script>
 								<script type="text/javascript" language="javascript">
-hotlog_r+="&js="+hotlog_js;
-document.write('<a href="http://click.hotlog.ru/?2063094" target="_top"><img '+
-'src="http://hit34.hotlog.ru/cgi-bin/hotlog/count?'+
-hotlog_r+'" border="0" width="90" height="31" alt="HotLog"><\/a>');
-</script>
+									hotlog_r += "&js=" + hotlog_js;
+									document
+											.write('<a href="http://click.hotlog.ru/?2063094" target="_top"><img '
+													+ 'src="http://hit34.hotlog.ru/cgi-bin/hotlog/count?'
+													+ hotlog_r
+													+ '" border="0" width="90" height="31" alt="HotLog"><\/a>');
+								</script>
 								<noscript>
 									<a href="http://click.hotlog.ru/?2063094" target="_top"><img
 										src="http://hit34.hotlog.ru/cgi-bin/hotlog/count?s=2063094&im=101"
@@ -411,9 +425,13 @@ hotlog_r+'" border="0" width="90" height="31" alt="HotLog"><\/a>');
 			<td id="bottom"><div>
 
 					<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
+						var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl."
+								: "http://www.");
+						document
+								.write(unescape("%3Cscript src='"
+										+ gaJsHost
+										+ "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+					</script>
 
 
 					<strong> <a href="http://ustimenko.com.ua/"

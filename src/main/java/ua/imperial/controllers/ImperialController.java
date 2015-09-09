@@ -37,8 +37,10 @@ public class ImperialController {
 	}
 	
 	@RequestMapping("/")
-	public String home() {
-		//return "redirect:/index";
+	public String home(Map<String, Object> map) {
+
+		map.put("category", imperialService.getCategory(1));
+		map.put("categoryList", imperialService.listCategory());
 		return "index";
 	}
 	
