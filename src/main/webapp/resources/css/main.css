@@ -15,6 +15,34 @@ input, textarea, select {
 	color: #696969;
 }
 
+@font-face {
+	font-family: 'robotoregular';
+	src: url('font/roboto/roboto-regular.eot');
+	src: url('font/roboto/roboto-regular.eot?#iefix')
+		format('embedded-opentype'), url('../font/roboto/roboto-regular.woff')
+		format('woff'), url('font/roboto/roboto-regular.ttf')
+		format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.h1_roboto {
+	font: 24px 'robotoregular', Arial, Helvetica, sans-serif;
+	color: #fff;
+	line-height: 150%;
+	width: 350px;
+}
+
+.h2_roboto a {
+	font: 28px 'robotoregular', Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.h3_roboto {
+	font: 20px 'robotoregular', Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+
 body.green {
 	background: #599d00 url(../images/bg2g.jpg) no-repeat 50% bottom;
 }
@@ -737,10 +765,10 @@ div.trans_n {
 div.bcompact1 {
 	display: inline-block;
 	white-space: nowrap;
-	_width: expression(this.children [ 2 ] .offsetWidth + this.children [ 1 ]
-		.offsetWidth + this.children [ 0 ] .offsetWidth + "px");
-	a: expression(( this.children [ 2 ] .style .width = this.children [ 2 ]
-		.offsetWidth)&&(this.children[2].style .display='block'));
+	_width: expression(this.children [ 2 ] .offsetWidth + this.children [ 1 ] 
+		 .offsetWidth + this.children [ 0 ] .offsetWidth + "px");
+	a: expression(( this.children [ 2 ] .style .width = this.children [ 2 ] 
+		 .offsetWidth)&&(this.children[2].style .display='block'));
 }
 
 div.bcompact1 a {

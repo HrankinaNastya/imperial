@@ -38,7 +38,8 @@ public class ImperialController {
 	
 	@RequestMapping("/")
 	public String home() {
-		return "redirect:/index";
+		//return "redirect:/index";
+		return "index";
 	}
 	
 	@RequestMapping("/admin")
