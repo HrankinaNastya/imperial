@@ -14,6 +14,7 @@ import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
+import ua.imperial.entities.Year;
 import ua.imperial.service.ImperialService;
 
 
@@ -41,6 +42,7 @@ public class ImperialController {
 
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
+		
 		return "index";
 	}
 	

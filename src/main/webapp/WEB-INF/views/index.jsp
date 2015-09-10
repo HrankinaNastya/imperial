@@ -1,3 +1,4 @@
+<%@page import="ua.imperial.entities.Year"%>
 <%@ page language="java" contentType="text/html; charset=utf8"
 	pageEncoding="utf8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
@@ -49,11 +50,13 @@
 					<span><img src="/resources/images/l2.png" hspace="0">
 						<div>
 							<a href="http://imperial.ua/about_us.html"><img
-								src="/resources/images/flag_rus.gif" alt="Русский"
-								title="Русский" class="cur"></a><a
+								src="/resources/images/flag_rus.gif"
+								alt="<spring:message code="label.ru" />"
+								title="<spring:message code="label.ru" />" class="cur"></a><a
 								href="http://imperial.ua/1/eng/index.html"><img
-								src="/resources/images/flag_eng.gif" alt="English"
-								title="English"></a>
+								src="/resources/images/flag_eng.gif"
+								alt="<spring:message code="label.en" />"
+								title="<spring:message code="label.en" />"></a>
 						</div> <img src="/resources/images/r2.png" hspace="0"></span>
 				</div>
 
@@ -68,10 +71,11 @@
 
 				<div class="hmc">
 					<a href="./"><img src="/resources/images/pic_home.gif"
-						title="На главную"></a><a class="" href="sitemap.html"><img
-						src="/resources/images/pic_map.gif" title="Карта сайта"></a><a
-						class="" href="contacts.html"><img
-						src="/resources/images/pic_mail.gif" title="Обратная связь"></a>
+						title="<spring:message code="label.home" />"></a><a class=""
+						href="sitemap.html"><img src="/resources/images/pic_map.gif"
+						title="<spring:message code="label.sitemap" />"></a><a class=""
+						href="contacts.html"><img src="/resources/images/pic_mail.gif"
+						title="<spring:message code="label.feedback" />"></a>
 				</div>
 
 
@@ -237,8 +241,11 @@
 								<br> <br> <br>
 								<div id="mapfirstpage" align="center">
 									<h2>
-										<a href="#">Карта с отображением филиалов ФПХ Империал</a>
+										<a href="#"><spring:message code="label.branchoffices" /></a>
 									</h2>
+									<iframe
+										src="https://www.google.com/maps/d/embed?mid=zn_ZULhOr7HQ.kYlUrvDkaRyg"
+										width="640" height="480"></iframe>
 								</div>
 							</div>
 
@@ -265,9 +272,9 @@
 
 
 									<script>
-										var adr = 'Адрес Вашей электронной почты';
+										var adr = '<spring:message code="label.youremail" />';
 
-										var _check_field = "Проверьте поле";
+										var _check_field = '<spring:message code="label.checkfield" />';
 
 										function ChaeckSubscribe()
 
@@ -298,18 +305,24 @@
 
 										<td style="padding-right: 50px;"><input
 											class="shadow text w100" style="color: #b8b8b8;" name="mail"
-											value="Адрес Вашей электронной почты"
+											value="<spring:message code="label.youremail" />"
 											onfocus="if(this.value==adr){this.value=''; document.getElementById('addfilds').style.display='block'};">
 
 											<div id="addfilds" style="display: none;">
 
-												<div class="form">Ф.И.О.</div>
+												<div class="form">
+													<spring:message code="label.FIO" />
+												</div>
 												<input class="shadow text w100" name="name">
 
-												<div class="form">Компания</div>
+												<div class="form">
+													<spring:message code="label.company" />
+												</div>
 												<input class="shadow text w100" name="company">
 
-												<div class="form">Город</div>
+												<div class="form">
+													<spring:message code="label.city" />
+												</div>
 												<input class="shadow text w100" name="city">
 
 											</div>
@@ -317,7 +330,8 @@
 
 											<div style="margin-top: 15px">
 												<a class="newbut" href=""
-													onclick="if(ChaeckSubscribe())document.subscribe.submit(); return false;">Подписаться<span></span></a>
+													onclick="if(ChaeckSubscribe())document.subscribe.submit(); return false;"><spring:message
+														code="label.subscribe" /><span></span></a>
 											</div></td>
 
 									</form>
@@ -337,7 +351,8 @@
 								<a target="_top" href="http://top.mail.ru/jump?from=1832819">
 									<img
 									src="http://d7.cf.bb.a1.top.mail.ru/counter?id=1832819;t=243"
-									border="0" height="31" width="90" alt="Рейтинг@Mail.ru">
+									border="0" height="31" width="90"
+									alt="<spring:message code="label.ratingMail" />">
 								</a>
 
 							</div> <img src="/resources/images/bl.png" hspace="0"
@@ -403,8 +418,8 @@
 
 								<a href="http://www.liveinternet.ru/click" target="_blank"><img
 									src="/resources/images/live-image.png"
-									title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня"
-									alt="" border="0" width="88" height="31" /></a>
+									title="<spring:message code="label.liveInternet" />" alt=""
+									border="0" width="88" height="31" /></a>
 
 
 							</div>
@@ -434,12 +449,16 @@
 					</script>
 
 
-					<strong> <a href="http://ustimenko.com.ua/"
-						target="_blank">Дизайн &mdash; <u>ustimenko.com.ua</u></a><br>
-						<a href="#" target="_blank">Создание сайта &mdash; <u>HrankinaAnastasiia</u></a>
-					</strong> &copy; 2008 &mdash; 2015 Финансово промышленный холдинг «Империал»<br>
-					Использование материалов возможно при условии наличия ссылки на наш
-					сайт
+					<strong> <a href="http://ustimenko.com.ua/" targe
+						t="_blank"><spring:message code="label.design" /> &mdash; <u>ustimenko.com.ua</u></a><br>
+						<a href="#" target="_blank"><spring:message
+								code="label.websiteCreation" /> &mdash; <u>HrankinaAnastasiia</u></a>
+					</strong> &copy; 2008 &mdash;
+					<%= new Year().getСurrentYear() %>
+					<spring:message code="label.FIH" />
+					<br>
+					<spring:message code="label.copy" />
+
 				</div></td>
 		</tr>
 	</table>
