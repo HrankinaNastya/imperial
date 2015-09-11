@@ -33,8 +33,19 @@
 
 <script type="text/javascript" src="/resources/js/jquery.js"></script>
 
+<link rel="stylesheet"
+	href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/MarkerCluster.css" />" />
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/MarkerCluster.Default.css" />" />
+<script type="text/javascript"
+	src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script type="text/javascript"
+	src="/resources/js/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="/resources/js/leaflet.geocsv.js"></script>
 
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 
 <title><spring:message code="label.imperial" /></title>
@@ -243,9 +254,18 @@
 									<h2>
 										<a href="#"><spring:message code="label.branchoffices" /></a>
 									</h2>
-									<iframe
-										src="https://www.google.com/maps/d/embed?mid=zn_ZULhOr7HQ.kYlUrvDkaRyg"
-										width="640" height="480"></iframe>
+									<!-- 									<iframe -->
+									<!-- 										src="https://www.google.com/maps/d/embed?mid=zn_ZULhOr7HQ.kYlUrvDkaRyg" -->
+									<!-- 										width="640" height="480"></iframe> -->
+
+									<div id="mapdiv" style="width: 650px; height: 400px">
+										There is a map</div>
+
+									<div id="locations" style="white-space: pre; display: none">
+										30.5159572,50.4525783,Киев,Владимирская 38</div>
+
+
+									<script type="text/javascript" src="/resources/js/script.js"></script>
 								</div>
 							</div>
 
@@ -274,7 +294,7 @@
 									<script>
 										var adr = '<spring:message code="label.youremail" />';
 
-										var _check_field = '<spring:message code="label.checkfield" />';
+						 				var _check_field = '<spring:message code="label.checkfield" />';
 
 										function ChaeckSubscribe()
 
