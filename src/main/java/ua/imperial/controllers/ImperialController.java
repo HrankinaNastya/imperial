@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
+import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.entities.Year;
@@ -286,6 +287,54 @@ public class ImperialController {
 		imperialService.removeFact(factId);
 
 		return "redirect:/admin/facts";
+	}
+	
+	/*
+	 * FeedbackController
+	 */
+	
+	@RequestMapping(value = "admin/addFeedback", method = RequestMethod.POST)
+	public String addFeedback(@ModelAttribute("feedback") Feedback feedback,
+			BindingResult result) {
+		
+		imperialService.addFeedback(feedback);
+
+		return "redirect:/feedback";
+	}
+	
+	@RequestMapping(value = "admin/getFeedback/{id}", method = RequestMethod.GET)
+	public String getFeedback(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+		Feedback feedback = imperialService.getFeedback(id);
+		
+		map.put("feedback", feedback);
+		
+        return "getFeedback";
+	}
+	
+	@RequestMapping("admin/feedbacks")
+	public String feedbacks(Map<String, Object> map) {
+		
+		map.put("feedbackList", imperialService.listFeedback());
+		
+		return "listOfFeedbacks";
+	}
+	
+	@RequestMapping(value = "admin/editFeedback", method = RequestMethod.POST)
+	public String editFeedback(@ModelAttribute("feedback") Feedback feedback, Map<String, Object> map,
+			BindingResult result) {
+		
+		imperialService.updateFeedback(feedback);
+
+		return "redirect:/admin/feedbacks";
+	}
+
+	@RequestMapping("admin/deleteFact/{feedbackId}")
+	public String deleteFeedback(@PathVariable("feedbackId") Integer feedbackId) {
+
+		imperialService.removeFeedback(feedbackId);
+
+		return "redirect:/admin/feedbacks";
 	}
 	
 }

@@ -9,5 +9,6 @@
 		<mapping class="ua.imperial.entities.Subcategory" />
 		<mapping class="ua.imperial.entities.Section" />
 		<mapping class="ua.imperial.entities.Fact" />
+		<mapping class="ua.imperial.entities.Feedback" />
 	</session-factory>
 </hibernate-configuration>

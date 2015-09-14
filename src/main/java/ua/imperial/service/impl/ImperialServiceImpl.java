@@ -8,8 +8,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ua.imperial.dao.CategoryDAO;
 import ua.imperial.dao.FactDAO;
+import ua.imperial.dao.FeedbackDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
+import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.service.ImperialService;
@@ -23,6 +25,9 @@ public class ImperialServiceImpl implements ImperialService {
     
     @Autowired
     private FactDAO factDAO;
+    
+    @Autowired
+    private FeedbackDAO feedbackDAO;
 
     
     /*
@@ -150,6 +155,40 @@ public class ImperialServiceImpl implements ImperialService {
 	@Transactional
 	public void removeFact(Integer id) {
 		factDAO.removeFact(id);
+	}
+
+	/*
+	 * FeedbackDAO
+	 */
+	
+	@Override
+	@Transactional
+	public void addFeedback(Feedback feedback) {
+		feedbackDAO.addFeedback(feedback);
+	}
+
+	@Override
+	@Transactional
+	public Feedback getFeedback(Integer id) {
+		return feedbackDAO.getFeedback(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Feedback> listFeedback() {
+		return feedbackDAO.listFeedback();
+	}
+
+	@Override
+	@Transactional
+	public void updateFeedback(Feedback feedback) {
+		feedbackDAO.updateFeedback(feedback);
+	}
+
+	@Override
+	@Transactional
+	public void removeFeedback(Integer id) {
+		feedbackDAO.removeFeedback(id);
 	}
 
 
