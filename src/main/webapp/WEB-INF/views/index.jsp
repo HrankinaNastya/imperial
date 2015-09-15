@@ -81,11 +81,14 @@
 				</div>
 
 				<div class="hmc">
-					<a href="/"><img src="/resources/images/pic_home.gif"
+					<a href="<c:url value="/" />"><img
+						src="<c:url value="/resources/images/pic_home.gif" />"
 						title="<spring:message code="label.home" />"></a><a class=""
-						href="sitemap.html"><img src="/resources/images/pic_map.gif"
+						href="<c:url value="/sitemap" />"><img
+						src="<c:url value="/resources/images/pic_map.gif" />"
 						title="<spring:message code="label.sitemap" />"></a><a class=""
-						href="/feedback"><img src="/resources/images/pic_mail.gif"
+						href="<c:url value="/feedback" />"><img
+						src="<c:url value="/resources/images/pic_mail.gif" />"
 						title="<spring:message code="label.feedback" />"></a>
 				</div>
 
@@ -124,7 +127,7 @@
 				<table id="cb" cellspacing="0" border="0" cellpadding="0"
 					width="100%" style="clear: both">
 					<tr valign="top">
-						<td onclick="location.href='http://imperial.ua/meat.html'"><a
+						<td onclick="location.href='<c:url value="/meat" />'"><a
 							href="meat.html"><ul id="slide_meat"
 									style="list-style: none;">
 									<li><img class="frst"
@@ -133,7 +136,7 @@
 
 								</ul> </a>
 							<div class="meat_n">
-								<h2 class="h2_roboto">
+								<h2 class="roboto2">
 									<a href="meat.html"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==7}">${category.name}</c:if>
@@ -148,7 +151,7 @@
 								</ul>
 						</a>
 							<div class="fruit_n">
-								<h2 class="h2_roboto">
+								<h2 class="roboto2">
 									<a href="fruits.html"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==8}">${category.name}</c:if>
@@ -165,7 +168,7 @@
 								</ul>
 						</a>
 							<div class="trans_n">
-								<h2 class="h2_roboto">
+								<h2 class="roboto2">
 									<a href="logistics.html"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==9}">${category.name}</c:if>
@@ -179,7 +182,7 @@
 
 					<tr valign="top">
 						<td width="30%">
-							<h3 class="h3_roboto">
+							<h3 class="roboto3">
 								<spring:message code="label.lastnews" />
 							</h3>
 							<div id="sidebar">
@@ -241,7 +244,7 @@
 
 							<div style="padding: 0 23px;">
 
-								<h1 class="h1_roboto">
+								<h1 class="roboto1">
 									<spring:message code="label.h1index" />
 								</h1>
 								<div align="justify">
@@ -272,7 +275,7 @@
 
 							<div
 								style="clear: both; padding: 53px 0 22px 23px; _padding-top: 27px;">
-								<h3 class="h3_roboto">
+								<h3 class="roboto3">
 									<spring:message code="label.Learnmoreaboutus" />
 								</h3>
 							</div> <img src="/resources/images/tl.png" hspace="0"

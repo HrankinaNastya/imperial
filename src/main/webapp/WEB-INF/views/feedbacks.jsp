@@ -62,17 +62,20 @@
 				<div class="phone">
 					<img src="<c:url value="/resources/images/r1d.png" />" hspace="0">
 					<div>
-						<spring:message code="label.hotline" /> &mdash; <b>8 (048) <i>780-14-05</i></b>
+						<spring:message code="label.hotline" />
+						&mdash; <b>8 (048) <i>780-14-05</i></b>
 					</div>
 					<img src="<c:url value="/resources/images/l1d.png" />" hspace="0">
 				</div>
 
 				<div class="hmc">
-					<a href="/"><img
+					<a href="<c:url value="/" />"><img
 						src="<c:url value="/resources/images/pic_home.gif" />"
-						title="<spring:message code="label.home" />"></a><a class="" href="sitemap.html"><img
+						title="<spring:message code="label.home" />"></a><a class=""
+						href="<c:url value="/sitemap" />"><img
 						src="<c:url value="/resources/images/pic_map.gif" />"
-						title="<spring:message code="label.sitemap" />"></a><a class="" href="/feedback"><img
+						title="<spring:message code="label.sitemap" />"></a><a class=""
+						href="<c:url value="/feedback" />"><img
 						src="<c:url value="/resources/images/pic_mail.gif" />"
 						title="<spring:message code="label.feedback" />"></a>
 				</div>
@@ -83,20 +86,31 @@
 					<div style="width: 100%;">
 						<ul>
 
-							<li style="text-align: left;"><a href="about_us.html"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b>О
-										компании</b><img src="images/r2.png" hspace="0"></a></li>
-							<li class="cur"><a href="partnership.html"><img
-									src="<c:url value="/resources/images/l4.png"  />" hspace="0"><b>Партнерство</b><img
-									src="images/r4.png" hspace="0"></a></li>
-							<li><a href="news.html"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b>Новости</b><img
-									src="<c:url value="/resources/images/r2.png" />" hspace="0"></a></li>
-							<li style="text-align: right;"><a href="contacts.html"><img
-									src="<c:url value="/resources/images/l2d.png" />" hspace="0"><b>Контакты</b><img
-									src="<c:url value="/resources/images/r2d.png" />" hspace="0"></a></li>
-
-
+							<li style="text-align: left;"><a href="<c:url value="/" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==1}">${category.name}</c:if>
+										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
+									hspace="0"></a></li>
+							<li class="cur"><a href="<c:url value="/feedback" />"><img
+									src="<c:url value="/resources/images/l4.png"  />" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==4}">${category.name}</c:if>
+										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
+									hspace="0"></a></li>
+							<li><a href="<c:url value="/news" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==5}">${category.name}</c:if>
+										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
+									hspace="0"></a></li>
+							<li style="text-align: right;"><a
+								href="<c:url value="/contacts" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==6}">${category.name}</c:if>
+										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
+									hspace="0"></a></li>
 
 
 						</ul>
@@ -105,33 +119,38 @@
 					src="<c:url value="/resources/images/r7d.png" />" hspace="0">
 					<div>
 						<img src="<c:url value="/resources/images/arrow.png" />"><a
-							href="meat.html"><img
-							src="file.php?v=1389591256&src=images/text/1065854573.png"
-							width="163" height="21" transparent="#405870" border="0"
-							name="1065854573" id="1065854573" alt="Мясная продукция"></a><img
-							src="images/arrow.png" style="margin-left: 41px;"><a
-							href="fruits.html"><img
-							src="file.php?v=1389591256&src=images/text/951554476.png"
-							width="68" height="21" transparent="#405870" border="0"
-							name="951554476" id="951554476" alt="Фрукты"></a><img
-							src="images/arrow.png" style="margin-left: 41px;"><a
-							href="logistics.html"><img
-							src="file.php?v=1312001483&src=images/text/3899658765.png"
-							width="128" height="21" transparent="#405870" border="0"
-							name="3899658765" id="3899658765" alt="Автологистика"></a>
+							href="<c:url value="/meat" />" class="roboto4"><c:forEach
+								items="${categoryList}" var="category">
+								<c:if test="${category.id==7}">${category.name}</c:if>
+							</c:forEach></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
+							href="<c:url value="/fruits" />" class="roboto4"><c:forEach
+								items="${categoryList}" var="category">
+								<c:if test="${category.id==8}">${category.name}</c:if>
+							</c:forEach></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
+							href="<c:url value="/logistics" />" class="roboto4 lastrob"><c:forEach
+								items="${categoryList}" var="category">
+								<c:if test="${category.id==9}">${category.name}</c:if>
+							</c:forEach></a>
 					</div> <img src="<c:url value="/resources/images/l7d.png" />" hspace="0"></span>
+
+
 				<table cellspacing="0" cellpadding="0" id="submain">
 					<tr valign="top">
 						<td width="30%" id="lft"><img
 							src="<c:url value="/resources/images/arrow2.png" />"
 							class="h1but">
 							<div class="h1">
-								<a class="" href="contacts.html"><img
-									src="file.php?v=1312410563&src=images/text/4106171956.png"
-									width="124" height="30" transparent="#405870" border="0"
-									name="4106171956" id="4106171956" alt="Контакты"></a>
-							</div> <img src="images/tld.png" hspace="0" style="float: left;"><img
-							src="images/trd.png" hspace="0" style="float: right;">
+								<a href="<c:url value="/feedback" />" class="roboto5">
+									<c:forEach items="${categoryList}" var="category">
+										<c:if test="${category.id==4}">${category.name}</c:if>
+									</c:forEach>
+								</a>
+							</div> <img src="<c:url value="/resources/images/tld.png" />"
+							hspace="0" style="float: left;"> <img
+							src="<c:url value="/resources/images/trd.png" />" hspace="0"
+							style="float: right;">
+
+
 							<div class="t"></div>
 
 							<div class="m">
@@ -156,7 +175,7 @@
 											onfocus="if(this.value='Поиск по сайту')this.value='';" />
 
 										<div>
-											<img src="images/search.gif"
+											<img src="<c:url value="/resources/images/search.gif" />"
 												style="position: absolute; margin-top: -19px; margin-left: 5px;">
 										</div>
 										<div style="padding-top: 15px">
@@ -169,8 +188,8 @@
 
 
 
-							</div> <img src="images/bld.png" hspace="0" style="float: left;"><img
-							src="images/brd.png" hspace="0" style="float: right;">
+							</div> <img src="<c:url value="/resources/images/bld.png" />" hspace="0" style="float: left;"><img
+							src="<c:url value="/resources/images/brd.png" />" hspace="0" style="float: right;">
 							<div class="b"></div></td>
 						<td width="5%"></td>
 						<td class="lh" style="padding: 0 23px;">
@@ -181,8 +200,8 @@
 
 							<div class="quote">
 
-								<img src="images/tl2.png" hspace="0" style="float: left;"><img
-									src="images/tr2.png" hspace="0" style="float: right;">
+								<img src="<c:url value="/resources/images/tl2.png" />" hspace="0" style="float: left;"><img
+									src="<c:url value="/resources/images/tr2.png" />" hspace="0" style="float: right;">
 								<div class="t2"></div>
 
 								<div class="m2">
@@ -196,7 +215,7 @@
 
 								</div>
 
-								<img src="images/bl2.png" hspace="0" style="float: left;">
+								<img src="<c:url value="/resources/images/bl2.png" />" hspace="0" style="float: left;">
 								<div class="b2" style="margin-right: 0px;"></div>
 								<div id="know" style="float: right; padding-right: 17px;">
 									<a class="newbut knw"
@@ -259,8 +278,8 @@
 
 								<div style="margin-top: 30px; width: 100%;">
 
-									<img src="images/tld.png" hspace="0" style="float: left;"><img
-										src="images/trd.png" hspace="0" style="float: right;">
+									<img src="<c:url value="/resources/images/tld.png" />" hspace="0" style="float: left;"><img
+										src="<c:url value="/resources/images/trd.png" />" hspace="0" style="float: right;">
 									<div class="t"></div>
 
 									<div class="m">
@@ -313,8 +332,8 @@
 
 									</div>
 
-									<img src="images/bld.png" hspace="0" style="float: left;"><img
-										src="images/brd.png" hspace="0" style="float: right;">
+									<img src="<c:url value="/resources/images/bld.png" />" hspace="0" style="float: left;"><img
+										src="<c:url value="/resources/images/brd.png" />" hspace="0" style="float: right;">
 									<div class="b"></div>
 
 								</div>
@@ -363,7 +382,7 @@
 						<a href="http://atis.net.ua/" target="_blank">Создание сайта
 							&mdash; <u>HrankinaAnastasiia</u>
 					</a>
-					</strong> &copy; 2008 &mdash; 2014 Финансово промышленный холдинг «Империал»<br>
+					</strong> &copy; 2008 &mdash; 2014 Финансово промышленный холдинг «Империал»<>
 					Использование материалов возможно при условии наличия ссылки на наш
 					сайт
 				</div></td>

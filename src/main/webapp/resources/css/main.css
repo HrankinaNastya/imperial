@@ -26,19 +26,31 @@ input, textarea, select {
 	font-style: normal;
 }
 
-.h1_roboto {
+.roboto1 {
 	font: 24px 'robotoregular', Arial, Helvetica, sans-serif;
 	color: #fff;
 	line-height: 150%;
 	width: 350px;
 }
 
-.h2_roboto a {
+.roboto4 {
+	font: 19px 'robotoregular', Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	margin:6px 45px 0 0;
+}
+
+.lastrob {
+	margin:6px 0 0 0;
+}
+
+.roboto5,
+.roboto2 a {
 	font: 28px 'robotoregular', Arial, Helvetica, sans-serif;
 	text-decoration: none;
 }
 
-.h3_roboto {
+.roboto3 {
 	font: 20px 'robotoregular', Arial, Helvetica, sans-serif;
 	color: #fff;
 }
@@ -977,7 +989,7 @@ div.quote div.m2 p {
 }
 
 img.h1but {
-	margin: 32px 12px 0px 32px;
+	margin: 37px 12px 0px 32px;
 	float: left;
 }
 
