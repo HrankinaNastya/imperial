@@ -81,11 +81,11 @@
 				</div>
 
 				<div class="hmc">
-					<a href="./"><img src="/resources/images/pic_home.gif"
+					<a href="/"><img src="/resources/images/pic_home.gif"
 						title="<spring:message code="label.home" />"></a><a class=""
 						href="sitemap.html"><img src="/resources/images/pic_map.gif"
 						title="<spring:message code="label.sitemap" />"></a><a class=""
-						href="contacts.html"><img src="/resources/images/pic_mail.gif"
+						href="/feedback"><img src="/resources/images/pic_mail.gif"
 						title="<spring:message code="label.feedback" />"></a>
 				</div>
 

@@ -19,18 +19,21 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 
-<link href="css/main.css?v=0.5" rel="stylesheet" media="screen">
-<link href="css/custom.css?nocache" rel="stylesheet" media="screen">
+<link href="<c:url value="/resources/css/main.css?v=0.5" />"
+	rel="stylesheet" media="screen">
+<link href="<c:url value="/resources/css/custom.css?nocache" />"
+	rel="stylesheet" media="screen">
 
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="<c:url value="/resources/images/favicon.ico" />"
+	type="image/x-icon">
+<link rel="shortcut icon"
+	href="<c:url value="/resources/images/favicon.ico"  />"
+	type="image/x-icon">
 
-<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript"
+	src="<c:url value="/resources/js/jquery.js" />"></script>
 
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-
-<title>Империал &mdash; холдинговая компания - Контакты</title>
+<title><spring:message code="label.imperial.feedback" /></title>
 
 </head>
 
@@ -42,29 +45,36 @@
 			<td id="top">
 
 				<div class="lang">
-					<span><img src="images/l2.png" hspace="0">
-					<div>
+					<span><img src="<c:url value="/resources/images/l2.png" />"
+						hspace="0">
+						<div>
 							<a href="http://imperial.ua/contacts.html"><img
-								src="images/flag_rus.gif" alt="Русский" title="Русский"
-								class="cur"></a><a href="http://imperial.ua/7/eng/index.html"><img
-								src="images/flag_eng.gif" alt="English" title="English"></a>
-						</div>
-						<img src="images/r2.png" hspace="0"></span>
+								src="<c:url value="/resources/images/flag_rus.gif" />"
+								alt="<spring:message code="label.ru" />"
+								title="<spring:message code="label.ru" />" class="cur"></a><a
+								href="http://imperial.ua/7/eng/index.html"><img
+								src="<c:url value="/resources/images/flag_eng.gif" />"
+								alt="<spring:message code="label.en" />"
+								title="<spring:message code="label.en" />"></a>
+						</div> <img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
 				</div>
 
 				<div class="phone">
-					<img src="images/r1d.png" hspace="0">
+					<img src="<c:url value="/resources/images/r1d.png" />" hspace="0">
 					<div>
-						Горячая линия &mdash; <b>8 (048) <i>780-14-05</i></b>
+						<spring:message code="label.hotline" /> &mdash; <b>8 (048) <i>780-14-05</i></b>
 					</div>
-					<img src="images/l1d.png" hspace="0">
+					<img src="<c:url value="/resources/images/l1d.png" />" hspace="0">
 				</div>
 
 				<div class="hmc">
-					<a href="./"><img src="images/pic_home.gif" title="На главную"></a><a
-						class="" href="sitemap.html"><img src="images/pic_map.gif"
-						title="Карта сайта"></a><a class="" href="contacts.html"><img
-						src="images/pic_mail.gif" title="Обратная связь"></a>
+					<a href="/"><img
+						src="<c:url value="/resources/images/pic_home.gif" />"
+						title="<spring:message code="label.home" />"></a><a class="" href="sitemap.html"><img
+						src="<c:url value="/resources/images/pic_map.gif" />"
+						title="<spring:message code="label.sitemap" />"></a><a class="" href="/feedback"><img
+						src="<c:url value="/resources/images/pic_mail.gif" />"
+						title="<spring:message code="label.feedback" />"></a>
 				</div>
 
 
@@ -74,27 +84,28 @@
 						<ul>
 
 							<li style="text-align: left;"><a href="about_us.html"><img
-									src="images/l2.png" hspace="0"><b>О компании</b><img
-									src="images/r2.png" hspace="0"></a></li>
-							<li><a href="partnership.html"><img
-									src="images/l2.png" hspace="0"><b>Партнерство</b><img
-									src="images/r2.png" hspace="0"></a></li>
-							<li><a href="news.html"><img src="images/l2.png"
-									hspace="0"><b>Новости</b><img src="images/r2.png"
-									hspace="0"></a></li>
-							<li style="text-align: right;" class="cur"><a
-								href="contacts.html"><img src="images/l4d.png" hspace="0"><b>Контакты</b><img
-									src="images/r4d.png" hspace="0"></a></li>
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b>О
+										компании</b><img src="images/r2.png" hspace="0"></a></li>
+							<li class="cur"><a href="partnership.html"><img
+									src="<c:url value="/resources/images/l4.png"  />" hspace="0"><b>Партнерство</b><img
+									src="images/r4.png" hspace="0"></a></li>
+							<li><a href="news.html"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b>Новости</b><img
+									src="<c:url value="/resources/images/r2.png" />" hspace="0"></a></li>
+							<li style="text-align: right;"><a href="contacts.html"><img
+									src="<c:url value="/resources/images/l2d.png" />" hspace="0"><b>Контакты</b><img
+									src="<c:url value="/resources/images/r2d.png" />" hspace="0"></a></li>
 
 
 
 
 						</ul>
 					</div>
-				</div>
-				<span class="submenu"><img src="images/r7d.png" hspace="0">
-				<div>
-						<img src="images/arrow.png"><a href="meat.html"><img
+				</div> <span class="submenu"><img
+					src="<c:url value="/resources/images/r7d.png" />" hspace="0">
+					<div>
+						<img src="<c:url value="/resources/images/arrow.png" />"><a
+							href="meat.html"><img
 							src="file.php?v=1389591256&src=images/text/1065854573.png"
 							width="163" height="21" transparent="#405870" border="0"
 							name="1065854573" id="1065854573" alt="Мясная продукция"></a><img
@@ -108,20 +119,20 @@
 							src="file.php?v=1312001483&src=images/text/3899658765.png"
 							width="128" height="21" transparent="#405870" border="0"
 							name="3899658765" id="3899658765" alt="Автологистика"></a>
-					</div>
-					<img src="images/l7d.png" hspace="0"></span>
+					</div> <img src="<c:url value="/resources/images/l7d.png" />" hspace="0"></span>
 				<table cellspacing="0" cellpadding="0" id="submain">
 					<tr valign="top">
-						<td width="30%" id="lft"><img src="images/arrow2.png"
+						<td width="30%" id="lft"><img
+							src="<c:url value="/resources/images/arrow2.png" />"
 							class="h1but">
-						<div class="h1">
+							<div class="h1">
 								<a class="" href="contacts.html"><img
 									src="file.php?v=1312410563&src=images/text/4106171956.png"
 									width="124" height="30" transparent="#405870" border="0"
 									name="4106171956" id="4106171956" alt="Контакты"></a>
 							</div> <img src="images/tld.png" hspace="0" style="float: left;"><img
 							src="images/trd.png" hspace="0" style="float: right;">
-						<div class="t"></div>
+							<div class="t"></div>
 
 							<div class="m">
 
@@ -160,7 +171,7 @@
 
 							</div> <img src="images/bld.png" hspace="0" style="float: left;"><img
 							src="images/brd.png" hspace="0" style="float: right;">
-						<div class="b"></div></td>
+							<div class="b"></div></td>
 						<td width="5%"></td>
 						<td class="lh" style="padding: 0 23px;">
 
@@ -210,9 +221,9 @@
 									ул. Дальницкая 15а
 								</P>
 								<P>
-									<STRONG><BR>
-									<FONT class=movedown>Если вы не нашли нужный вам
-											контакт, предлагаем Вам заполнить форму-заявку:</FONT></STRONG>
+									<STRONG><BR> <FONT class=movedown>Если вы
+											не нашли нужный вам контакт, предлагаем Вам заполнить
+											форму-заявку:</FONT></STRONG>
 								</P>
 								<div></div>
 
@@ -263,28 +274,24 @@
 
 												<tr>
 
-													<td><div>*Ф.И.О.</div>
-														<input name="name"></td>
+													<td><div>*Ф.И.О.</div> <input name="name"></td>
 
-													<td><div>*E-Mail</div>
-														<input name="mail"></td>
+													<td><div>*E-Mail</div> <input name="mail"></td>
 
 												</tr>
 
 												<tr>
 
-													<td><div>Компания</div>
-														<input name="company"></td>
+													<td><div>Компания</div> <input name="company"></td>
 
-													<td><div>Город</div>
-														<input name="city"></td>
+													<td><div>Город</div> <input name="city"></td>
 
 												</tr>
 
 												<tr>
 
-													<td colspan="2"><div>*Сообщение</div>
-														<textarea rows="5" name="message"></textarea></td>
+													<td colspan="2"><div>*Сообщение</div> <textarea
+															rows="5" name="message"></textarea></td>
 
 												</tr>
 

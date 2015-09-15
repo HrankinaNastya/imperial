@@ -1,5 +1,7 @@
 package ua.imperial.entities;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,6 +32,9 @@ public class Feedback {
 	
 	@Column(name = "MESSAGE", nullable=false)
 	private String message;
+	
+	@Column(name = "CREATED", nullable=false)
+	private Date created;
 
 	public Feedback() {
 		super();
@@ -81,6 +86,14 @@ public class Feedback {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 	
 

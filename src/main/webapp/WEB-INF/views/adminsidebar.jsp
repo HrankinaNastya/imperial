@@ -8,23 +8,27 @@
 	<div class="box sidemenu">
 		<div class="block" id="section-menu">
 			<ul class="section menu">
-				<li><a class="menuitem" href="../../admin/categories">Категории</a>
+				<li><a class="menuitem"
+					href="<c:url value="/admin/categories" />">Категории</a>
 					<ul class="submenu">
-						<li><a href="../../admin/categories">Список</a></li>
-						<li><a href="../../admin/addCat">Добавить</a></li>
+						<li><a href="<c:url value="/admin/categories" />">Список</a></li>
+						<li><a href="<c:url value="/admin/addCat" />">Добавить</a></li>
 					</ul></li>
-				<li><a class="menuitem">Подкатегории</a>
+				<li><a class="menuitem"
+					href="<c:url value="/admin/subcategories" />">Подкатегории</a>
 					<ul class="submenu">
-						<li><a href="">Список</a></li>
-						<li><a>Добавить</a></li>
+						<li><a href="<c:url value="/admin/subcategories" />">Список</a></li>
+						<li><a href="<c:url value="/admin/addSubcat" />">Добавить</a></li>
 					</ul></li>
-				<li><a href="../../admin/facts" class="menuitem">А знаете
-						ли вы?</a>
+				<li><a href="<c:url value="/admin/facts" />" class="menuitem">А
+						знаете ли вы?</a>
 					<ul class="submenu">
-						<li><a href="../../admin/sections">Разделы</a></li>
-						<li><a href="../../admin/facts">Список</a></li>
-						<li><a href="../../admin/addFact">Добавить</a></li>
+						<li><a href="<c:url value="/admin/sections" />">Разделы</a></li>
+						<li><a href="<c:url value="/admin/facts" />">Список</a></li>
+						<li><a href="<c:url value="/admin/addFact" />">Добавить</a></li>
 					</ul></li>
+				<li><a href="<c:url value="/admin/feedbacks" />"
+					class="menuitem">Обратная связь</a></li>
 				<li><a class="menuitem">Новости</a>
 					<ul class="submenu">
 						<li><a>Список</a></li>

@@ -21,6 +21,7 @@
 							<td>Email</td>
 							<td>City</td>
 							<td>Message</td>
+							<td>Date</td>
 							<td></td>
 							<td></td>
 						</tr>
@@ -32,6 +33,7 @@
 								<td>${feedback.email}</td>
 								<td>${feedback.city}</td>
 								<td width="450px">${feedback.message}</td>
+								<td>${feedback.created}</td>
 								<td><a href="/admin/getFeedback/${feedback.id}">Edit</a></td>
 								<td><a href="/admin/deleteFeedback/${feedback.id}">Delete</a></td>
 							</tr>
