@@ -3,7 +3,6 @@ package ua.imperial.dao;
 import java.util.List;
 
 import ua.imperial.entities.Category;
-import ua.imperial.entities.Item;
 import ua.imperial.entities.Subcategory;
 
 public interface CategoryDAO {

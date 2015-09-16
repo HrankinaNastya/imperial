@@ -37,15 +37,14 @@ input, textarea, select {
 	font: 19px 'robotoregular', Arial, Helvetica, sans-serif;
 	color: #fff;
 	text-decoration: none;
-	margin:6px 45px 0 0;
+	margin: 6px 45px 0 0;
 }
 
 .lastrob {
-	margin:6px 0 0 0;
+	margin: 6px 0 0 0;
 }
 
-.roboto5,
-.roboto2 a {
+.roboto5, .roboto2 a {
 	font: 28px 'robotoregular', Arial, Helvetica, sans-serif;
 	text-decoration: none;
 }
@@ -53,6 +52,13 @@ input, textarea, select {
 .roboto3 {
 	font: 20px 'robotoregular', Arial, Helvetica, sans-serif;
 	color: #fff;
+}
+
+.roboto6 {
+	font: 18px 'robotoregular', Arial, Helvetica, sans-serif;
+	color: #fff;
+	line-height: 100%;
+	margin-top: 0px;
 }
 
 body.green {
@@ -816,7 +822,7 @@ div.button2 a {
 	_height: 31px;
 }
 
-a.newbut {
+button.newbut, a.newbut {
 	height: 53px; /* trips haslayout, wrap floats IE */
 	float: left;
 	position: relative;
@@ -827,7 +833,11 @@ a.newbut {
 	font-style: italic;
 }
 
-a.newbut span {
+button.newbut {
+	padding: 5px 10px 30px 27px;
+}
+
+button.newbut span, a.newbut span {
 	position: absolute;
 	top: 0;
 	left: 100%;
@@ -837,20 +847,24 @@ a.newbut span {
 	cursor: hand;
 }
 
-a.newbut {
+button.newbut {
+	border: 0px;
+}
+
+button.newbut, a.newbut {
 	background: url(../images/newbut.png) 0px 0px no-repeat;
 	color: #405870;
 }
 
-body.green a.newbut {
+body.green button.newbut, body.green a.newbut {
 	color: #405870;
 }
 
-body.blue a.newbut {
+body.blue button.newbut, body.blue a.newbut {
 	color: #405870;
 }
 
-body.red a.newbut {
+body.red button.newbut, body.red a.newbut {
 	color: #405870;
 }
 
@@ -859,7 +873,7 @@ a.knw {
 	color: #405870;
 }
 
-a.newbut span {
+button.newbut span, a.newbut span {
 	background: url(../images/newbut.png) -483px 0px no-repeat;
 }
 
@@ -867,7 +881,7 @@ a.knw span {
 	background: url(../images/nbut9.png) -283px 0px no-repeat;
 }
 
-a.newbut:hover {
+button.newbut:hover, a.newbut:hover {
 	color: black;
 }
 
@@ -1325,4 +1339,8 @@ div.contacts {
 	height: 100%;
 	overflow: hidden;
 	position: relative;
+}
+
+*:focus {
+	outline: none;
 }

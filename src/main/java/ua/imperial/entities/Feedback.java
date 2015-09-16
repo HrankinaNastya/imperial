@@ -1,6 +1,6 @@
 package ua.imperial.entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ public class Feedback {
 	@Column(name = "FULLNAME", nullable=false)
 	private String fullname;
 	
-	@Column(name = "COMPANY", nullable=false)
+	@Column(name = "COMPANY")
 	private String company;
 	
 	@Column(name = "EMAIL", nullable=false)
@@ -38,6 +38,7 @@ public class Feedback {
 
 	public Feedback() {
 		super();
+		setCreated(new Date());
 	}
 
 	public Integer getId() {

@@ -5,7 +5,6 @@ import java.util.List;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
-import ua.imperial.entities.Item;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 

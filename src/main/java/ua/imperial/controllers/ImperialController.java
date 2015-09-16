@@ -50,6 +50,7 @@ public class ImperialController {
 	@RequestMapping("/feedback")
 	public String contacts(Map<String, Object> map) {
 
+		map.put("category", imperialService.getCategory(4));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("feedback", new Feedback());
 		
@@ -293,7 +294,7 @@ public class ImperialController {
 	 * FeedbackController
 	 */
 	
-	@RequestMapping(value = "admin/addFeedback", method = RequestMethod.POST)
+	@RequestMapping(value = "addFeedback", method = RequestMethod.POST)
 	public String addFeedback(@ModelAttribute("feedback") Feedback feedback,
 			BindingResult result) {
 		

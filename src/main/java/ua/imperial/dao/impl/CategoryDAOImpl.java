@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import ua.imperial.dao.CategoryDAO;
 import ua.imperial.entities.Category;
-import ua.imperial.entities.Item;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.service.ImperialService;
 
