@@ -9,43 +9,39 @@
 
 <div class="grid_10">
 	<div class="box round first">
-		<h2>Список категорий</h2>
+		<h2>Список контактов(координаты)</h2>
 		<div class="block">
-			<c:if test="${!empty categoryList}">
+			<c:if test="${!empty сoordinatesList}">
 				<div class="table">
 					<table>
 						<tr>
 							<td>ID</td>
-							<td>Name</td>
-							<td>Name_en</td>
-							<td>Content</td>
-							<td>Content_en</td>
+							<td>City</td>
+							<td>Сity_en</td>
+							<td>Latitude</td>
+							<td>Longitude</td>
+							<td>Address</td>
+							<td>Address_en</td>
+							<td>Phone</td>
+							<td>Skype</td>
+							<td>Email</td>
 							<td></td>
 							<td></td>
 						</tr>
-						<c:forEach items="${categoryList}" var="category">
+						<c:forEach items="${сoordinatesList}" var="сoordinates">
 							<tr>
-								<td>${category.id}</td>
-								<td>${category.name}</td>
-								<td>${category.name_en}</td>
-								<c:choose>
-									<c:when test="${!empty category.content}">
-										<td>yes</td>
-									</c:when>
-									<c:otherwise>
-										<td>-</td>
-									</c:otherwise>
-								</c:choose>
-								<c:choose>
-									<c:when test="${!empty category.content_en}">
-										<td>yes</td>
-									</c:when>
-									<c:otherwise>
-										<td>-</td>
-									</c:otherwise>
-								</c:choose>
-								<td><a href="/admin/getCategory/${category.id}">Edit</a></td>
-								<td><a href="/admin/deleteCategory/${category.id}">Delete</a></td>
+								<td>${сoordinates.id}</td>
+								<td>${сoordinates.city}</td>
+								<td>${сoordinates.city_en}</td>
+								<td>${сoordinates.latitude}</td>
+								<td>${сoordinates.longitude}</td>
+								<td>${сoordinates.address}</td>
+								<td>${сoordinates.address_en}</td>
+								<td>${сoordinates.phone}</td>
+								<td>${сoordinates.skype}</td>
+								<td>${сoordinates.email}</td>
+								<td><a href="/admin/getCoordinates/${сoordinates.id}">Edit</a></td>
+								<td><a href="/admin/deleteCoordinates/${сoordinates.id}">Delete</a></td>
 							</tr>
 						</c:forEach>
 					</table>

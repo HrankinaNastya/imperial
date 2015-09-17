@@ -3,11 +3,11 @@ package ua.imperial.service;
 import java.util.List;
 
 import ua.imperial.entities.Category;
+import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
-import ua.imperial.entities.—oordinates;
 
 public interface ImperialService {
 
@@ -65,17 +65,17 @@ public interface ImperialService {
 
 	
 	/*
-	 * —oordinatesDAO
+	 * CoordinatesDAO
 	 */
 	
-	public void add—oordinates(—oordinates coordinates);
+	public void addCoordinates(Coordinates Coordinates);
 
-	public —oordinates get—oordinates(Integer id);
+	public Coordinates getCoordinates(Integer id);
 	
-	public List<—oordinates> list—oordinates();
+	public List<Coordinates> listCoordinates();
 	
-	public void update—oordinates(—oordinates coordinates);
+	public void updateCoordinates(Coordinates coordinates);
 
-	public void remove—oordinates(Integer id);
+	public void removeCoordinates(Integer id);
 	
 }

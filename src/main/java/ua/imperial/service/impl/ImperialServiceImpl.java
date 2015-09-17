@@ -9,13 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.imperial.dao.CategoryDAO;
 import ua.imperial.dao.FactDAO;
 import ua.imperial.dao.FeedbackDAO;
-import ua.imperial.dao.—oordinatesDAO;
+import ua.imperial.dao.CoordinatesDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
-import ua.imperial.entities.—oordinates;
+import ua.imperial.entities.Coordinates;
 import ua.imperial.service.ImperialService;
 
  
@@ -32,7 +32,7 @@ public class ImperialServiceImpl implements ImperialService {
     private FeedbackDAO feedbackDAO;
     
     @Autowired
-    private —oordinatesDAO coordinatesDAO;
+    private CoordinatesDAO coordinatesDAO;
 
     
     /*
@@ -197,37 +197,37 @@ public class ImperialServiceImpl implements ImperialService {
 	}
 
 	/*
-	 * —oordinatesDAO
+	 * CoordinatesDAO
 	 */
 	
 	@Override
 	@Transactional
-	public void add—oordinates(—oordinates coordinates) {
-		coordinatesDAO.add—oordinates(coordinates);
+	public void addCoordinates(Coordinates coordinates) {
+		coordinatesDAO.addCoordinates(coordinates);
 	}
 
 	@Override
 	@Transactional
-	public —oordinates get—oordinates(Integer id) {
-		return coordinatesDAO.get—oordinates(id);
+	public Coordinates getCoordinates(Integer id) {
+		return coordinatesDAO.getCoordinates(id);
 	}
 
 	@Override
 	@Transactional
-	public List<—oordinates> list—oordinates() {
-		return coordinatesDAO.list—oordinates();
+	public List<Coordinates> listCoordinates() {
+		return coordinatesDAO.listCoordinates();
 	}
 
 	@Override
 	@Transactional
-	public void update—oordinates(—oordinates coordinates) {
-		coordinatesDAO.update—oordinates(coordinates);
+	public void updateCoordinates(Coordinates coordinates) {
+		coordinatesDAO.updateCoordinates(coordinates);
 	}
 
 	@Override
 	@Transactional
-	public void remove—oordinates(Integer id) {
-		coordinatesDAO.remove—oordinates(id);
+	public void removeCoordinates(Integer id) {
+		coordinatesDAO.removeCoordinates(id);
 	}
 
 

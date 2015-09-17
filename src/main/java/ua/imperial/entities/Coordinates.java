@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "COORDINATES")
-public class Ñoordinates {
+public class Coordinates {
 	
 	@Id
 	@Column(name = "ID")
@@ -43,7 +43,7 @@ public class Ñoordinates {
 	@Column(name = "EMAIL", nullable = false)
 	private String email;
 
-	public Ñoordinates() {
+	public Coordinates() {
 		super();
 	}
 

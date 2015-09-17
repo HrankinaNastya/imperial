@@ -6,45 +6,43 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import ua.imperial.dao.FeedbackDAO;
-import ua.imperial.dao.—oordinatesDAO;
-import ua.imperial.entities.Feedback;
-import ua.imperial.entities.—oordinates;
+import ua.imperial.dao.CoordinatesDAO;
+import ua.imperial.entities.Coordinates;
 
 @Repository
-public class —oordinatesDAOImpl implements —oordinatesDAO  {
+public class —oordinatesDAOImpl implements CoordinatesDAO  {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 
 	@Override
-	public void add—oordinates(—oordinates coordinates) {
+	public void addCoordinates(Coordinates coordinates) {
 		sessionFactory.getCurrentSession().save(coordinates);
 	}
 
 	@Override
-	public —oordinates get—oordinates(Integer id) {
-		—oordinates coordinates = (—oordinates) sessionFactory.getCurrentSession().get(—oordinates.class, id);    	
+	public Coordinates getCoordinates(Integer id) {
+		Coordinates coordinates = (Coordinates) sessionFactory.getCurrentSession().get(Coordinates.class, id);    	
 		return coordinates;
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<—oordinates> list—oordinates() {
-		return sessionFactory.getCurrentSession().createQuery("from —oordinates")
+	public List<Coordinates> listCoordinates() {
+		return sessionFactory.getCurrentSession().createQuery("from Coordinates")
 				.list();
 	}
 
 	@Override
-	public void update—oordinates(—oordinates coordinates) {
+	public void updateCoordinates(Coordinates coordinates) {
 		sessionFactory.getCurrentSession().merge(coordinates);	
 		sessionFactory.getCurrentSession().flush();
 	}
 
 	@Override
-	public void remove—oordinates(Integer id) {
-		—oordinates coordinates = (—oordinates) sessionFactory.getCurrentSession().load(
-				—oordinates.class, id);
+	public void removeCoordinates(Integer id) {
+		Coordinates coordinates = (Coordinates) sessionFactory.getCurrentSession().load(
+				Coordinates.class, id);
 		if (null != coordinates) {
 			sessionFactory.getCurrentSession().delete(coordinates);
 			sessionFactory.getCurrentSession().flush();

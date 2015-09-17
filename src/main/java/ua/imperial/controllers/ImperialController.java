@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ua.imperial.entities.Category;
+import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Section;
@@ -336,6 +337,61 @@ public class ImperialController {
 		imperialService.removeFeedback(feedbackId);
 
 		return "redirect:/admin/feedbacks";
+	}
+	
+	/*
+	 * CoordinatesController
+	 */
+	
+	@RequestMapping("admin/addCoordinates")
+	public String addCoordinates(Map<String, Object> map) {
+
+		map.put("coordinates", new Coordinates());
+
+		return "addCoordinates";
+	}
+	
+	@RequestMapping(value = "admin/addCoord", method = RequestMethod.POST)
+	public String addCoord(@ModelAttribute("coordinates") Coordinates coordinates,
+			BindingResult result) {
+		
+		imperialService.addCoordinates(coordinates);
+
+		return "redirect:/admin/addCoordinates";
+	}
+	
+	@RequestMapping(value = "admin/getCoordinates/{id}", method = RequestMethod.GET)
+	public String getCoordinates(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+		Coordinates coordinates = imperialService.getCoordinates(id);
+
+		map.put("coordinates", coordinates);
+		
+        return "getCoordinates";
+	}
+	
+	@RequestMapping("admin/coordinates")
+	public String coordinates(Map<String, Object> map) {
+
+		map.put("coordinatesList", imperialService.listCoordinates());
+		
+		return "listOfCoordinates";
+	}
+	
+	@RequestMapping(value = "admin/editCoordinates", method = RequestMethod.POST)
+	public String editCoordinates(@ModelAttribute("Coordinates") Coordinates coordinates, BindingResult result) {
+		
+		imperialService.updateCoordinates(coordinates);
+
+		return "redirect:/admin/coordinates";
+	}
+
+	@RequestMapping("admin/deleteCoordinates/{coordinatesId}")
+	public String deleteCoordinates(@PathVariable("coordinatesId") Integer coordinatesId) {
+
+		imperialService.removeCoordinates(coordinatesId);
+
+		return "redirect:/admin/coordinates";
 	}
 	
 }
