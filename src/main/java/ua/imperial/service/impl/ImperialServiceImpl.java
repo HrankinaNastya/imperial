@@ -9,11 +9,13 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.imperial.dao.CategoryDAO;
 import ua.imperial.dao.FactDAO;
 import ua.imperial.dao.FeedbackDAO;
+import ua.imperial.dao.—oordinatesDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
+import ua.imperial.entities.—oordinates;
 import ua.imperial.service.ImperialService;
 
  
@@ -28,6 +30,9 @@ public class ImperialServiceImpl implements ImperialService {
     
     @Autowired
     private FeedbackDAO feedbackDAO;
+    
+    @Autowired
+    private —oordinatesDAO coordinatesDAO;
 
     
     /*
@@ -189,6 +194,40 @@ public class ImperialServiceImpl implements ImperialService {
 	@Transactional
 	public void removeFeedback(Integer id) {
 		feedbackDAO.removeFeedback(id);
+	}
+
+	/*
+	 * —oordinatesDAO
+	 */
+	
+	@Override
+	@Transactional
+	public void add—oordinates(—oordinates coordinates) {
+		coordinatesDAO.add—oordinates(coordinates);
+	}
+
+	@Override
+	@Transactional
+	public —oordinates get—oordinates(Integer id) {
+		return coordinatesDAO.get—oordinates(id);
+	}
+
+	@Override
+	@Transactional
+	public List<—oordinates> list—oordinates() {
+		return coordinatesDAO.list—oordinates();
+	}
+
+	@Override
+	@Transactional
+	public void update—oordinates(—oordinates coordinates) {
+		coordinatesDAO.update—oordinates(coordinates);
+	}
+
+	@Override
+	@Transactional
+	public void remove—oordinates(Integer id) {
+		coordinatesDAO.remove—oordinates(id);
 	}
 
 

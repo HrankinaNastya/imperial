@@ -33,8 +33,6 @@ public class Category {
 	@Column(name = "CONTENT_EN")
 	private String content_en;
 	
-	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
-	//private List<Subcategory> subcategories = new ArrayList<Subcategory>();
 
 	public Category() {
 		super();
@@ -79,14 +77,6 @@ public class Category {
 	public void setContent_en(String content_en) {
 		this.content_en = content_en;
 	}
-
-	//public List<Subcategory> getSubcategories() {
-	//	return subcategories;
-	//}
-
-	//public void setSubcategories(List<Subcategory> subcategories) {
-	//	this.subcategories = subcategories;
-	//}
 
 	
 }

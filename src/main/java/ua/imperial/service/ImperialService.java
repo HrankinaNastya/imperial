@@ -7,6 +7,7 @@ import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
+import ua.imperial.entities.—oordinates;
 
 public interface ImperialService {
 
@@ -62,5 +63,19 @@ public interface ImperialService {
 
 	public void removeFeedback(Integer id);
 
+	
+	/*
+	 * —oordinatesDAO
+	 */
+	
+	public void add—oordinates(—oordinates coordinates);
+
+	public —oordinates get—oordinates(Integer id);
+	
+	public List<—oordinates> list—oordinates();
+	
+	public void update—oordinates(—oordinates coordinates);
+
+	public void remove—oordinates(Integer id);
 	
 }

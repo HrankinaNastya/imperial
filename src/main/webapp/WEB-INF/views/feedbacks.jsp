@@ -299,11 +299,11 @@
 															required="required"></form:textarea></td>
 
 												</tr>
-												
+
 												<tr>
 
-													<td><div>
-														</div> <form:input path="created" hidden="true"/></td>
+													<td><div></div> <form:input path="created"
+															hidden="true" /></td>
 
 												</tr>
 

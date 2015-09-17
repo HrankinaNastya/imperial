@@ -10,5 +10,6 @@
 		<mapping class="ua.imperial.entities.Section" />
 		<mapping class="ua.imperial.entities.Fact" />
 		<mapping class="ua.imperial.entities.Feedback" />
+		<mapping class="ua.imperial.entities.Сoordinates" />
 	</session-factory>
 </hibernate-configuration>
