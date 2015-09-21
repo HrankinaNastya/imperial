@@ -35,7 +35,8 @@ public class FactDAOImpl implements FactDAO {
 
 	@Override
 	public Section getSection(Integer id) {
-		Section section = (Section) sessionFactory.getCurrentSession().get(Section.class, id);    	
+		Section section = (Section) sessionFactory.getCurrentSession().get(Section.class, id);   
+	
 		return section;
 	}
 
@@ -56,6 +57,13 @@ public class FactDAOImpl implements FactDAO {
 	@SuppressWarnings("unchecked")
 	public List<Fact> listFact() {
 		return sessionFactory.getCurrentSession().createQuery("from Fact")
+				.list();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Fact> listFactfromSection(Integer id) {
+		return sessionFactory.getCurrentSession().createQuery("from Fact where section.id =" + id)
 				.list();
 	}
 

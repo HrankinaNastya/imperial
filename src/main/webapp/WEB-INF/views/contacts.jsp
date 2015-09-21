@@ -29,11 +29,23 @@
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico"  />"
 	type="image/x-icon">
+	
+<link rel="stylesheet"
+	href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/MarkerCluster.css" />" />
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/MarkerCluster.Default.css" />" />
+<script type="text/javascript"
+	src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script type="text/javascript"
+	src="/resources/js/leaflet.markercluster.js"></script>
+<script type="text/javascript" src="/resources/js/leaflet.geocsv.js"></script>
 
 <script type="text/javascript"
 	src="<c:url value="/resources/js/jquery.js" />"></script>
 
-<title><spring:message code="label.imperial.feedback" /></title>
+<title><spring:message code="label.imperial.contacts" /></title>
 
 </head>
 
@@ -92,11 +104,11 @@
 											<c:if test="${category.id==1}">${category.name}</c:if>
 										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-							<li class="cur"><a href="<c:url value="/feedback" />"><img
-									src="<c:url value="/resources/images/l4.png"  />" hspace="0"><b><c:forEach
+							<li><a href="<c:url value="/feedback" />"><img
+									src="<c:url value="/resources/images/l2.png"  />" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==4}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
+										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li><a href="<c:url value="/news" />"><img
 									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
@@ -104,12 +116,12 @@
 											<c:if test="${category.id==5}">${category.name}</c:if>
 										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-							<li style="text-align: right;"><a
-								href="<c:url value="/contacts" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
+							<li class="cur" style="text-align: right;"><a
+								href="<c:url value="/contacts/1" />"><img
+									src="<c:url value="/resources/images/l4.png" />" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==6}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
+										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
 									hspace="0"></a></li>
 
 
@@ -140,12 +152,19 @@
 							src="<c:url value="/resources/images/arrow2.png" />"
 							class="h1but">
 							<div class="h1">
-								<a href="<c:url value="/feedback" />" class="roboto5"> <c:forEach
-										items="${categoryList}" var="category">
-										<c:if test="${category.id==4}">${category.name}</c:if>
-									</c:forEach>
+								<a href="<c:url value="/feedback" />" class="roboto5"> 
+									<c:if test="${!empty category}">${category.name}</c:if>
 								</a>
-							</div> <img src="<c:url value="/resources/images/tld.png" />"
+							</div> 
+							<div class="coordinates">
+							<c:if test="${!empty coordinatesList}">
+								<c:forEach
+										items="${coordinatesList}" var="coordinates">
+										<li><a href="<c:url value="/contacts/${coordinates.id}" />" >${coordinates.city}</a></li>
+								</c:forEach>
+								</c:if>
+							</div>
+							<img src="<c:url value="/resources/images/tld.png" />"
 							hspace="0" style="float: left;"> <img
 							src="<c:url value="/resources/images/trd.png" />" hspace="0"
 							style="float: right;">
@@ -233,111 +252,64 @@
 
 							<div style="position: relative; top: -230px; clear: both;">
 								<h1 class="roboto1">
-									<c:if test="${!empty category}">${category.name}</c:if>
+									<c:if test="${!empty coordinates}">${coordinates.city}</c:if>
 								</h1>
 								<p>
-									<c:if test="${!empty category}">${category.content}</c:if>
+								<c:if test="${!empty category}"><p>${category.content}</p></c:if>
+								<c:if test="${!empty coordinates.address}"><spring:message code="label.address" />: ${coordinates.address}<br></c:if>
+								<c:if test="${!empty coordinates.phone}"><spring:message code="label.phone" />: ${coordinates.phone}<br></c:if>
+								<c:if test="${!empty coordinates.skype}"><spring:message code="label.skype" />: ${coordinates.skype}<br></c:if>
+								<c:if test="${!empty coordinates.email}"><spring:message code="label.email" />: ${coordinates.email}<br></c:if>
 								</p>
+								<div id="mapdiv" style="width: 650px; height: 400px">
+										There is a map</div>
 
+									<div id="locations" style="white-space: pre; display: none">
+										<c:if test="${!empty coordinatesList}">
+
+											<c:forEach items="${coordinatesList}" var="coordinates">
+												${coordinates.longitude},${coordinates.latitude},${coordinates.city},${coordinates.city}: ${coordinates.address}
+  											</c:forEach>
+
+										</c:if>
+									</div>
+								    <script type="text/javascript">
+  
+    var a = ${coordinates.latitude};
+    var b = ${coordinates.longitude};
+    map = L.map('mapdiv').setView([a, b],17);
+ var tile_options = {
+    subdomains: '1234', // Using multiple subdomains allows the user to download more tiles at a time so 
+    attribution: 'Map data OpenStreeMaps and MapQuest'
+};
+
+// Now we add the actual tile layer
+var basemap = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png',tile_options);
+basemap.addTo(map);
+
+// Options for the CSV data
+var csv_options = {
+    fieldSeparator: ',',
+    titles: ['lng','lat','ignore','popup'],
+    onEachFeature: function(feature,layer){
+        layer.bindPopup("<p>" + feature.properties.popup +"</p>");
+    }
+};
+
+var csvContents = document.getElementById('locations').innerHTML;
+var geoLayer = L.geoCsv(csvContents,csv_options);
+//map.addLayer(geoLayer);
+
+var clusterOptions = {
+    maxClusterRadius: 30
+};
+
+var markers = new L.MarkerClusterGroup(clusterOptions);
+markers.addLayer(geoLayer);
+map.addLayer(markers);
+
+</script>
 								<div></div>
-
-								<div style="margin-top: 30px; width: 100%;">
-
-									<img src="<c:url value="/resources/images/tld.png" />"
-										hspace="0" style="float: left;"><img
-										src="<c:url value="/resources/images/trd.png" />" hspace="0"
-										style="float: right;">
-									<div class="t"></div>
-
-									<div class="m">
-
-
-										<form:form method="post" action="addFeedback"
-											commandName="feedback" class="form">
-
-											<table cellspacing="0" cellpadding="0">
-
-												<tr>
-
-													<td><div>
-															<form:label path="fullname">*<spring:message
-																	code="label.FIO" />
-															</form:label>
-														</div> <form:input path="fullname" required="required" /></td>
-
-													<td><div>
-															<form:label path="email">*<spring:message
-																	code="label.email" />
-															</form:label>
-														</div> <form:input path="email" required="required" /></td>
-
-												</tr>
-
-												<tr>
-
-													<td><div>
-															<form:label path="company">
-																<spring:message code="label.company" />
-															</form:label>
-														</div> <form:input path="company" /></td>
-
-													<td><div>
-															<form:label path="city">
-																<spring:message code="label.city" />
-															</form:label>
-														</div> <form:input path="city" /></td>
-
-												</tr>
-
-												<tr>
-
-													<td colspan="2"><div>
-															<form:label path="message">*<spring:message
-																	code="label.message" />
-															</form:label>
-														</div> <form:textarea rows="5" path="message"
-															required="required"></form:textarea></td>
-
-												</tr>
-
-												<tr>
-
-													<td>
-														<div style="margin-top: 15px">
-															<button type="submit" class="newbut">
-																Отправить<span></span>
-															</button>
-														</div>
-													</td>
-
-												</tr>
-
-											</table>
-
-										</form:form>
-
-
-
-									</div>
-
-									<img src="<c:url value="/resources/images/bld.png" />"
-										hspace="0" style="float: left;"><img
-										src="<c:url value="/resources/images/brd.png" />" hspace="0"
-										style="float: right;">
-									<div class="b"></div>
-
-								</div>
-
-								<div style="padding: 5px 37px 0;">
-
-									<b style="color: #CD2626;"><spring:message
-											code="label.attention" /></b>
-									<spring:message code="label.pleasefill" />
-									<div style="font-size: 11px;">
-										<spring:message code="label.guarantee" />
-									</div>
-
-								</div>
 
 							</div>
 						</td>
@@ -365,10 +337,7 @@
 						}
 					</script>
 
-					<strong> <a href="http://ustimenko.com.ua/" targe
-						t="_blank"><spring:message code="label.design" /> &mdash; <u>ustimenko.com.ua</u></a><br>
-						<a href="#" target="_blank"><spring:message
-								code="label.websiteCreation" /> &mdash; <u>HrankinaAnastasiia</u></a>
+					<strong> 
 					</strong> &copy; 2008 &mdash;
 					<%=new Year().getСurrentYear()%>
 					<spring:message code="label.FIH" />

@@ -15,6 +15,7 @@ public interface FactDAO {
 	
 	public List<Section> listSection();
 	public List<Fact> listFact();
+	public List<Fact> listFactfromSection(Integer id);
 	
 	public void updateSection(Section section);
 	public void updateFact(Fact fact);

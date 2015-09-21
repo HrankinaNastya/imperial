@@ -1,6 +1,8 @@
 package ua.imperial.controllers;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ua.imperial.dao.FactDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
@@ -29,6 +32,11 @@ public class ImperialController {
 
 	@Autowired
 	private ImperialService imperialService;
+	
+	@Autowired
+	private FactDAO factDAO;
+	
+	private Random random = new Random();
 
 	@RequestMapping("/index")
 	public String list(Map<String, Object> map) {
@@ -44,12 +52,13 @@ public class ImperialController {
 
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
+		map.put("coordinatesList", imperialService.listCoordinates());
 		
 		return "index";
 	}
 	
 	@RequestMapping("/feedback")
-	public String contacts(Map<String, Object> map) {
+	public String feedback(Map<String, Object> map) {
 
 		map.put("category", imperialService.getCategory(4));
 		map.put("categoryList", imperialService.listCategory());
@@ -61,6 +70,38 @@ public class ImperialController {
 	@RequestMapping("/admin")
 	public String admin() {
 		return "redirect:/admin/categories";
+	}
+	
+	@RequestMapping(value = "contacts/{id}", method = RequestMethod.GET)
+	public String contacts(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+		
+	
+		
+		List<Fact> facts = factDAO.listFactfromSection(1);
+		System.out.println("______________________________________");
+		for(Fact fact: facts){
+			System.out.println("ullalalalalala");
+			System.out.println(fact.getDescription());
+			System.out.println(facts.size());
+		}
+		
+		
+		int pos = random.nextInt(facts.size());
+		System.out.println(pos);
+		System.out.println(facts.get(pos).getDescription());
+		
+		
+		//map.put("sectionList", imperialService.listSection());
+		
+		Coordinates coordinates = imperialService.getCoordinates(id);
+
+		map.put("coordinates", coordinates);
+		map.put("coordinatesList", imperialService.listCoordinates());
+		map.put("category", imperialService.getCategory(6));
+		map.put("categoryList", imperialService.listCategory());
+		
+        return "contacts";
 	}
 	
 	/*
@@ -331,7 +372,7 @@ public class ImperialController {
 		return "redirect:/admin/feedbacks";
 	}
 
-	@RequestMapping("admin/deleteFact/{feedbackId}")
+	@RequestMapping("admin/deleteFeedback/{feedbackId}")
 	public String deleteFeedback(@PathVariable("feedbackId") Integer feedbackId) {
 
 		imperialService.removeFeedback(feedbackId);

@@ -98,22 +98,22 @@
 						<ul>
 
 							<li style="text-align: left;" class="cur"><a
-								href="about_us.html"><img src="/resources/images/l4.png"
+								href="<c:url value="/" />"><img src="/resources/images/l4.png"
 									hspace="0"><b><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==1}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r4.png" hspace="0"></a></li>
-							<li><a href="partnership.html"><img
+							<li><a href="<c:url value="/feedback" />"><img
 									src="/resources/images/l2.png" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==4}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
-							<li><a href="news.html"><img
+							<li><a href="<c:url value="/news" />"><img
 									src="/resources/images/l2.png" hspace="0" alt=""><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==5}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
-							<li style="text-align: right;"><a href="contacts.html"><img
+							<li style="text-align: right;"><a href="<c:url value="/contacts/1" />"><img
 									src="/resources/images/l2.png" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==6}">${category.name}</c:if>
@@ -265,7 +265,14 @@
 										There is a map</div>
 
 									<div id="locations" style="white-space: pre; display: none">
-										30.5159572,50.4525783,Киев,Владимирская 38</div>
+										<c:if test="${!empty coordinatesList}">
+
+											<c:forEach items="${coordinatesList}" var="coordinates">
+												${coordinates.longitude},${coordinates.latitude},${coordinates.city},${coordinates.city}: ${coordinates.address}
+  											</c:forEach>
+
+										</c:if>
+									</div>
 
 
 									<script type="text/javascript" src="/resources/js/script.js"></script>
@@ -295,9 +302,9 @@
 
 
 									<script>
-										var adr = '<spring:message code="label.youremail" />';
+										var adr = '_$tag____________________________________';
 
-						 				var _check_field = '<spring:message code="label.checkfield" />';
+										var _check_field = '_$tag_____________________________________';
 
 										function ChaeckSubscribe()
 
@@ -472,12 +479,8 @@
 					</script>
 
 
-					<strong> <a href="http://ustimenko.com.ua/" targe
-						t="_blank"><spring:message code="label.design" /> &mdash; <u>ustimenko.com.ua</u></a><br>
-						<a href="#" target="_blank"><spring:message
-								code="label.websiteCreation" /> &mdash; <u>HrankinaAnastasiia</u></a>
-					</strong> &copy; 2008 &mdash;
-					<%= new Year().getСurrentYear() %>
+					<strong> </strong> &copy; 2008 &mdash;
+					<%=new Year().getСurrentYear()%>
 					<spring:message code="label.FIH" />
 					<br>
 					<spring:message code="label.copy" />

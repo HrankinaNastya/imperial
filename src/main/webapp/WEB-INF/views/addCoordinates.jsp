@@ -11,10 +11,11 @@
 	<div class="box round first">
 		<h2>Добавить контакт(координаты)</h2>
 		<div class="block">
-			<form:form method="post" action="addCoord" commandName="сoordinates">
+			<form:form method="post" action="addCoord" commandName="coordinates">
+				<a class="linkcoord" href="http://www.mapcoordinates.net/ru">Определение координат</a>
 				<table>
 					<tr>
-						<td><form:label path="city">Сity</form:label></td>
+						<td><form:label path="city">City</form:label></td>
 						<td><form:input path="city" required="required"
 								class="input_width" /></td>
 					</tr>

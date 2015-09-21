@@ -11,7 +11,7 @@
 	<div class="box round first">
 		<h2>Список контактов(координаты)</h2>
 		<div class="block">
-			<c:if test="${!empty сoordinatesList}">
+			<c:if test="${!empty coordinatesList}">
 				<div class="table">
 					<table>
 						<tr>
@@ -28,20 +28,20 @@
 							<td></td>
 							<td></td>
 						</tr>
-						<c:forEach items="${сoordinatesList}" var="сoordinates">
+						<c:forEach items="${coordinatesList}" var="coordinates">
 							<tr>
-								<td>${сoordinates.id}</td>
-								<td>${сoordinates.city}</td>
-								<td>${сoordinates.city_en}</td>
-								<td>${сoordinates.latitude}</td>
-								<td>${сoordinates.longitude}</td>
-								<td>${сoordinates.address}</td>
-								<td>${сoordinates.address_en}</td>
-								<td>${сoordinates.phone}</td>
-								<td>${сoordinates.skype}</td>
-								<td>${сoordinates.email}</td>
-								<td><a href="/admin/getCoordinates/${сoordinates.id}">Edit</a></td>
-								<td><a href="/admin/deleteCoordinates/${сoordinates.id}">Delete</a></td>
+								<td>${coordinates.id}</td>
+								<td>${coordinates.city}</td>
+								<td>${coordinates.city_en}</td>
+								<td>${coordinates.latitude}</td>
+								<td>${coordinates.longitude}</td>
+								<td>${coordinates.address}</td>
+								<td>${coordinates.address_en}</td>
+								<td>${coordinates.phone}</td>
+								<td>${coordinates.skype}</td>
+								<td>${coordinates.email}</td>
+								<td><a href="/admin/getCoordinates/${coordinates.id}">Edit</a></td>
+								<td><a href="/admin/deleteCoordinates/${coordinates.id}">Delete</a></td>
 							</tr>
 						</c:forEach>
 					</table>

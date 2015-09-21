@@ -440,3 +440,9 @@ input.button {
 .clear {
 	clear: both;
 }
+
+
+a.linkcoord{
+	color:blue;
+	text-decoration: underline;
+}

@@ -105,7 +105,7 @@
 										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li style="text-align: right;"><a
-								href="<c:url value="/contacts" />"><img
+								href="<c:url value="/contacts/1" />"><img
 									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==6}">${category.name}</c:if>
@@ -372,10 +372,7 @@
 						}
 					</script>
 
-					<strong> <a href="http://ustimenko.com.ua/" targe
-						t="_blank"><spring:message code="label.design" /> &mdash; <u>ustimenko.com.ua</u></a><br>
-						<a href="#" target="_blank"><spring:message
-								code="label.websiteCreation" /> &mdash; <u>HrankinaAnastasiia</u></a>
+					<strong> 
 					</strong> &copy; 2008 &mdash;
 					<%=new Year().getСurrentYear()%>
 					<spring:message code="label.FIH" />

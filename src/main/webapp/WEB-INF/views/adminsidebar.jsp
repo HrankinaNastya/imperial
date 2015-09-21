@@ -39,10 +39,11 @@
 						<li><a>Список</a></li>
 						<li><a>Добавить</a></li>
 					</ul></li>
-				<li><a class="menuitem">Контакты</a>
+				<li><a href="<c:url value="/admin/coordinates" />" 
+					class="menuitem">Контакты(Координаты)</a>
 					<ul class="submenu">
-						<li><a>Список</a></li>
-						<li><a>Добавить</a></li>
+						<li><a href="<c:url value="/admin/coordinates" />" >Список</a></li>
+						<li><a href="<c:url value="/admin/addCoordinates" />">Добавить</a></li>
 					</ul></li>
 			</ul>
 		</div>
