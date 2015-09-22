@@ -1,7 +1,6 @@
 package ua.imperial.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -12,13 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "SUBCATEGORIES")
-public class Subcategory {
-
+@Table(name = "NEWS")
+public class News {
+	
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,12 +28,6 @@ public class Subcategory {
 	@Column(name = "NAME_EN", unique = true)
 	private String name_en;
 	
-	@Column(name = "DESCRIPTION", unique = true, nullable=false)
-	private String description;
-	
-	@Column(name = "DESCRIPTION_EN", unique = true, nullable=false)
-	private String description_en;
-	
 	@Column(name = "CONTENT", unique = true, nullable=false)
 	private String content;
 	
@@ -43,14 +35,15 @@ public class Subcategory {
 	private String content_en;
 	
 	@ManyToOne(cascade={CascadeType.REFRESH}, fetch = FetchType.EAGER)
-	@JoinColumn(name = "category_id")
-	private Category category;
-	
-	@Column(name = "IMAGE")
-	private String image;
+	@JoinColumn(name = "subcategory_id")
+	private Subcategory subcategory;
 
-	public Subcategory() {
+	@Column(name = "CREATED", nullable=false)
+	private Date created;
+
+	public News() {
 		super();
+		setCreated(new Date());
 	}
 
 	public Integer getId() {
@@ -77,22 +70,6 @@ public class Subcategory {
 		this.name_en = name_en;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getDescription_en() {
-		return description_en;
-	}
-
-	public void setDescription_en(String description_en) {
-		this.description_en = description_en;
-	}
-
 	public String getContent() {
 		return content;
 	}
@@ -109,21 +86,23 @@ public class Subcategory {
 		this.content_en = content_en;
 	}
 
-	public Category getCategory() {
-		return category;
+	public Subcategory getSubcategory() {
+		return subcategory;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setSubcategory(Subcategory subcategory) {
+		this.subcategory = subcategory;
 	}
 
-	public String getImage() {
-		return image;
+	public Date getCreated() {
+		return created;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
-
-
+	
+	
+	
+	
 }

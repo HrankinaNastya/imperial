@@ -3,6 +3,7 @@ package ua.imperial.dao;
 import java.util.List;
 
 import ua.imperial.entities.Category;
+import ua.imperial.entities.Fact;
 import ua.imperial.entities.Subcategory;
 
 public interface CategoryDAO {
@@ -15,6 +16,7 @@ public interface CategoryDAO {
 	
 	public List<Category> listCategory();
 	public List<Subcategory> listSubcategory();
+	public List<Subcategory> listSubcategoryfromCategory(Integer id);
 	
 	public void updateCategory(Category category);
 	public void updateSubcategory(Subcategory subcategory);

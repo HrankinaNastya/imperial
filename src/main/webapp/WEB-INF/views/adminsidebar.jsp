@@ -29,20 +29,20 @@
 					</ul></li>
 				<li><a href="<c:url value="/admin/feedbacks" />"
 					class="menuitem">Обратная связь</a></li>
-				<li><a class="menuitem">Новости</a>
+				<li><a href="<c:url value="/admin/news" />" class="menuitem">Новости</a>
 					<ul class="submenu">
-						<li><a>Список</a></li>
-						<li><a>Добавить</a></li>
+						<li><a href="<c:url value="/admin/news" />">Список</a></li>
+						<li><a href="<c:url value="/admin/addNews" />">Добавить</a></li>
 					</ul></li>
 				<li><a class="menuitem">Филиалы</a>
 					<ul class="submenu">
 						<li><a>Список</a></li>
 						<li><a>Добавить</a></li>
 					</ul></li>
-				<li><a href="<c:url value="/admin/coordinates" />" 
+				<li><a href="<c:url value="/admin/coordinates" />"
 					class="menuitem">Контакты(Координаты)</a>
 					<ul class="submenu">
-						<li><a href="<c:url value="/admin/coordinates" />" >Список</a></li>
+						<li><a href="<c:url value="/admin/coordinates" />">Список</a></li>
 						<li><a href="<c:url value="/admin/addCoordinates" />">Добавить</a></li>
 					</ul></li>
 			</ul>

@@ -199,37 +199,36 @@
 						<td class="lh" style="padding: 0 23px;">
 
 
-							<div style="position: relative; height: 214px;"></div>
+							<div style="position: relative; height: 214px;"></div> <c:if
+								test="${!empty fact}">
+								<div class="quote">
 
+									<img src="<c:url value="/resources/images/tl2.png" />"
+										hspace="0" style="float: left;"><img
+										src="<c:url value="/resources/images/tr2.png" />" hspace="0"
+										style="float: right;">
+									<div class="t2"></div>
 
-							<div class="quote">
+									<div class="m2">
+										<h2 class="roboto6">
+											<spring:message code="label.doyouknow" />
+										</h2>
+										${fact.description} &nbsp;
 
-								<img src="<c:url value="/resources/images/tl2.png" />"
-									hspace="0" style="float: left;"><img
-									src="<c:url value="/resources/images/tr2.png" />" hspace="0"
-									style="float: right;">
-								<div class="t2"></div>
+									</div>
 
-								<div class="m2">
-									<h2 class="roboto6">
-										<spring:message code="label.doyouknow" />
-									</h2>
-									Какие фрукты известны европейцам как армянские яблоки?.....
-									&nbsp;
+									<img src="<c:url value="/resources/images/bl2.png" />"
+										hspace="0" style="float: left;">
+									<div class="b2" style="margin-right: 0px;"></div>
+									<div id="know" style="float: right; padding-right: 17px;">
+										<a class="newbut knw"
+											href="<c:url value="/fact/${fact.id}" />"> <spring:message
+												code="label.more" /> <span></span>
+										</a>
+									</div>
 
 								</div>
-
-								<img src="<c:url value="/resources/images/bl2.png" />"
-									hspace="0" style="float: left;">
-								<div class="b2" style="margin-right: 0px;"></div>
-								<div id="know" style="float: right; padding-right: 17px;">
-									<a class="newbut knw"
-										href="26/rus/fullquote/25/visibletype/1/index.html"> <spring:message
-											code="label.more" /> <span></span>
-									</a>
-								</div>
-
-							</div>
+							</c:if>
 
 							<div style="position: relative; top: -230px; clear: both;">
 								<h1 class="roboto1">
@@ -372,8 +371,7 @@
 						}
 					</script>
 
-					<strong> 
-					</strong> &copy; 2008 &mdash;
+					<strong> </strong> &copy; 2008 &mdash;
 					<%=new Year().getСurrentYear()%>
 					<spring:message code="label.FIH" />
 					<br>

@@ -17,6 +17,7 @@ import ua.imperial.entities.Category;
 import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
+import ua.imperial.entities.News;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.entities.Year;
@@ -33,9 +34,6 @@ public class ImperialController {
 	@Autowired
 	private ImperialService imperialService;
 	
-	@Autowired
-	private FactDAO factDAO;
-	
 	private Random random = new Random();
 
 	@RequestMapping("/index")
@@ -49,7 +47,7 @@ public class ImperialController {
 	
 	@RequestMapping("/")
 	public String home(Map<String, Object> map) {
-
+		
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("coordinatesList", imperialService.listCoordinates());
@@ -59,7 +57,11 @@ public class ImperialController {
 	
 	@RequestMapping("/feedback")
 	public String feedback(Map<String, Object> map) {
-
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
 		map.put("category", imperialService.getCategory(4));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("feedback", new Feedback());
@@ -76,23 +78,9 @@ public class ImperialController {
 	public String contacts(@PathVariable("id") Integer id, 
 			Map<String, Object> map) {
 		
-	
-		
-		List<Fact> facts = factDAO.listFactfromSection(1);
-		System.out.println("______________________________________");
-		for(Fact fact: facts){
-			System.out.println("ullalalalalala");
-			System.out.println(fact.getDescription());
-			System.out.println(facts.size());
-		}
-		
-		
-		int pos = random.nextInt(facts.size());
-		System.out.println(pos);
-		System.out.println(facts.get(pos).getDescription());
-		
-		
-		//map.put("sectionList", imperialService.listSection());
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
 		
 		Coordinates coordinates = imperialService.getCoordinates(id);
 
@@ -420,7 +408,7 @@ public class ImperialController {
 	}
 	
 	@RequestMapping(value = "admin/editCoordinates", method = RequestMethod.POST)
-	public String editCoordinates(@ModelAttribute("Coordinates") Coordinates coordinates, BindingResult result) {
+	public String editCoordinates(@ModelAttribute("coordinates") Coordinates coordinates, BindingResult result) {
 		
 		imperialService.updateCoordinates(coordinates);
 
@@ -433,6 +421,63 @@ public class ImperialController {
 		imperialService.removeCoordinates(coordinatesId);
 
 		return "redirect:/admin/coordinates";
+	}
+	
+	/*
+	 * NewsDAO
+	 */
+	
+	@RequestMapping("admin/addNews")
+	public String addNews(Map<String, Object> map) {
+
+		map.put("news", new News());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(5));
+		
+		return "addNews";
+	}
+	
+	@RequestMapping(value = "admin/addNewsObj", method = RequestMethod.POST)
+	public String addNewsObj(@ModelAttribute("news") News news,
+			BindingResult result) {
+		
+		imperialService.addNews(news);
+
+		return "redirect:/admin/addNews";
+	}
+	
+	@RequestMapping(value = "admin/getNews/{id}", method = RequestMethod.GET)
+	public String getNews(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+		News news = imperialService.getNews(id);
+
+		map.put("news", news);
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(5));
+		
+        return "getNews";
+	}
+	
+	@RequestMapping("admin/news")
+	public String news(Map<String, Object> map) {
+
+		map.put("newsList", imperialService.listNews());
+		
+		return "listOfNews";
+	}
+	
+	@RequestMapping(value = "admin/editNews", method = RequestMethod.POST)
+	public String editNews(@ModelAttribute("news") News news, BindingResult result) {
+		
+		imperialService.updateNews(news);
+
+		return "redirect:/admin/news";
+	}
+
+	@RequestMapping("admin/deleteNews/{newsId}")
+	public String deleteNews(@PathVariable("newsId") Integer newsId) {
+
+		imperialService.removeNews(newsId);
+
+		return "redirect:/admin/news";
 	}
 	
 }

@@ -49,6 +49,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 		return sessionFactory.getCurrentSession().createQuery("from Subcategory")
 				.list();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Subcategory> listSubcategoryfromCategory(Integer id) {
+		return sessionFactory.getCurrentSession().createQuery("from Subcategory where category.id =" + id)
+				.list();
+	}
 
 	public void updateCategory(Category category) {
 		sessionFactory.getCurrentSession().merge(category);	

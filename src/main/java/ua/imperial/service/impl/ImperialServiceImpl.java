@@ -10,9 +10,11 @@ import ua.imperial.dao.CategoryDAO;
 import ua.imperial.dao.FactDAO;
 import ua.imperial.dao.FeedbackDAO;
 import ua.imperial.dao.CoordinatesDAO;
+import ua.imperial.dao.NewsDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
+import ua.imperial.entities.News;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.entities.Coordinates;
@@ -33,6 +35,9 @@ public class ImperialServiceImpl implements ImperialService {
     
     @Autowired
     private CoordinatesDAO coordinatesDAO;
+    
+    @Autowired
+    private NewsDAO newsDAO;
 
     
     /*
@@ -63,6 +68,7 @@ public class ImperialServiceImpl implements ImperialService {
 		return categoryDAO.getSubcategory(id);
 	}
 
+    @Override
     @Transactional
 	public List<Category> listCategory() {
 		return categoryDAO.listCategory();
@@ -73,6 +79,12 @@ public class ImperialServiceImpl implements ImperialService {
 	public List<Subcategory> listSubcategory() {
 		return categoryDAO.listSubcategory();
 	}
+    
+    @Override
+    @Transactional
+    public List<Subcategory> listSubcategoryfromCategory(Integer id){
+    	return categoryDAO.listSubcategoryfromCategory(id);
+    }
     
     @Override
     @Transactional
@@ -136,6 +148,12 @@ public class ImperialServiceImpl implements ImperialService {
 	@Transactional
 	public List<Fact> listFact() {
 		return factDAO.listFact();
+	}
+	
+	@Override
+	@Transactional
+	public List<Fact> listFactfromSection(Integer id){
+		return factDAO.listFactfromSection(id);
 	}
 
 	@Override
@@ -229,6 +247,41 @@ public class ImperialServiceImpl implements ImperialService {
 	public void removeCoordinates(Integer id) {
 		coordinatesDAO.removeCoordinates(id);
 	}
+	
+	/*
+	 * NewsDAO	 
+	 */
 
+	@Override
+	@Transactional
+	public void addNews(News news) {
+		newsDAO.addNews(news);
+	}
+
+	@Override
+	@Transactional
+	public News getNews(Integer id) {
+		return newsDAO.getNews(id);
+	}
+
+	@Override
+	@Transactional
+	public List<News> listNews() {
+		return newsDAO.listNews();
+	}
+
+	@Override
+	@Transactional
+	public void updateNews(News news) {
+		newsDAO.updateNews(news);
+	}
+
+	@Override
+	@Transactional
+	public void removeNews(Integer id) {
+		newsDAO.removeNews(id);
+	}
+	
+	
 
 }

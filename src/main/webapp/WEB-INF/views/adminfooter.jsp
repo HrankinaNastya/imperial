@@ -9,7 +9,8 @@
 <div class="clear"></div>
 <div id="site_info">
 	<p>
-		Copyright <a href="#">Hrankina Anastasiia</a>. All Rights Reserved.
+		Copyright <a href="<c:url value="/" />">Imperial</a>. All Rights
+		Reserved.
 	</p>
 </div>
 </body>

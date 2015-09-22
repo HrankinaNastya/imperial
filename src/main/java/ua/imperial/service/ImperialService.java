@@ -6,6 +6,7 @@ import ua.imperial.entities.Category;
 import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
+import ua.imperial.entities.News;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 
@@ -23,6 +24,7 @@ public interface ImperialService {
 	
 	public List<Category> listCategory();
 	public List<Subcategory> listSubcategory();
+	public List<Subcategory> listSubcategoryfromCategory(Integer id);
 	
 	public void updateCategory(Category category);
 	public void updateSubcategory(Subcategory subcategory);
@@ -42,6 +44,7 @@ public interface ImperialService {
 	
 	public List<Section> listSection();
 	public List<Fact> listFact();
+	public List<Fact> listFactfromSection(Integer id);
 	
 	public void updateSection(Section section);
 	public void updateFact(Fact fact);
@@ -77,5 +80,19 @@ public interface ImperialService {
 	public void updateCoordinates(Coordinates coordinates);
 
 	public void removeCoordinates(Integer id);
+	
+	/*
+	 * NewsDAO
+	 */
+	
+	public void addNews(News news);
+
+	public News getNews(Integer id);
+	
+	public List<News> listNews();
+	
+	public void updateNews(News news);
+
+	public void removeNews(Integer id);
 	
 }

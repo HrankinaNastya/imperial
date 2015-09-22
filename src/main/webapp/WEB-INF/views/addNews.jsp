@@ -9,15 +9,14 @@
 
 <div class="grid_10">
 	<div class="box round first">
-		<h2>Добавить подкатегорию</h2>
+		<h2>Добавить новость</h2>
 		<div class="block">
-			<form:form method="post" action="addSubcategory"
-				commandName="subcategory">
+			<form:form method="post" action="addNewsObj" commandName="news">
 				<table>
 					<tr>
-						<td><form:label path="category">Category</form:label></td>
-						<td><form:select path="category.id">
-								<form:options items="${categoryList}" itemValue="id"
+						<td><form:label path="subcategory">Subcategory</form:label></td>
+						<td><form:select path="subcategory.id">
+								<form:options items="${subcategoryList}" itemValue="id"
 									itemLabel="name" />
 							</form:select></td>
 					</tr>
@@ -32,18 +31,6 @@
 								class="input_width" /></td>
 					</tr>
 					<tr>
-						<td><form:label path="image">Image</form:label></td>
-						<td><form:input path="image" type="file" class="input_width" /></td>
-					</tr>
-					<tr>
-						<td><form:label path="description">Description</form:label></td>
-						<td><form:input path="description" class="input_width" /></td>
-					</tr>
-					<tr>
-						<td><form:label path="description_en">Description_en</form:label></td>
-						<td><form:input path="description_en" class="input_width" /></td>
-					</tr>
-					<tr>
 						<td><form:label path="content">Content</form:label></td>
 						<td><form:textarea path="content"></form:textarea></td>
 					</tr>
@@ -52,8 +39,13 @@
 						<td><form:textarea path="content_en"></form:textarea></td>
 					</tr>
 					<tr>
+						<td></td>
+						<td><form:input path="created" value="${news.created}"
+								hidden="true" /></td>
+					</tr>
+					<tr>
 						<td colspan="2"><button type="submit" class="btn">Add
-								Subcategory</button></td>
+								News</button></td>
 					</tr>
 				</table>
 			</form:form>

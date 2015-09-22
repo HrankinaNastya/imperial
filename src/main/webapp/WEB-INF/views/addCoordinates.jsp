@@ -12,7 +12,8 @@
 		<h2>Добавить контакт(координаты)</h2>
 		<div class="block">
 			<form:form method="post" action="addCoord" commandName="coordinates">
-				<a class="linkcoord" href="http://www.mapcoordinates.net/ru">Определение координат</a>
+				<a class="linkcoord" href="http://www.mapcoordinates.net/ru">Определение
+					координат</a>
 				<table>
 					<tr>
 						<td><form:label path="city">City</form:label></td>

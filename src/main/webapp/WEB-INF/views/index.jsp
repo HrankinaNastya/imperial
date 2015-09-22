@@ -98,9 +98,9 @@
 						<ul>
 
 							<li style="text-align: left;" class="cur"><a
-								href="<c:url value="/" />"><img src="/resources/images/l4.png"
-									hspace="0"><b><c:forEach items="${categoryList}"
-											var="category">
+								href="<c:url value="/" />"><img
+									src="/resources/images/l4.png" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
 											<c:if test="${category.id==1}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r4.png" hspace="0"></a></li>
 							<li><a href="<c:url value="/feedback" />"><img
@@ -113,7 +113,8 @@
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==5}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
-							<li style="text-align: right;"><a href="<c:url value="/contacts/1" />"><img
+							<li style="text-align: right;"><a
+								href="<c:url value="/contacts/1" />"><img
 									src="/resources/images/l2.png" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==6}">${category.name}</c:if>
