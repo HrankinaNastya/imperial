@@ -151,58 +151,56 @@
 											href="<c:url value="/news/cat/${subcategory.id}" />">${subcategory.name}</a></li>
 									</c:forEach>
 								</c:if>
-							</div>
-								<img src="<c:url value="/resources/images/tld.png" />"
-									hspace="0" style="float: left;"> <img
-									src="<c:url value="/resources/images/trd.png" />" hspace="0"
-									style="float: right;">
+							</div> <img src="<c:url value="/resources/images/tld.png" />"
+							hspace="0" style="float: left;"> <img
+							src="<c:url value="/resources/images/trd.png" />" hspace="0"
+							style="float: right;">
 
 
-								<div class="t"></div>
+							<div class="t"></div>
 
-								<div class="m">
+							<div class="m">
 
 
 
-									<form action="http://imperial.ua/search.html"
-										id="cse-search-box">
-										<div style="_width: 90%;">
+								<form action="http://imperial.ua/search.html"
+									id="cse-search-box">
+									<div style="_width: 90%;">
 
-											<input type="hidden" name="cx"
-												value="001330795240219927122:8nphcldyxgg" /> <input
-												type="hidden" name="cof" value="FORID:9" /> <input
-												type="hidden" name="ie" value="windows-1251" />
+										<input type="hidden" name="cx"
+											value="001330795240219927122:8nphcldyxgg" /> <input
+											type="hidden" name="cof" value="FORID:9" /> <input
+											type="hidden" name="ie" value="windows-1251" />
 
-											<script type="text/javascript"
-												src="http://www.google.com/cse/brand?form=cse-search-box&lang=ru"></script>
+										<script type="text/javascript"
+											src="http://www.google.com/cse/brand?form=cse-search-box&lang=ru"></script>
 
-											<input type="text" name="q" class="shadow text"
-												style="width: 90%; display: block; color: #b8b8b8; padding-left: 26px;"
-												value="<spring:message code="label.sitesearch" />"
-												onfocus="if(this.value='<spring:message code="label.sitesearch" />')this.value='';" />
+										<input type="text" name="q" class="shadow text"
+											style="width: 90%; display: block; color: #b8b8b8; padding-left: 26px;"
+											value="<spring:message code="label.sitesearch" />"
+											onfocus="if(this.value='<spring:message code="label.sitesearch" />')this.value='';" />
 
-											<div>
-												<img src="/resources/images/search.gif"
-													style="position: absolute; margin-top: -19px; margin-left: 5px;">
-											</div>
-											<div style="padding-top: 15px">
-
-												<a class="newbut" href=""
-													onclick="document.getElementById('cse-search-box').submit(); return false;"><spring:message
-														code="label.search" /><span></span></a>
-											</div>
-											<br style="clear: both" />
+										<div>
+											<img src="/resources/images/search.gif"
+												style="position: absolute; margin-top: -19px; margin-left: 5px;">
 										</div>
-									</form>
+										<div style="padding-top: 15px">
+
+											<a class="newbut" href=""
+												onclick="document.getElementById('cse-search-box').submit(); return false;"><spring:message
+													code="label.search" /><span></span></a>
+										</div>
+										<br style="clear: both" />
+									</div>
+								</form>
 
 
 
-								</div>
-								<img src="<c:url value="/resources/images/bld.png" />"
-									hspace="0" style="float: left;"><img
-									src="<c:url value="/resources/images/brd.png" />" hspace="0"
-									style="float: right;">
-								<div class="b"></div></td>
+							</div> <img src="<c:url value="/resources/images/bld.png" />"
+							hspace="0" style="float: left;"><img
+							src="<c:url value="/resources/images/brd.png" />" hspace="0"
+							style="float: right;">
+							<div class="b"></div></td>
 						<td width="5%"></td>
 						<td class="lh" style="padding: 0 23px;">
 
@@ -247,16 +245,15 @@
 										<p>${category.content}</p>
 									</c:if>
 									<c:if test="${!empty newsList}">
-									<c:forEach items="${newsList}" var="news">
-									<div class="news">
-									${news.created}
-									<a href="<c:url value="/news/${news.id}" />" class="text" >${news.name}</a>
-									<strong><p>${news.description}</p></strong>
-									</div>
-									</c:forEach>
+										<c:forEach items="${newsList}" var="news">
+											<div class="news">
+												${news.created} <a href="<c:url value="/news/${news.id}" />"
+													class="text">${news.name}</a> <strong><p>${news.description}</p></strong>
+											</div>
+										</c:forEach>
 									</c:if>
 								</p>
-								
+
 								<!-- <div class="navigator">
 			<script>
 				if(!Defined(sysnavigators))var sysnavigators={};
