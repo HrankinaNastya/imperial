@@ -1,5 +1,6 @@
 package ua.imperial.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.CascadeType;
@@ -28,6 +29,12 @@ public class News {
 	@Column(name = "NAME_EN", unique = true)
 	private String name_en;
 	
+	@Column(name = "DESCRIPTION", unique = true)
+	private String description;
+	
+	@Column(name = "DESCRIPTION_EN", unique = true)
+	private String description_en;
+	
 	@Column(name = "CONTENT", unique = true, nullable=false)
 	private String content;
 	
@@ -39,7 +46,7 @@ public class News {
 	private Subcategory subcategory;
 
 	@Column(name = "CREATED", nullable=false)
-	private Date created;
+	private String created;
 
 	public News() {
 		super();
@@ -69,6 +76,22 @@ public class News {
 	public void setName_en(String name_en) {
 		this.name_en = name_en;
 	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public String getDescription_en() {
+		return description_en;
+	}
+
+	public void setDescription_en(String description_en) {
+		this.description_en = description_en;
+	}
 
 	public String getContent() {
 		return content;
@@ -94,15 +117,17 @@ public class News {
 		this.subcategory = subcategory;
 	}
 
-	public Date getCreated() {
+	public String getCreated() {
 		return created;
 	}
 
 	public void setCreated(Date created) {
-		this.created = created;
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy ' ' HH:mm");
+		this.created = dateFormat.format(created);
 	}
 	
-	
-	
+	public void setCreated(String created) {
+		this.created = created;
+	}
 	
 }

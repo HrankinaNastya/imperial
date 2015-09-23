@@ -69,6 +69,41 @@ public class ImperialController {
 		return "feedbacks";
 	}
 	
+	@RequestMapping("/news")
+	public String newspage(Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(5));
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(5));
+		map.put("newsList", imperialService.listNews());
+		
+		return "news";
+	}
+	
+	
+	@RequestMapping(value = "news/{id}", method = RequestMethod.GET)
+	public String getNewsById(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+		News news = imperialService.getNews(id);
+
+		map.put("news", news);
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(5));
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(5));
+		map.put("newsList", imperialService.listNews());
+		
+        return "newsById";
+	}
+	
+	
 	@RequestMapping("/admin")
 	public String admin() {
 		return "redirect:/admin/categories";

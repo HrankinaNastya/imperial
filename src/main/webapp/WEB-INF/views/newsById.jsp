@@ -30,22 +30,10 @@
 	href="<c:url value="/resources/images/favicon.ico"  />"
 	type="image/x-icon">
 
-<link rel="stylesheet"
-	href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/MarkerCluster.css" />" />
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/MarkerCluster.Default.css" />" />
-<script type="text/javascript"
-	src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-<script type="text/javascript"
-	src="/resources/js/leaflet.markercluster.js"></script>
-<script type="text/javascript" src="/resources/js/leaflet.geocsv.js"></script>
-
 <script type="text/javascript"
 	src="<c:url value="/resources/js/jquery.js" />"></script>
 
-<title><spring:message code="label.imperial.contacts" /></title>
+<title><spring:message code="label.imperial.news" /></title>
 
 </head>
 
@@ -110,18 +98,18 @@
 											<c:if test="${category.id==4}">${category.name}</c:if>
 										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-							<li><a href="<c:url value="/news" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
-											items="${categoryList}" var="category">
-											<c:if test="${category.id==5}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
-									hspace="0"></a></li>
-							<li class="cur" style="text-align: right;"><a
-								href="<c:url value="/contacts/1" />"><img
+							<li class="cur"><a href="<c:url value="/news" />"><img
 									src="<c:url value="/resources/images/l4.png" />" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
-											<c:if test="${category.id==6}">${category.name}</c:if>
+											<c:if test="${category.id==5}">${category.name}</c:if>
 										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
+									hspace="0"></a></li>
+							<li style="text-align: right;"><a
+								href="<c:url value="/contacts/1" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==6}">${category.name}</c:if>
+										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
 
 
@@ -152,67 +140,69 @@
 							src="<c:url value="/resources/images/arrow2.png" />"
 							class="h1but">
 							<div class="h1">
-								<a href="<c:url value="/contacts/1" />" class="roboto5"> <c:if
+								<a href="<c:url value="/news" />" class="roboto5"> <c:if
 										test="${!empty category}">${category.name}</c:if>
 								</a>
 							</div>
-							<div class="coordinates">
-								<c:if test="${!empty coordinatesList}">
-									<c:forEach items="${coordinatesList}" var="coordinates">
+							<div class="submenu">
+								<c:if test="${!empty subcategoryList}">
+									<c:forEach items="${subcategoryList}" var="subcategory">
 										<li><a
-											href="<c:url value="/contacts/${coordinates.id}" />">${coordinates.city}</a></li>
+											href="<c:url value="/news/cat/${subcategory.id}" />">${subcategory.name}</a></li>
 									</c:forEach>
 								</c:if>
-							</div> <img src="<c:url value="/resources/images/tld.png" />"
-							hspace="0" style="float: left;"> <img
-							src="<c:url value="/resources/images/trd.png" />" hspace="0"
-							style="float: right;">
+							</div>
+								<img src="<c:url value="/resources/images/tld.png" />"
+									hspace="0" style="float: left;"> <img
+									src="<c:url value="/resources/images/trd.png" />" hspace="0"
+									style="float: right;">
 
 
-							<div class="t"></div>
+								<div class="t"></div>
 
-							<div class="m">
+								<div class="m">
 
 
 
-								<form action="http://imperial.ua/search.html"
-									id="cse-search-box">
-									<div style="_width: 90%;">
+									<form action="http://imperial.ua/search.html"
+										id="cse-search-box">
+										<div style="_width: 90%;">
 
-										<input type="hidden" name="cx"
-											value="001330795240219927122:8nphcldyxgg" /> <input
-											type="hidden" name="cof" value="FORID:9" /> <input
-											type="hidden" name="ie" value="windows-1251" />
+											<input type="hidden" name="cx"
+												value="001330795240219927122:8nphcldyxgg" /> <input
+												type="hidden" name="cof" value="FORID:9" /> <input
+												type="hidden" name="ie" value="windows-1251" />
 
-										<script type="text/javascript"
-											src="http://www.google.com/cse/brand?form=cse-search-box&lang=ru"></script>
+											<script type="text/javascript"
+												src="http://www.google.com/cse/brand?form=cse-search-box&lang=ru"></script>
 
-										<input type="text" name="q" class="shadow text"
-											style="width: 90%; display: block; color: #b8b8b8; padding-left: 26px;"
-											value="<spring:message code="label.sitesearch" />"
-											onfocus="if(this.value='<spring:message code="label.sitesearch" />')this.value='';" />
+											<input type="text" name="q" class="shadow text"
+												style="width: 90%; display: block; color: #b8b8b8; padding-left: 26px;"
+												value="<spring:message code="label.sitesearch" />"
+												onfocus="if(this.value='<spring:message code="label.sitesearch" />')this.value='';" />
 
-										<div>
-											<img src="/resources/images/search.gif"
-												style="position: absolute; margin-top: -19px; margin-left: 5px;">
+											<div>
+												<img src="/resources/images/search.gif"
+													style="position: absolute; margin-top: -19px; margin-left: 5px;">
+											</div>
+											<div style="padding-top: 15px">
+
+												<a class="newbut" href=""
+													onclick="document.getElementById('cse-search-box').submit(); return false;"><spring:message
+														code="label.search" /><span></span></a>
+											</div>
+											<br style="clear: both" />
 										</div>
-										<div style="padding-top: 15px">
-
-											<a class="newbut" href=""
-												onclick="document.getElementById('cse-search-box').submit(); return false;"><spring:message
-													code="label.search" /><span></span></a>
-										</div>
-										<br style="clear: both" />
-									</div>
-								</form>
+									</form>
 
 
 
-							</div> <img src="<c:url value="/resources/images/bld.png" />"
-							hspace="0" style="float: left;"><img
-							src="<c:url value="/resources/images/brd.png" />" hspace="0"
-							style="float: right;">
-							<div class="b"></div></td>
+								</div>
+								<img src="<c:url value="/resources/images/bld.png" />"
+									hspace="0" style="float: left;"><img
+									src="<c:url value="/resources/images/brd.png" />" hspace="0"
+									style="float: right;">
+								<div class="b"></div></td>
 						<td width="5%"></td>
 						<td class="lh" style="padding: 0 23px;">
 
@@ -250,73 +240,31 @@
 
 							<div style="position: relative; top: -230px; clear: both;">
 								<h1 class="roboto1">
-									<c:if test="${!empty coordinates}">${coordinates.city}</c:if>
+									<c:if test="${!empty category}">${category.name}</c:if>
 								</h1>
 								<p>
-									<c:if test="${!empty category}">
-										<p>${category.content}</p>
-									</c:if>
-									<c:if test="${!empty coordinates.address}">
-										<spring:message code="label.address" />: ${coordinates.address}<br>
-									</c:if>
-									<c:if test="${!empty coordinates.phone}">
-										<spring:message code="label.phone" />: ${coordinates.phone}<br>
-									</c:if>
-									<c:if test="${!empty coordinates.skype}">
-										<spring:message code="label.skype" />: ${coordinates.skype}<br>
-									</c:if>
-									<c:if test="${!empty coordinates.email}">
-										<spring:message code="label.email" />: ${coordinates.email}<br>
+									
+									<c:if test="${!empty news}">
+									<div class="news">
+		<strong>${news.created}</strong>
+		<a>${news.name}</a>
+		${news.content}
+		
+	</div>
+		<a href="<c:url value="/news" />" >Все новости</a>
 									</c:if>
 								</p>
-								<div id="mapdiv" style="width: 650px; height: 400px">
-									There is a map</div>
+								
+								<!-- <div class="navigator">
+			<script>
+				if(!Defined(sysnavigators))var sysnavigators={};
+				sysnavigators.navname={};
+				sysnavigators.navname.page=1;
+				sysnavigators.navname.total=6;
+				sysnavigators.navname.urltemplate="6/rus/news/0/page/pagenum/index.html";
+			</script><div id="navigator" name="news"><br>Записей: 6<br>Страница: 1 из 2<br>[<u>1..4</u>] [<a href='6/rus/news/0/page/2/index.html'>5..8</a>] </div></div>
 
-								<div id="locations" style="white-space: pre; display: none">
-									<c:if test="${!empty coordinatesList}">
-
-										<c:forEach items="${coordinatesList}" var="coordinates">
-												${coordinates.longitude},${coordinates.latitude},${coordinates.city},${coordinates.city}: ${coordinates.address}
-  											</c:forEach>
-
-									</c:if>
-								</div>
-								<script type="text/javascript">
-  
-    var a = ${coordinates.latitude};
-    var b = ${coordinates.longitude};
-    map = L.map('mapdiv').setView([a, b],17);
- var tile_options = {
-    subdomains: '1234', // Using multiple subdomains allows the user to download more tiles at a time so 
-    attribution: 'Map data OpenStreeMaps and MapQuest'
-};
-
-// Now we add the actual tile layer
-var basemap = L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png',tile_options);
-basemap.addTo(map);
-
-// Options for the CSV data
-var csv_options = {
-    fieldSeparator: ',',
-    titles: ['lng','lat','ignore','popup'],
-    onEachFeature: function(feature,layer){
-        layer.bindPopup("<p>" + feature.properties.popup +"</p>");
-    }
-};
-
-var csvContents = document.getElementById('locations').innerHTML;
-var geoLayer = L.geoCsv(csvContents,csv_options);
-//map.addLayer(geoLayer);
-
-var clusterOptions = {
-    maxClusterRadius: 30
-};
-
-var markers = new L.MarkerClusterGroup(clusterOptions);
-markers.addLayer(geoLayer);
-map.addLayer(markers);
-
-</script>
+ -->
 								<div></div>
 
 							</div>

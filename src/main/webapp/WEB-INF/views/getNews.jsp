@@ -36,6 +36,14 @@
 								class="input_width" /></td>
 					</tr>
 					<tr>
+						<td><form:label path="description">Description</form:label></td>
+						<td><form:input path="description" class="input_width" /></td>
+					</tr>
+					<tr>
+						<td><form:label path="description_en">Description_en</form:label></td>
+						<td><form:input path="description_en" class="input_width" /></td>
+					</tr>
+					<tr>
 						<td><form:label path="content">Content</form:label></td>
 						<td><form:textarea path="content"></form:textarea></td>
 					</tr>

@@ -19,6 +19,8 @@
 							<td>Subcategory</td>
 							<td>Name</td>
 							<td>Name_en</td>
+							<td>Description</td>
+							<td>Description_en</td>
 							<td>Content</td>
 							<td>Content_en</td>
 							<td>Created</td>
@@ -31,6 +33,8 @@
 								<td>${news.subcategory.name}</td>
 								<td>${news.name}</td>
 								<td>${news.name_en}</td>
+								<td>${news.description}</td>
+								<td>${news.description_en}</td>
 								<c:choose>
 									<c:when test="${!empty news.content}">
 										<td>yes</td>
