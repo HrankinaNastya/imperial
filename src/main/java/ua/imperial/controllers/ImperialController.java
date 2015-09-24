@@ -1,5 +1,8 @@
 package ua.imperial.controllers;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -18,6 +21,7 @@ import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
 import ua.imperial.entities.News;
+import ua.imperial.entities.Page;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.entities.Year;
@@ -80,6 +84,7 @@ public class ImperialController {
 		map.put("categoryList", imperialService.listCategory());
 		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(5));
 		map.put("newsList", imperialService.listNews());
+		map.put("pageList", new Page(imperialService.listNews()));
 		
 		return "news";
 	}

@@ -1,5 +1,7 @@
 package ua.imperial.service.impl;
  
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -267,7 +269,13 @@ public class ImperialServiceImpl implements ImperialService {
 	@Override
 	@Transactional
 	public List<News> listNews() {
-		return newsDAO.listNews();
+		List<News> newsList = newsDAO.listNews();
+		Collections.sort(newsList, new Comparator<News>() {
+	        public int compare(News n1, News n2) {
+	                return n2.getCreated().compareTo(n1.getCreated());
+	        }
+		});
+		return newsList;
 	}
 
 	@Override

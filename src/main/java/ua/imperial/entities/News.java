@@ -130,4 +130,8 @@ public class News {
 		this.created = created;
 	}
 	
+	public void sortByDate() {
+		this.created = created;
+	}
+	
 }
