@@ -52,9 +52,9 @@
 						<td><form:textarea path="content_en"></form:textarea></td>
 					</tr>
 					<tr>
-						<td></td>
-						<td><form:input path="created" value="${news.created}"
-								hidden="true" /></td>
+						<td><form:label path="created">Created</form:label></td>
+						<td><form:input path="created" required="required"
+								class="input_width" /></td>
 					</tr>
 					<tr>
 						<td colspan="2"><button type="submit" class="btn">Save

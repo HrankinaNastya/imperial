@@ -19,7 +19,6 @@
 							<td>Category</td>
 							<td>Name</td>
 							<td>Name_en</td>
-							<td>Image</td>
 							<td>Description</td>
 							<td>Description_en</td>
 							<td>Content</td>
@@ -33,7 +32,6 @@
 								<td>${subcategory.category.name}</td>
 								<td>${subcategory.name}</td>
 								<td>${subcategory.name_en}</td>
-								<td><${subcategory.image}</td>
 								<td>${subcategory.description}</td>
 								<td>${subcategory.description_en}</td>
 								<c:choose>

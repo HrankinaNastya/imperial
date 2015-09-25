@@ -7,6 +7,8 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
 public class Post {
+	
+	private Integer id;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "news")
 	private List<News> news = new ArrayList<News>();
@@ -15,6 +17,14 @@ public class Post {
 
 	public Post() {
 		super();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public List<News> getNews() {

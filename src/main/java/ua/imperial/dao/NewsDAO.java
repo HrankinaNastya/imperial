@@ -12,6 +12,7 @@ public interface NewsDAO {
 	public News getNews(Integer id);
 	
 	public List<News> listNews();
+	public List<News> listNewsfromSubcategory(Integer id);
 	
 	public void updateNews(News news);
 

@@ -38,13 +38,8 @@
 								class="input_width" /></td>
 					</tr>
 					<tr>
-						<td><form:label path="image">Image</form:label></td>
-						<td><form:input path="image" type="file" class="input_width" /></td>
-					</tr>
-					<tr>
 						<td><form:label path="description">Description</form:label></td>
-						<td><form:input path="description" required="required"
-								class="input_width" /></td>
+						<td><form:input path="description" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="description_en">Description_en</form:label></td>

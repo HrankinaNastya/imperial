@@ -277,6 +277,18 @@ public class ImperialServiceImpl implements ImperialService {
 		});
 		return newsList;
 	}
+	
+	@Override
+	@Transactional
+	public List<News> listNewsfromSubcategory(Integer id){
+		List<News> newsList = newsDAO.listNewsfromSubcategory(id);
+		Collections.sort(newsList, new Comparator<News>() {
+	        public int compare(News n1, News n2) {
+	                return n2.getCreated().compareTo(n1.getCreated());
+	        }
+		});
+		return newsList;
+	}
 
 	@Override
 	@Transactional

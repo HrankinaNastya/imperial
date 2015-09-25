@@ -39,6 +39,13 @@ public class NewsDAOImpl implements NewsDAO {
 		return sessionFactory.getCurrentSession().createQuery("from News")
 				.list();
 	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<News> listNewsfromSubcategory(Integer id) {
+		return sessionFactory.getCurrentSession().createQuery("from News where subcategory.id =" + id)
+				.list();
+	}
 
 	@Override
 	public void updateNews(News news) {

@@ -45,9 +45,6 @@ public class Subcategory {
 	@ManyToOne(cascade={CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
 	private Category category;
-	
-	@Column(name = "IMAGE")
-	private String image;
 
 	public Subcategory() {
 		super();
@@ -117,13 +114,6 @@ public class Subcategory {
 		this.category = category;
 	}
 
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
 
 
 }

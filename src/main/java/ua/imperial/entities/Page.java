@@ -25,7 +25,7 @@ public class Page {
 		this.lengthOfNews = news.size();
 		this.count = 0;
 		this.size = 2;
-		pages = 1;
+		pages = 0;
 		setPosts();
 	}
 
@@ -80,15 +80,18 @@ public class Page {
 		while(iter.hasNext()){
 			if (size == count){
 				count = 0;
+				post.setId(++pages);
 				posts.add(post);
 				post = new Post();
 			}
 			
 			post.addNews(iter.next());
 			count++;
-			//System.out.println(post.getNews().get(count));
 		}
-		if (post != null) posts.add(post);
+		if (post != null) {
+			post.setId(++pages);
+			posts.add(post);
+		}
 	}
 	
 

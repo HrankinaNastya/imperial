@@ -148,7 +148,7 @@
 								<c:if test="${!empty subcategoryList}">
 									<c:forEach items="${subcategoryList}" var="subcategory">
 										<li><a
-											href="<c:url value="/news/cat/${subcategory.id}" />">${subcategory.name}</a></li>
+											href="<c:url value="/news/cat/${subcategory.id}/${subcategory.id}" />">${subcategory.name}</a></li>
 									</c:forEach>
 								</c:if>
 							</div> <img src="<c:url value="/resources/images/tld.png" />"
@@ -254,17 +254,24 @@
 									</c:if>
 								</p>
 
-								<div class="navigator">
-			<!-- <script>
-				 [<a href='6/rus/news/0/page/2/index.html'>5..8</a>] 
-			</script> -->
-			<%! int i=0; int page = 0; %>
-			<div id="navigator" name="news"><br>Записей: ${pageList.lengthOfNews}<br>Страница: 1 из ${pageList.pages}<br>
-			<c:forEach items="${pageList.posts}" var="page">
-			
-			[<u> <%=++i %> </u>]
-			</c:forEach>
-			</div></div>
+								<div class="navigator">	
+									<div id="navigator" name="news">
+										<br>Записей: ${page.lengthOfNews}<br>Страница: ${post.id}
+										из ${page.pages}<br>
+										<c:forEach items="${navList}" var="nav">
+											<c:choose>
+												<c:when test="${nav.id == post.id}">
+													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
+												</c:when>
+												<c:otherwise>
+													[ <a href="<c:url value="/news/nav/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+										
+									</div>
+								</div>
+								
 								<div></div>
 
 							</div>
