@@ -21,7 +21,7 @@
 					</tr>
 					<tr>
 						<td><form:label path="name">Name</form:label></td>
-						<td><form:input path="name" required="required"
+						<td><form:input path="name" id="name" required="required"
 								class="input_width" /></td>
 					</tr>
 					<tr>
@@ -33,5 +33,17 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){   
+    $('#name').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+     });
+     
+</script>
 
 <jsp:include page="adminfooter.jsp" />

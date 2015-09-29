@@ -189,7 +189,7 @@ body.blue, body.blue td, body.blue #bottom a {
 	color: #d6dcf7;
 }
 
-body.blue a, body.blue div.news ins a, body.blue div.news strong a {
+body.blue div.news ins a, body.blue div.news strong a {
 	color: #00d0ed;
 }
 
@@ -1352,4 +1352,8 @@ div.contacts {
 .coordinates a {
 	font: 16px 'robotoregular', Arial, Helvetica, sans-serif;
 	text-decoration: none;
+}
+
+.a_blue{
+	color: #00d0ed;
 }

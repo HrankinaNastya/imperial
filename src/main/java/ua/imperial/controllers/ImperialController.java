@@ -133,8 +133,8 @@ public class ImperialController {
 		return "newsByNav";
 	}
 	
-	@RequestMapping("/news/cat/{id_subcat}")
-	public String newsCat(@PathVariable("id_subcat") Integer id_subcat, 
+	@RequestMapping("/news/cat/{id_subcat}/{id}")
+	public String newsCat(@PathVariable("id_subcat") Integer id_subcat, @PathVariable("id") Integer id, 
 			Map<String, Object> map) {
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
@@ -144,22 +144,25 @@ public class ImperialController {
 		map.put("category", imperialService.getCategory(5));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(5));
+		map.put("subcategory", imperialService.getSubcategory(id_subcat));
 		
-		Page page = new Page(imperialService.listNewsfromSubcategory(id_subcat));
-		List<Post> posts = page.getPosts();
-		List<Navigation> navs = new ArrayList<Navigation>();
-		
-		int i = 0;
-		int number =0;
-		for(Post post:posts){
-			navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+		if (!imperialService.listNewsfromSubcategory(id_subcat).isEmpty()){
+			Page page = new Page(imperialService.listNewsfromSubcategory(id_subcat));
+			List<Post> posts = page.getPosts();
+			List<Navigation> navs = new ArrayList<Navigation>();
+			
+			int i = 0;
+			int number =0;
+			for(Post post:posts){
+				navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+			}
+			map.put("post", posts.get(id-1));
+			map.put("newsList", posts.get(id-1).getNews());
+			map.put("page", page);
+			map.put("navList", navs);
 		}
-		//map.put("post", posts.get(id-1));
-		map.put("newsList",imperialService.listNews());
-		//map.put("page", page);
-		//map.put("navList", navs);
 		
-		return "newsByNav";
+		return "newsByCat";
 	}
 	
 	@RequestMapping("/bananas")
@@ -176,6 +179,36 @@ public class ImperialController {
 		return "bananas";
 	}
 	
+	@RequestMapping(value = "/bananas/{id}", method = RequestMethod.GET)
+	public String bananasById(@PathVariable("id") Integer id,
+			Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(8));
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(8));
+		map.put("subcategory", imperialService.getSubcategory(id));
+		
+		return "bananasById";
+	}
+	
+	
+	@RequestMapping("/logistics")
+	public String logistics(Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(9));
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(9));
+		
+		return "logistics";
+	}
 	
 	@RequestMapping(value = "news/{id}", method = RequestMethod.GET)
 	public String getNewsById(@PathVariable("id") Integer id, 

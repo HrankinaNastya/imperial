@@ -20,6 +20,10 @@
 	href="<c:url value="/resources/css/table.css" />" media="screen" />
 <!--[if IE 6]><link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/ie6.css" />" media="screen" /><![endif]-->
 <!--[if IE 7]><link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/ie.css" />" media="screen" /><![endif]-->
+
+<script type="text/javascript"
+	src="<c:url value="/resources/js/jquery.js" />"></script>
+	
 </head>
 <body>
 	<div class="container_12">

@@ -17,26 +17,26 @@
 				<table>
 					<tr>
 						<td></td>
-						<td><form:input path="id" value="${category.id}"
+						<td><form:input path="id" value="${category.id}" 
 								hidden="true" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="name">Name</form:label></td>
-						<td><form:input path="name" required="required"
+						<td><form:input path="name" required="required" id="name"
 								class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="name_en">Name_en</form:label></td>
-						<td><form:input path="name_en" required="required"
+						<td><form:input path="name_en" required="required" id="name_en"
 								class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="content">Content</form:label></td>
-						<td><form:textarea path="content"></form:textarea></td>
+						<td><form:textarea path="content" id="content"></form:textarea></td>
 					</tr>
 					<tr>
 						<td><form:label path="content_en">Content_en</form:label></td>
-						<td><form:textarea path="content_en"></form:textarea></td>
+						<td><form:textarea path="content_en" id="content_en"></form:textarea></td>
 					</tr>
 					<tr>
 						<td colspan="2"><button type="submit" class="btn">Save
@@ -47,5 +47,32 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){   
+    $('#name').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#name_en').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#content').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 6000)
+            $this.val($this.val().substr(0, 6000));           
+    });
+    $('#content_en').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 6000)
+            $this.val($this.val().substr(0, 6000));           
+    });
+     });
+     
+</script>
 
 <jsp:include page="adminfooter.jsp" />

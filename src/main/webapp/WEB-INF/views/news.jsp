@@ -254,6 +254,8 @@
 									</c:if>
 								</p>
 
+								
+								<c:if test="${!empty newsList}">
 								<div class="navigator">	
 									<div id="navigator" name="news">
 										<br>Записей: ${page.lengthOfNews}<br>Страница: ${post.id}
@@ -264,13 +266,14 @@
 													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
 												</c:when>
 												<c:otherwise>
-													[ <a href="<c:url value="/news/nav/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
+													[ <a href="<c:url value="/news/nav/${subcategory.id}/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
 												</c:otherwise>
 											</c:choose>
 										</c:forEach>
 										
 									</div>
 								</div>
+								</c:if>
 								
 								<div></div>
 

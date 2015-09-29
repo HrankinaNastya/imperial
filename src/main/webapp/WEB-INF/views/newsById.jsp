@@ -148,7 +148,7 @@
 								<c:if test="${!empty subcategoryList}">
 									<c:forEach items="${subcategoryList}" var="subcategory">
 										<li><a
-											href="<c:url value="/news/cat/${subcategory.id}" />">${subcategory.name}</a></li>
+											href="<c:url value="/news/cat/${subcategory.id}/1" />">${subcategory.name}</a></li>
 									</c:forEach>
 								</c:if>
 							</div> <img src="<c:url value="/resources/images/tld.png" />"

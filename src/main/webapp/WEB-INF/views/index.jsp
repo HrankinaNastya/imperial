@@ -128,8 +128,8 @@
 				<table id="cb" cellspacing="0" border="0" cellpadding="0"
 					width="100%" style="clear: both">
 					<tr valign="top">
-						<td onclick="location.href='<c:url value="/meat" />'"><a
-							href="meat.html"><ul id="slide_meat"
+						<td onclick="location.href='<c:url value="/ecuador" />'"><a
+							href="<c:url value="/ecuador" />"><ul id="slide_meat"
 									style="list-style: none;">
 									<li><img class="frst"
 										src="/resources/images/pic_meat7.png" /></li>
@@ -138,22 +138,22 @@
 								</ul> </a>
 							<div class="meat_n">
 								<h2 class="roboto2">
-									<a href="meat.html"><c:forEach items="${categoryList}"
+									<a href="<c:url value="/ecuador" />"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==7}">${category.name}</c:if>
 										</c:forEach></a>
 								</h2>
 							</div></td>
 
-						<td onclick="location.href='http://imperial.ua/fruits.html'">
-							<a style="cursor: pointer;" href="fruits.html">
+						<td onclick="location.href='<c:url value="/bananas" />'">
+							<a style="cursor: pointer;" href="<c:url value="/bananas" />">
 								<ul id="slide_fruit" style="list-style: none;">
 									<li><img src="/resources/images/pic_fruit1.png" /></li>
 								</ul>
 						</a>
 							<div class="fruit_n">
 								<h2 class="roboto2">
-									<a href="fruits.html"><c:forEach items="${categoryList}"
+									<a href="<c:url value="/bananas" />"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==8}">${category.name}</c:if>
 										</c:forEach></a>
@@ -161,16 +161,16 @@
 							</div>
 						</td>
 
-						<td onclick="location.href='http://imperial.ua/logistics.html'">
+						<td onclick="location.href='<c:url value="/logistics" />'">
 
-							<a style="cursor: pointer;" href="logistics.html">
+							<a style="cursor: pointer;" href="<c:url value="/logistics" />">
 								<ul id="slide_trans" style="list-style: none;">
 									<li><img src="/resources/images/pic_trans1.png" /></li>
 								</ul>
 						</a>
 							<div class="trans_n">
 								<h2 class="roboto2">
-									<a href="logistics.html"><c:forEach items="${categoryList}"
+									<a href="<c:url value="/logistics" />"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==9}">${category.name}</c:if>
 										</c:forEach></a>
@@ -258,10 +258,7 @@
 									<h2>
 										<a href="#"><spring:message code="label.branchoffices" /></a>
 									</h2>
-									<!-- 									<iframe -->
-									<!-- 										src="https://www.google.com/maps/d/embed?mid=zn_ZULhOr7HQ.kYlUrvDkaRyg" -->
-									<!-- 										width="640" height="480"></iframe> -->
-
+				
 									<div id="mapdiv" style="width: 650px; height: 400px">
 										There is a map</div>
 
