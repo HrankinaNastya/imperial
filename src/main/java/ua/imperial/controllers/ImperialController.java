@@ -210,6 +210,36 @@ public class ImperialController {
 		return "logistics";
 	}
 	
+	@RequestMapping(value = "/logistics/{id}", method = RequestMethod.GET)
+	public String logisticsById(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(9));
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(9));
+		map.put("subcategory", imperialService.getSubcategory(id));
+		
+		return "logisticsByID";
+	}
+	
+	@RequestMapping("/ecuador")
+	public String ecuador(Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(7));
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(7));
+		
+		return "ecuador";
+	}
+	
 	@RequestMapping(value = "news/{id}", method = RequestMethod.GET)
 	public String getNewsById(@PathVariable("id") Integer id, 
 			Map<String, Object> map) {

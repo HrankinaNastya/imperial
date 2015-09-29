@@ -132,7 +132,7 @@
 							href="<c:url value="/ecuador" />"><ul id="slide_meat"
 									style="list-style: none;">
 									<li><img class="frst"
-										src="/resources/images/pic_meat7.png" /></li>
+										src="/resources/images/pic_fruit4.png" /></li>
 
 
 								</ul> </a>
