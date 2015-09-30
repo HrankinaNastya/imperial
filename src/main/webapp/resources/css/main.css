@@ -1011,6 +1011,10 @@ div.h1 {
 	margin: 36px 0 0 32px;
 	height: 63px;
 }
+div.h11 {
+	margin: 36px 0 0 32px;
+	height: 100px;
+}
 
 div.h1 img {
 	margin-right: 7px;
