@@ -33,6 +33,8 @@ public class Category {
 	@Column(name = "CONTENT_EN")
 	private String content_en;
 	
+	@Column(name = "PATH")
+	private String path;
 
 	public Category() {
 		super();
@@ -76,6 +78,14 @@ public class Category {
 
 	public void setContent_en(String content_en) {
 		this.content_en = content_en;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 
 	

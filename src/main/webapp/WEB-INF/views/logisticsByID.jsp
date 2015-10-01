@@ -158,18 +158,9 @@
 							<div class="m">
 
 
-
-								<form action="http://imperial.ua/search.html"
+								<form method="get" action="search"
 									id="cse-search-box">
 									<div style="_width: 90%;">
-
-										<input type="hidden" name="cx"
-											value="001330795240219927122:8nphcldyxgg" /> <input
-											type="hidden" name="cof" value="FORID:9" /> <input
-											type="hidden" name="ie" value="windows-1251" />
-
-										<script type="text/javascript"
-											src="http://www.google.com/cse/brand?form=cse-search-box&lang=ru"></script>
 
 										<input type="text" name="q" class="shadow text"
 											style="width: 90%; display: block; color: #b8b8b8; padding-left: 26px;"
@@ -181,10 +172,11 @@
 												style="position: absolute; margin-top: -19px; margin-left: 5px;">
 										</div>
 										<div style="padding-top: 15px">
-
-											<a class="newbut" href=""
-												onclick="document.getElementById('cse-search-box').submit(); return false;"><spring:message
-													code="label.search" /><span></span></a>
+											<button type="submit" class="newbut">
+												<spring:message
+													code="label.search" /><span></span>
+											</button>
+											
 										</div>
 										<br style="clear: both" />
 									</div>

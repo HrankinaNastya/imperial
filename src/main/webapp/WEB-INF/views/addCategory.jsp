@@ -24,6 +24,11 @@
 								class="input_width" /></td>
 					</tr>
 					<tr>
+						<td><form:label path="path">Path</form:label></td>
+						<td><form:input path="path" required="required" id="path"
+								class="input_width" /></td>
+					</tr>
+					<tr>
 						<td><form:label path="content">Content</form:label></td>
 						<td><form:textarea path="content" id="content"></form:textarea></td>
 					</tr>

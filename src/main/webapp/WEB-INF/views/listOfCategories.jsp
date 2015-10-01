@@ -18,6 +18,7 @@
 							<td>ID</td>
 							<td>Name</td>
 							<td>Name_en</td>
+							<td>Path</td>
 							<td>Content</td>
 							<td>Content_en</td>
 							<td></td>
@@ -28,6 +29,7 @@
 								<td>${category.id}</td>
 								<td>${category.name}</td>
 								<td>${category.name_en}</td>
+								<td>${category.path}</td>
 								<c:choose>
 									<c:when test="${!empty category.content}">
 										<td>yes</td>

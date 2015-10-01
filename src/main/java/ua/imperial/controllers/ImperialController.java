@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ua.imperial.dao.FactDAO;
 import ua.imperial.entities.Category;
@@ -102,10 +103,10 @@ public class ImperialController {
 		
 		
 		
-		return "search";
+		return "news";
 	}
 	
-	@RequestMapping("/search")
+	@RequestMapping("/searchresults")
 	public String search(Map<String, Object> map) {
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
@@ -114,6 +115,22 @@ public class ImperialController {
 		
 		map.put("category", imperialService.getCategory(11));
 		map.put("categoryList", imperialService.listCategory());
+
+		return "search";
+	}
+	
+	@RequestMapping("/search")
+	public String searchresults(@RequestParam(value="q", required=false) String q, 
+			Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(11));
+		map.put("categoryList", imperialService.listCategory());
+		
+		System.out.println("_____________________________" + q);
 
 		return "search";
 	}
@@ -269,7 +286,7 @@ public class ImperialController {
 		return "ecuadorById";
 	}
 	
-	@RequestMapping(value = "news/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/news/{id}", method = RequestMethod.GET)
 	public String getNewsById(@PathVariable("id") Integer id, 
 			Map<String, Object> map) {
 		News news = imperialService.getNews(id);

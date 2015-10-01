@@ -155,7 +155,7 @@
 
 
 
-								<form action="http://imperial.ua/search.html"
+								<form method="get" action="search"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 
@@ -169,10 +169,11 @@
 												style="position: absolute; margin-top: -19px; margin-left: 5px;">
 										</div>
 										<div style="padding-top: 15px">
-
-											<a class="newbut" href=""
-												onclick="document.getElementById('cse-search-box').submit(); return false;"><spring:message
-													code="label.search" /><span></span></a>
+											<button type="submit" class="newbut">
+												<spring:message
+													code="label.search" /><span></span>
+											</button>
+											
 										</div>
 										<br style="clear: both" />
 									</div>
