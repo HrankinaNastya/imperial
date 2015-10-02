@@ -2,7 +2,6 @@ package ua.imperial.entities;
 
 public class SearchResult {
 	
-	private Integer id_parent;
 	private String name;
 	private String name_en;
 	private String description;
@@ -14,18 +13,16 @@ public class SearchResult {
 	}
 	
 	public SearchResult(News news) {
-		this.id_parent = news.getId();
 		this.name = news.getName();
 		if (news.getContent().length()>200){
 			this.description = news.getContent().substring(0, 200).concat("...");
 		} else{
 			this.description = news.getContent();
 		}
-		this.path = "/news/".concat(id_parent.toString());
+		this.path = "/news/".concat(news.getId().toString());
 	}
 	
 	public SearchResult(Category category) {
-		this.id_parent = category.getId();
 		this.name = category.getName();
 		if (category.getContent().length()>200){
 			this.description = category.getContent().substring(0, 200).concat("...");
@@ -37,21 +34,18 @@ public class SearchResult {
 	}
 	
 	public SearchResult(Subcategory subcategory) {
-		this.id_parent = subcategory.getId();
 		this.name = subcategory.getName();
 		if (subcategory.getContent().length()>200){
 			this.description = subcategory.getContent().substring(0, 200).concat("...");
 		} else{
 			this.description = subcategory.getContent();
 		}
-	}
-
-	public Integer getId_parent() {
-		return id_parent;
-	}
-
-	public void setId_parent(Integer id_parent) {
-		this.id_parent = id_parent;
+		if (subcategory.getCategory().getId()!=5){
+			this.path = subcategory.getCategory().getPath().concat( "/" + subcategory.getId().toString());
+		} else{
+			this.path = "/news/cat/".concat(subcategory.getId().toString()).concat("/1");
+		}
+	
 	}
 
 	public String getName() {

@@ -47,13 +47,10 @@ public class News {
 
 	@Column(name = "CREATED", nullable=false)
 	private String created;
-	
-	private String path;
 
 	public News() {
 		super();
 		setCreated(new Date());
-		//setPath("news/"+ getId());
 	}
 
 	public Integer getId() {
@@ -137,12 +134,6 @@ public class News {
 		this.created = created;
 	}
 
-	public String getPath() {
-		return path;
-	}
 
-	public void setPath(String path) {
-		this.path = path;
-	}
 	
 }

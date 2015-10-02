@@ -12,6 +12,7 @@ public class Post {
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "news")
 	private List<News> news = new ArrayList<News>();
+	private List<SearchResult> searchResults = new ArrayList<SearchResult>();
 	
 	private Integer lenght;
 
@@ -46,6 +47,11 @@ public class Post {
 
 	public void setLenght(Integer lenght) {
 		this.lenght = lenght;
+	}
+
+	public void addSearchResult(SearchResult searchResult) {
+		searchResults.add(searchResult);
+		setLenght(searchResults.size());
 	}
 	
 	

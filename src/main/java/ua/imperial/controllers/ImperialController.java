@@ -24,7 +24,10 @@ import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Navigation;
 import ua.imperial.entities.News;
 import ua.imperial.entities.Page;
+import ua.imperial.entities.PageSearch;
 import ua.imperial.entities.Post;
+import ua.imperial.entities.Search;
+import ua.imperial.entities.SearchResult;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.entities.Year;
@@ -120,7 +123,7 @@ public class ImperialController {
 	}
 	
 	@RequestMapping("/search")
-	public String searchresults(@RequestParam(value="q", required=false) String q, 
+	public String searchresults(@RequestParam(value="q",  required=false) String q, 
 			Map<String, Object> map) {
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
@@ -130,7 +133,23 @@ public class ImperialController {
 		map.put("category", imperialService.getCategory(11));
 		map.put("categoryList", imperialService.listCategory());
 		
-		System.out.println("_____________________________" + q);
+		Search search = new Search(imperialService.listCategory(), 
+				imperialService.listSubcategory(), imperialService.listNews(), q);
+		List<SearchResult> listSearchR = search.getSearchResults();
+		
+		PageSearch page = new PageSearch(listSearchR);
+		List<Post> posts = page.getSearchResults();
+		List<Navigation> navs = new ArrayList<Navigation>();
+		
+		int i = 0;
+		int number =0;
+		for(Post post:posts){
+			navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+		}
+		map.put("post", page.getPosts().get(0));
+		map.put("newsList", posts.get(0).getNews());
+		map.put("page", page);
+		map.put("navList", navs);
 
 		return "search";
 	}

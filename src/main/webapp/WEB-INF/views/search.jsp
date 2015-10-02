@@ -156,7 +156,7 @@
 
 
 								<form method="get" action="search"
-									id="cse-search-box">
+									>
 									<div style="_width: 90%;">
 
 										<input type="text" name="q" class="shadow text"
@@ -229,10 +229,10 @@
 									<c:if test="${!empty category}">
 										<p>${category.content}</p>
 									</c:if>
-									<c:if test="${!empty searchSet}">
-										<c:forEach items="${searchSet}" var="search">
+									<c:if test="${!empty listSearchR}">
+										<c:forEach items="${listSearchR}" var="search">
 											<div class="news">
-												${news.created} <a href="<c:url value="/news/${search.id}" />"
+												${news.created} <a style="color:white;" href="<c:url value="${search.path}" />"
 													class="text">${search.name}</a> <strong><p>${search.description}</p></strong>
 											</div>
 										</c:forEach>
@@ -289,7 +289,7 @@
 					</script>
 
 					<strong> </strong> &copy; 2008 &mdash;
-					<%=new Year().getСurrentYear() %>
+					<%=new Year().getCurrentYear() %>
 					<spring:message code="label.FIH" />
 					<br>
 					<spring:message code="label.copy" />

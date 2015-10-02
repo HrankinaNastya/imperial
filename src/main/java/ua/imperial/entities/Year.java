@@ -2,7 +2,7 @@ package ua.imperial.entities;
 
 public class Year {
 	
-	private Integer ñurrentYear;
+	private Integer currentYear;
      
     public Year() {
 		super();
@@ -13,11 +13,11 @@ public class Year {
     {
         java.util.Calendar calendar = java.util.Calendar.getInstance(java.util.TimeZone.getDefault(), java.util.Locale.getDefault());
         calendar.setTime(new java.util.Date());
-        ñurrentYear = calendar.get(java.util.Calendar.YEAR);
+        currentYear = calendar.get(java.util.Calendar.YEAR);
     }
 
-	public Integer getÑurrentYear() {
-		return ñurrentYear;
+	public Integer getCurrentYear() {
+		return currentYear;
 	}
 
 }

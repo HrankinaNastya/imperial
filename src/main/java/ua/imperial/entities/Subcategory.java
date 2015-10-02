@@ -45,15 +45,9 @@ public class Subcategory {
 	@ManyToOne(cascade={CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
 	private Category category;
-	
-	//private String path;
 
 	public Subcategory() {
 		super();
-		//setPath(category.getPath().concat("/").concat(getId().toString()));
-		//if (this.id == 5){
-		//	setPath(("/news/cat/").concat(getId().toString().concat("/1")));
-		//}
 	}
 
 	public Integer getId() {
@@ -119,15 +113,6 @@ public class Subcategory {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-/*
-	public String getPath() {
-		return path;
-	}
-
-	public void setPath(String path) {
-		this.path = path;
-	}
-*/
 
 
 }

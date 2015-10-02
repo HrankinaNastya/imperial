@@ -10,7 +10,7 @@ import ua.imperial.dao.CoordinatesDAO;
 import ua.imperial.entities.Coordinates;
 
 @Repository
-public class ÑoordinatesDAOImpl implements CoordinatesDAO  {
+public class CoordinatesDAOImpl implements CoordinatesDAO  {
 	
 	@Autowired
 	private SessionFactory sessionFactory;

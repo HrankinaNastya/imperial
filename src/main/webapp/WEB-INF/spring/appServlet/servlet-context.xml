@@ -30,5 +30,5 @@
 
 	<!-- Файл с настройками контроллеров -->
 	<import resource="controllers.xml" />
-
+	
 </beans>

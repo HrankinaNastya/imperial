@@ -338,7 +338,7 @@ map.addLayer(markers);
 					</script>
 
 					<strong> </strong> &copy; 2008 &mdash;
-					<%=new Year().getСurrentYear()%>
+					<%=new Year().getCurrentYear() %>
 					<spring:message code="label.FIH" />
 					<br>
 					<spring:message code="label.copy" />
