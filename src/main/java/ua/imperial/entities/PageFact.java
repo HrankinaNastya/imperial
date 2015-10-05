@@ -7,19 +7,19 @@ import java.util.List;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
-public class PageSearch {
+public class PageFact {
 		
 		private Integer pages;
-		private Integer lengthOfSearch;
+		private Integer lengthOfFact;
 		private Integer count;
 		private Integer size;
 		private List<Post> posts = new ArrayList<Post>();
-		private List<SearchResult> searchResults = new ArrayList<SearchResult>();
+		private List<Fact> facts = new ArrayList<Fact>();
 		
-		public PageSearch(List<SearchResult> searchResults) {
+		public PageFact(List<Fact> facts) {
 			super();
-			this.searchResults = searchResults;
-			this.lengthOfSearch = searchResults.size();
+			this.facts = facts;
+			this.lengthOfFact = facts.size();
 			this.count = 0;
 			this.size = 2;
 			this.pages = 0;
@@ -30,18 +30,26 @@ public class PageSearch {
 			return pages;
 		}
 		
-		public Integer getLengthOfSearch() {
-			return lengthOfSearch;
+		public Integer getLengthOfFact() {
+			return lengthOfFact;
 		}
 
-		public void setLengthOfSearch(Integer lengthOfSearch) {
-			this.lengthOfSearch = lengthOfSearch;
+		public void setLengthOfFact(Integer lengthOfFact) {
+			this.lengthOfFact = lengthOfFact;
 		}
 
-		public void setLengthOfNews(Integer lengthOfSearch) {
-			this.lengthOfSearch = lengthOfSearch;
+		public List<Fact> getFacts() {
+			return facts;
 		}
-		
+
+		public void setFacts(List<Fact> facts) {
+			this.facts = facts;
+		}
+
+		public void setPages(Integer pages) {
+			this.pages = pages;
+		}
+
 		public Integer getCount() {
 			return count;
 		}
@@ -58,20 +66,13 @@ public class PageSearch {
 			this.size = size;
 		}
 		
-		public List<SearchResult> getSearchResults() {
-			return searchResults;
-		}
-
-		public void setSearchResults(List<SearchResult> searchResults) {
-			this.searchResults = searchResults;
-		}
 
 		public List<Post> getPosts() {
 			return posts;
 		}
 		
 		public void setPosts() {
-			Iterator<SearchResult> iter = searchResults.iterator();
+			Iterator<Fact> iter = facts.iterator();
 			Post post = new Post();
 			
 			while(iter.hasNext()){
@@ -82,7 +83,7 @@ public class PageSearch {
 					post = new Post();
 				}
 				
-				post.addSearchResult(iter.next());
+				post.addFact(iter.next());
 				count++;
 			}
 			if (post != null) {

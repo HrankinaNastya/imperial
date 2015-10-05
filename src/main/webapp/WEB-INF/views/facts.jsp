@@ -33,7 +33,7 @@
 <script type="text/javascript"
 	src="<c:url value="/resources/js/jquery.js" />"></script>
 
-<title><spring:message code="label.imperial.news" /></title>
+<title><spring:message code="label.imperial.facts" /></title>
 
 </head>
 
@@ -163,7 +163,7 @@
 
 
 
-								<form method="get" action="search"
+								<form method="get" action="<c:url value="/search" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 

@@ -98,11 +98,11 @@
 											<c:if test="${category.id==4}">${category.name}</c:if>
 										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-							<li class="cur"><a href="<c:url value="/news" />"><img
-									src="<c:url value="/resources/images/l4.png" />" hspace="0"><b><c:forEach
+							<li><a href="<c:url value="/news" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==5}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
+										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li style="text-align: right;"><a
 								href="<c:url value="/contacts/1" />"><img
@@ -155,8 +155,8 @@
 
 
 
-								<form method="get" action="search"
-									>
+								<form method="get" action="<c:url value="/search" />">
+									
 									<div style="_width: 90%;">
 
 										<input type="text" name="q" class="shadow text"
@@ -239,11 +239,10 @@
 									</c:if>
 								</p>
 
-								
-								<c:if test="${!empty newsList}">
+								<c:if test="${!empty listSearchR}">
 								<div class="navigator">	
-									<div id="navigator" name="news">
-										<br>Записей: ${page.lengthOfNews}<br>Страница: ${post.id}
+									<div id="navigator">
+										<br>Записей: ${page.lengthOfSearch}<br>Страница: ${post.id}
 										из ${page.pages}<br>
 										<c:forEach items="${navList}" var="nav">
 											<c:choose>
@@ -251,7 +250,7 @@
 													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
 												</c:when>
 												<c:otherwise>
-													[ <a href="<c:url value="/news/nav/${subcategory.id}/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
+													[ <a href="<c:url value="/search/nav/${nav.id}?q=${q}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
 												</c:otherwise>
 											</c:choose>
 										</c:forEach>

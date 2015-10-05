@@ -163,7 +163,7 @@
 
 
 
-								<form method="get" action="search"
+								<form method="get" action="<c:url value="/search" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 
@@ -244,17 +244,7 @@
 										<a href="<c:url value="/news" />">Все новости</a>
 									</c:if>
 								</p>
-
-								<!-- <div class="navigator">
-			<script>
-				if(!Defined(sysnavigators))var sysnavigators={};
-				sysnavigators.navname={};
-				sysnavigators.navname.page=1;
-				sysnavigators.navname.total=6;
-				sysnavigators.navname.urltemplate="6/rus/news/0/page/pagenum/index.html";
-			</script><div id="navigator" name="news"><br>Записей: 6<br>Страница: 1 из 2<br>[<u>1..4</u>] [<a href='6/rus/news/0/page/2/index.html'>5..8</a>] </div></div>
-
- -->
+								
 								<div></div>
 
 							</div>

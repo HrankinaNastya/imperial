@@ -157,7 +157,7 @@
 
 
 
-								<form method="get" action="search"
+								<form method="get" action="<c:url value="/search" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 

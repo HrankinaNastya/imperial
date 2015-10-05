@@ -9,6 +9,7 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -109,19 +110,6 @@ public class ImperialController {
 		return "news";
 	}
 	
-	@RequestMapping("/searchresults")
-	public String search(Map<String, Object> map) {
-		
-		List<Fact> facts = imperialService.listFactfromSection(1);
-		int index = random.nextInt(facts.size());		
-		map.put("fact", facts.get(index));
-		
-		map.put("category", imperialService.getCategory(11));
-		map.put("categoryList", imperialService.listCategory());
-
-		return "search";
-	}
-	
 	@RequestMapping("/search")
 	public String searchresults(@RequestParam(value="q",  required=false) String q, 
 			Map<String, Object> map) {
@@ -135,27 +123,68 @@ public class ImperialController {
 		
 		Search search = new Search(imperialService.listCategory(), 
 				imperialService.listSubcategory(), imperialService.listNews(), q);
-		List<SearchResult> listSearchR = search.getSearchResults();
 		
-		PageSearch page = new PageSearch(listSearchR);
-		List<Post> posts = page.getSearchResults();
-		List<Navigation> navs = new ArrayList<Navigation>();
-		
-		int i = 0;
-		int number =0;
-		for(Post post:posts){
-			navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+		if (! search.getSearchResults().isEmpty()){
+			PageSearch page = new PageSearch(search.getSearchResults());
+			List<Post> posts = page.getPosts();
+			List<Navigation> navs = new ArrayList<Navigation>();
+			
+			int i = 0;
+			int number = 0;
+			for(Post post:posts){
+				navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+			}
+			map.put("post", page.getPosts().get(0));
+			map.put("listSearchR", posts.get(0).getSearchResults());
+			map.put("page", page);
+			map.put("navList", navs);
+			
 		}
-		map.put("post", page.getPosts().get(0));
-		map.put("newsList", posts.get(0).getNews());
-		map.put("page", page);
-		map.put("navList", navs);
+		
+		map.put("q", q);
+
+		return "search";
+	}
+	
+	@RequestMapping("/search/nav/{id}")
+	public String searchresultsByNav(@PathVariable("id") Integer id,
+			@RequestParam(value="q",  required=false) String q, 
+			Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(11));
+		map.put("categoryList", imperialService.listCategory());
+		
+		Search search = new Search(imperialService.listCategory(), 
+				imperialService.listSubcategory(), imperialService.listNews(), q);
+		
+		if (! search.getSearchResults().isEmpty()){
+			PageSearch page = new PageSearch(search.getSearchResults());
+			List<Post> posts = page.getPosts();
+			List<Navigation> navs = new ArrayList<Navigation>();
+			
+			int i = 0;
+			int number = 0;
+			for(Post post:posts){
+				navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+			}
+			map.put("post", posts.get(id-1));
+			map.put("listSearchR", posts.get(id-1).getSearchResults());
+			map.put("page", page);
+			map.put("navList", navs);
+			
+		}
+		
+		map.put("q", q);
 
 		return "search";
 	}
 	
 	@RequestMapping("/news/nav/{id}")
-	public String newsNav(@PathVariable("id") Integer id,Map<String, Object> map) {
+	public String newsNav(@PathVariable("id") Integer id, Map<String, Object> map) {
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
 		int index = random.nextInt(facts.size());		
