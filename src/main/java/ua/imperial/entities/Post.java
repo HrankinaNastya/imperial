@@ -70,6 +70,15 @@ public class Post {
 		facts.add(fact);
 		setLenght(facts.size());
 	}
+
+	public List<Fact> getFacts() {
+		return facts;
+	}
+
+	public void setFacts(List<Fact> facts) {
+		this.facts = facts;
+	}
+	
 	
 
 }

@@ -25,6 +25,7 @@ import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Navigation;
 import ua.imperial.entities.News;
 import ua.imperial.entities.Page;
+import ua.imperial.entities.PageFact;
 import ua.imperial.entities.PageSearch;
 import ua.imperial.entities.Post;
 import ua.imperial.entities.Search;
@@ -144,6 +145,37 @@ public class ImperialController {
 		map.put("q", q);
 
 		return "search";
+	}
+	
+	@RequestMapping("/facts/nav/{id}")
+	public String factsByNav(@PathVariable("id") Integer id,
+			Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(11));
+		map.put("categoryList", imperialService.listCategory());
+		
+		if (! facts.isEmpty()){
+			PageFact page = new PageFact(facts);
+			List<Post> posts = page.getPosts();
+			List<Navigation> navs = new ArrayList<Navigation>();
+			
+			int i = 0;
+			int number = 0;
+			for(Post post:posts){
+				navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+			}
+			map.put("post", posts.get(id-1));
+			map.put("facts", posts.get(id-1).getFacts());
+			map.put("page", page);
+			map.put("navList", navs);
+			
+		}
+		
+		return "facts";
 	}
 	
 	@RequestMapping("/search/nav/{id}")

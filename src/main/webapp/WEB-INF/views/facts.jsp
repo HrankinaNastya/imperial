@@ -237,19 +237,11 @@
 									<c:if test="${!empty category}">
 										<p>${category.content}</p>
 									</c:if>
-									<c:if test="${!empty newsList}">
-										<c:forEach items="${newsList}" var="news">
-											<div class="news">
-												${news.created} <a href="<c:url value="/news/${news.id}" />"
-													class="text">${news.name}</a> <strong><p>${news.description}</p></strong>
-											</div>
-										</c:forEach>
-									</c:if>
 								</p>
 
 								<div class="navigator">	
 									<div id="navigator" name="news">
-										<br>Записей: ${page.lengthOfNews}<br>Страница: ${post.id}
+										<br>Записей: ${page.lengthOfFacts}<br>Страница: ${post.id}
 										из ${page.pages}<br>
 										<c:forEach items="${navList}" var="nav">
 											<c:choose>
@@ -257,7 +249,7 @@
 													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
 												</c:when>
 												<c:otherwise>
-													[ <a href="<c:url value="/news/nav/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
+													[ <a href="<c:url value="/facts/nav/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
 												</c:otherwise>
 											</c:choose>
 										</c:forEach>

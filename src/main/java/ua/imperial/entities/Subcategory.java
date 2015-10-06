@@ -30,17 +30,26 @@ public class Subcategory {
 	@Column(name = "NAME_EN", unique = true)
 	private String name_en;
 	
-	@Column(name = "DESCRIPTION", unique = true, nullable=false)
+	@Column(name = "NAME_ES", unique = true)
+	private String name_es;
+	
+	@Column(name = "DESCRIPTION", unique = true)
 	private String description;
 	
-	@Column(name = "DESCRIPTION_EN", unique = true, nullable=false)
+	@Column(name = "DESCRIPTION_EN", unique = true)
 	private String description_en;
 	
-	@Column(name = "CONTENT", unique = true, nullable=false)
+	@Column(name = "DESCRIPTION_ES", unique = true)
+	private String description_es;
+	
+	@Column(name = "CONTENT", unique = true)
 	private String content;
 	
-	@Column(name = "CONTENT_EN", unique = true, nullable=false)
+	@Column(name = "CONTENT_EN", unique = true)
 	private String content_en;
+	
+	@Column(name = "CONTENT_ES", unique = true)
+	private String content_es;
 	
 	@ManyToOne(cascade={CascadeType.REFRESH}, fetch = FetchType.EAGER)
 	@JoinColumn(name = "category_id")
@@ -74,6 +83,14 @@ public class Subcategory {
 		this.name_en = name_en;
 	}
 
+	public String getName_es() {
+		return name_es;
+	}
+
+	public void setName_es(String name_es) {
+		this.name_es = name_es;
+	}
+
 	public String getDescription() {
 		return description;
 	}
@@ -88,6 +105,14 @@ public class Subcategory {
 
 	public void setDescription_en(String description_en) {
 		this.description_en = description_en;
+	}
+
+	public String getDescription_es() {
+		return description_es;
+	}
+
+	public void setDescription_es(String description_es) {
+		this.description_es = description_es;
 	}
 
 	public String getContent() {
@@ -106,6 +131,14 @@ public class Subcategory {
 		this.content_en = content_en;
 	}
 
+	public String getContent_es() {
+		return content_es;
+	}
+
+	public void setContent_es(String content_es) {
+		this.content_es = content_es;
+	}
+	
 	public Category getCategory() {
 		return category;
 	}

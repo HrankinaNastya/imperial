@@ -19,8 +19,10 @@
 							<td>Section</td>
 							<td>Description</td>
 							<td>Description_en</td>
+							<td>Description_es</td>
 							<td>Content</td>
 							<td>Content_en</td>
+							<td>Content_es</td>
 							<td></td>
 							<td></td>
 						</tr>
@@ -30,6 +32,7 @@
 								<td>${fact.section.name}</td>
 								<td>${fact.description}</td>
 								<td>${fact.description_en}</td>
+								<td>${fact.description_es}</td>
 								<c:choose>
 									<c:when test="${!empty fact.content}">
 										<td>yes</td>
@@ -40,6 +43,14 @@
 								</c:choose>
 								<c:choose>
 									<c:when test="${!empty fact.content_en}">
+										<td>yes</td>
+									</c:when>
+									<c:otherwise>
+										<td>-</td>
+									</c:otherwise>
+								</c:choose>
+								<c:choose>
+									<c:when test="${!empty fact.content_es}">
 										<td>yes</td>
 									</c:when>
 									<c:otherwise>

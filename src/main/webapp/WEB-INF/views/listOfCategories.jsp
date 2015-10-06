@@ -18,9 +18,11 @@
 							<td>ID</td>
 							<td>Name</td>
 							<td>Name_en</td>
+							<td>Name_es</td>
 							<td>Path</td>
 							<td>Content</td>
 							<td>Content_en</td>
+							<td>Content_es</td>
 							<td></td>
 							<td></td>
 						</tr>
@@ -29,6 +31,7 @@
 								<td>${category.id}</td>
 								<td>${category.name}</td>
 								<td>${category.name_en}</td>
+								<td>${category.name_es}</td>
 								<td>${category.path}</td>
 								<c:choose>
 									<c:when test="${!empty category.content}">
@@ -40,6 +43,14 @@
 								</c:choose>
 								<c:choose>
 									<c:when test="${!empty category.content_en}">
+										<td>yes</td>
+									</c:when>
+									<c:otherwise>
+										<td>-</td>
+									</c:otherwise>
+								</c:choose>
+								<c:choose>
+									<c:when test="${!empty category.content_es}">
 										<td>yes</td>
 									</c:when>
 									<c:otherwise>

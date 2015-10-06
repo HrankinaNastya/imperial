@@ -31,12 +31,21 @@
 						id="description_en"/></td>
 					</tr>
 					<tr>
+						<td><form:label path="description_es">Description_es</form:label></td>
+						<td><form:input path="description_es" class="input_width" 
+						id="description_es"/></td>
+					</tr>
+					<tr>
 						<td><form:label path="content">Content</form:label></td>
 						<td><form:textarea path="content" required="required" id="content"></form:textarea></td>
 					</tr>
 					<tr>
 						<td><form:label path="content_en">Content_en</form:label></td>
 						<td><form:textarea path="content_en" id="content_en"></form:textarea></td>
+					</tr>
+					<tr>
+						<td><form:label path="content_es">Content_es</form:label></td>
+						<td><form:textarea path="content_es" id="content_es"></form:textarea></td>
 					</tr>
 					<tr>
 						<td colspan="2"><button type="submit" class="btn">Add
@@ -53,23 +62,32 @@
 $(document).ready(function(){   
     $('#description').keyup( function() {
         var $this = $(this);
-        if($this.val().length > 150)
-            $this.val($this.val().substr(0, 150));           
+        if($this.val().length > 200)
+            $this.val($this.val().substr(0, 200));           
     });
     $('#description_en').keyup( function() {
         var $this = $(this);
-        if($this.val().length > 150)
-            $this.val($this.val().substr(0, 150));           
+        if($this.val().length > 200)
+            $this.val($this.val().substr(0, 200));           
     });
+    $('#description_es').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 200)
+    });    
     $('#content').keyup( function() {
         var $this = $(this);
-        if($this.val().length > 6000)
-            $this.val($this.val().substr(0, 6000));           
+        if($this.val().length > 1000)
+            $this.val($this.val().substr(0, 1000));           
     });
     $('#content_en').keyup( function() {
         var $this = $(this);
-        if($this.val().length > 6000)
-            $this.val($this.val().substr(0, 6000));           
+        if($this.val().length > 1000)
+            $this.val($this.val().substr(0, 1000));           
+    });
+    $('#content_es').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 1000)
+            $this.val($this.val().substr(0, 1000));           
     });
      });
      

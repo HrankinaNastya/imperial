@@ -19,10 +19,13 @@
 							<td>Category</td>
 							<td>Name</td>
 							<td>Name_en</td>
+							<td>Name_es</td>
 							<td>Description</td>
 							<td>Description_en</td>
+							<td>Description_es</td>
 							<td>Content</td>
 							<td>Content_en</td>
+							<td>Content_es</td>
 							<td></td>
 							<td></td>
 						</tr>
@@ -32,8 +35,10 @@
 								<td>${subcategory.category.name}</td>
 								<td>${subcategory.name}</td>
 								<td>${subcategory.name_en}</td>
+								<td>${subcategory.name_es}</td>
 								<td>${subcategory.description}</td>
 								<td>${subcategory.description_en}</td>
+								<td>${subcategory.description_es}</td>
 								<c:choose>
 									<c:when test="${!empty subcategory.content}">
 										<td>yes</td>
@@ -44,6 +49,14 @@
 								</c:choose>
 								<c:choose>
 									<c:when test="${!empty subcategory.content_en}">
+										<td>yes</td>
+									</c:when>
+									<c:otherwise>
+										<td>-</td>
+									</c:otherwise>
+								</c:choose>
+								<c:choose>
+									<c:when test="${!empty subcategory.content_es}">
 										<td>yes</td>
 									</c:when>
 									<c:otherwise>

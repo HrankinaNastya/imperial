@@ -30,11 +30,17 @@ public class Fact {
 	@Column(name = "DESCRIPTION_EN", unique = true, nullable=false)
 	private String description_en;
 	
+	@Column(name = "DESCRIPTION_ES", unique = true, nullable=false)
+	private String description_es;
+	
 	@Column(name = "CONTENT", unique = true, nullable=false)
 	private String content;
 	
 	@Column(name = "CONTENT_EN", unique = true, nullable=false)
 	private String content_en;
+	
+	@Column(name = "CONTENT_ES", unique = true, nullable=false)
+	private String content_es;
 	
 	public Fact() {
 		super();
@@ -72,6 +78,14 @@ public class Fact {
 		this.description_en = description_en;
 	}
 
+	public String getDescription_es() {
+		return description_es;
+	}
+
+	public void setDescription_es(String description_es) {
+		this.description_es = description_es;
+	}
+
 	public String getContent() {
 		return content;
 	}
@@ -88,5 +102,14 @@ public class Fact {
 		this.content_en = content_en;
 	}
 
+	public String getContent_es() {
+		return content_es;
+	}
+
+	public void setContent_es(String content_es) {
+		this.content_es = content_es;
+	}
+
+	
 	
 }

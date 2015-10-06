@@ -31,6 +31,11 @@
 								class="input_width" /></td>
 					</tr>
 					<tr>
+						<td><form:label path="name_es">Name_es</form:label></td>
+						<td><form:input path="name_es" required="required" id="name_es"
+								class="input_width" /></td>
+					</tr>
+					<tr>
 						<td><form:label path="path">Path</form:label></td>
 						<td><form:input path="path" required="required" id="path"
 								class="input_width" /></td>
@@ -42,6 +47,10 @@
 					<tr>
 						<td><form:label path="content_en">Content_en</form:label></td>
 						<td><form:textarea path="content_en" id="content_en"></form:textarea></td>
+					</tr>
+					<tr>
+						<td><form:label path="content_es">Content_es</form:label></td>
+						<td><form:textarea path="content_es" id="content_es"></form:textarea></td>
 					</tr>
 					<tr>
 						<td colspan="2"><button type="submit" class="btn">Save
@@ -66,12 +75,22 @@ $(document).ready(function(){
         if($this.val().length > 50)
             $this.val($this.val().substr(0, 50));           
     });
+    $('#name_es').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
     $('#content').keyup( function() {
         var $this = $(this);
         if($this.val().length > 6000)
             $this.val($this.val().substr(0, 6000));           
     });
     $('#content_en').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 6000)
+            $this.val($this.val().substr(0, 6000));           
+    });
+    $('#content_es').keyup( function() {
         var $this = $(this);
         if($this.val().length > 6000)
             $this.val($this.val().substr(0, 6000));           
