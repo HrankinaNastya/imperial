@@ -33,11 +33,11 @@
 <script type="text/javascript"
 	src="<c:url value="/resources/js/jquery.js" />"></script>
 
-<title><spring:message code="label.imperial.news" /></title>
+<title><spring:message code="label.imperial.doyouknow" /></title>
 
 </head>
 
-<body class="dark">
+<body class="green">
 
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
@@ -56,16 +56,17 @@
 								src="<c:url value="/resources/images/flag_eng.gif" />"
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
-						</div> <img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
+						</div> 
+						<img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
 				</div>
 
 				<div class="phone">
-					<img src="<c:url value="/resources/images/r1d.png" />" hspace="0">
+					<img src="<c:url value="/resources/images/r1g.png" />" hspace="0">
 					<div>
 						<spring:message code="label.hotline" />
 						&mdash; <b>8 (048) <i>780-14-05</i></b>
 					</div>
-					<img src="<c:url value="/resources/images/l1d.png" />" hspace="0">
+					<img src="<c:url value="/resources/images/l1g.png" />" hspace="0">
 				</div>
 
 				<div class="hmc">
@@ -98,11 +99,11 @@
 											<c:if test="${category.id==4}">${category.name}</c:if>
 										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-							<li class="cur"><a href="<c:url value="/news" />"><img
-									src="<c:url value="/resources/images/l4.png" />" hspace="0"><b><c:forEach
+							<li><a href="<c:url value="/news" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==5}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
+										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li style="text-align: right;"><a
 								href="<c:url value="/contacts/1" />"><img
@@ -116,7 +117,7 @@
 						</ul>
 					</div>
 				</div> <span class="submenu"><img
-					src="<c:url value="/resources/images/r7d.png" />" hspace="0">
+					src="<c:url value="/resources/images/r7g.png" />" hspace="0">
 					<div>
 						<img src="<c:url value="/resources/images/arrow.png" />"><a
 							href="<c:url value="/ecuador" />" class="roboto4"><c:forEach
@@ -131,7 +132,7 @@
 								items="${categoryList}" var="category">
 								<c:if test="${category.id==9}">${category.name}</c:if>
 							</c:forEach></a>
-					</div> <img src="<c:url value="/resources/images/l7d.png" />" hspace="0"></span>
+					</div> <img src="<c:url value="/resources/images/l7g.png" />" hspace="0"></span>
 
 
 				<table cellspacing="0" cellpadding="0" id="submain">
@@ -140,18 +141,11 @@
 							src="<c:url value="/resources/images/arrow2.png" />"
 							class="h1but">
 							<div class="h1">
-								<a href="<c:url value="/news" />" class="roboto5"> <c:if
+								<a href="<c:url value="/facts" />" class="roboto5"> <c:if
 										test="${!empty category}">${category.name}</c:if>
 								</a>
 							</div>
-							<div class="submenu">
-								<c:if test="${!empty subcategoryList}">
-									<c:forEach items="${subcategoryList}" var="subcategory">
-										<li><a
-											href="<c:url value="/news/cat/${subcategory.id}/1" />">${subcategory.name}</a></li>
-									</c:forEach>
-								</c:if>
-							</div> <img src="<c:url value="/resources/images/tld.png" />"
+							 <img src="<c:url value="/resources/images/tld.png" />"
 							hspace="0" style="float: left;"> <img
 							src="<c:url value="/resources/images/trd.png" />" hspace="0"
 							style="float: right;">
@@ -198,7 +192,7 @@
 						<td class="lh" style="padding: 0 23px;">
 
 
-							<div style="position: relative; height: 214px;"></div> <c:if
+							<div style="position:relative; top:-7px; left:-43px; height:214px;"><img src="<c:url value="/resources/images/img_fruits.png" />" ></div> <c:if
 								test="${!empty fact}">
 								<div class="quote">
 
@@ -221,8 +215,7 @@
 									<div class="b2" style="margin-right: 0px;"></div>
 									<div id="know" style="float: right; padding-right: 17px;">
 										<a class="newbut knw"
-											href="<c:url value="/facts/${fact.id}" />"> <spring:message
-												code="label.more" /> <span></span>
+											href="<c:url value="/facts" />"> Теперь знаю!<span></span>
 										</a>
 									</div>
 
@@ -233,37 +226,13 @@
 								<h1 class="roboto1">
 									<c:if test="${!empty category}">${category.name}</c:if>
 								</h1>
-								<p>
-									<c:if test="${!empty category}">
-										<p>${category.content}</p>
+									<c:if test="${!empty fact}">
+										<div style="margin-bottom:45px;">
+										${fact.content}		
+										</div>
 									</c:if>
-									<c:if test="${!empty newsList}">
-										<c:forEach items="${newsList}" var="news">
-											<div class="news">
-												${news.created} <a href="<c:url value="/news/${news.id}" />"
-													class="text">${news.name}</a> <strong><p>${news.description}</p></strong>
-											</div>
-										</c:forEach>
-									</c:if>
-								</p>
-
-								<div class="navigator">	
-									<div id="navigator" name="news">
-										<br>Записей: ${page.lengthOfNews}<br>Страница: ${post.id}
-										из ${page.pages}<br>
-										<c:forEach items="${navList}" var="nav">
-											<c:choose>
-												<c:when test="${nav.id == post.id}">
-													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
-												</c:when>
-												<c:otherwise>
-													[ <a href="<c:url value="/news/nav/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
-												</c:otherwise>
-											</c:choose>
-										</c:forEach>
-										
-									</div>
-								</div>
+								
+						
 								
 								<div></div>
 

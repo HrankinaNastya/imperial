@@ -22,6 +22,9 @@ public class Coordinates {
 	@Column(name = "CITY_EN", unique = true, nullable = false)
 	private String city_en;
 	
+	@Column(name = "CITY_ES", unique = true, nullable = false)
+	private String city_es;
+	
 	@Column(name = "LATITUDE", nullable = false)
 	private String latitude;
 	
@@ -33,6 +36,9 @@ public class Coordinates {
 	
 	@Column(name = "ADDRESS_EN", nullable = false)
 	private String address_en;
+	
+	@Column(name = "ADDRESS_ES", nullable = false)
+	private String address_es;
 	
 	@Column(name = "PHONE", nullable = false)
 	private String phone;
@@ -71,6 +77,14 @@ public class Coordinates {
 		this.city_en = city_en;
 	}
 
+	public String getCity_es() {
+		return city_es;
+	}
+
+	public void setCity_es(String city_es) {
+		this.city_es = city_es;
+	}
+
 	public String getLatitude() {
 		return latitude;
 	}
@@ -101,6 +115,14 @@ public class Coordinates {
 
 	public void setAddress_en(String address_en) {
 		this.address_en = address_en;
+	}
+
+	public String getAddress_es() {
+		return address_es;
+	}
+
+	public void setAddress_es(String address_es) {
+		this.address_es = address_es;
 	}
 
 	public String getPhone() {

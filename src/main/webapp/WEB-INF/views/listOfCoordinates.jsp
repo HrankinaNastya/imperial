@@ -18,10 +18,12 @@
 							<td>ID</td>
 							<td>City</td>
 							<td>Сity_en</td>
+							<td>Сity_es</td>
 							<td>Latitude</td>
 							<td>Longitude</td>
 							<td>Address</td>
 							<td>Address_en</td>
+							<td>Address_es</td>
 							<td>Phone</td>
 							<td>Skype</td>
 							<td>Email</td>
@@ -33,10 +35,12 @@
 								<td>${coordinates.id}</td>
 								<td>${coordinates.city}</td>
 								<td>${coordinates.city_en}</td>
+								<td>${coordinates.city_es}</td>
 								<td>${coordinates.latitude}</td>
 								<td>${coordinates.longitude}</td>
 								<td>${coordinates.address}</td>
 								<td>${coordinates.address_en}</td>
+								<td>${coordinates.address_es}</td>
 								<td>${coordinates.phone}</td>
 								<td>${coordinates.skype}</td>
 								<td>${coordinates.email}</td>

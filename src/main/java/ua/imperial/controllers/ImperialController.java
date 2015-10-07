@@ -155,7 +155,7 @@ public class ImperialController {
 		int index = random.nextInt(facts.size());		
 		map.put("fact", facts.get(index));
 		
-		map.put("category", imperialService.getCategory(11));
+		map.put("category", imperialService.getCategory(12));
 		map.put("categoryList", imperialService.listCategory());
 		
 		if (! facts.isEmpty()){
@@ -176,6 +176,49 @@ public class ImperialController {
 		}
 		
 		return "facts";
+	}
+	
+	@RequestMapping("/facts")
+	public String allfacts(Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(12));
+		map.put("categoryList", imperialService.listCategory());
+		
+		if (! facts.isEmpty()){
+			PageFact page = new PageFact(facts);
+			List<Post> posts = page.getPosts();
+			List<Navigation> navs = new ArrayList<Navigation>();
+			
+			int i = 0;
+			int number = 0;
+			for(Post post:posts){
+				navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
+			}
+			map.put("post", posts.get(0));
+			map.put("facts", posts.get(0).getFacts());
+			map.put("page", page);
+			map.put("navList", navs);
+			
+		}
+		
+		return "facts";
+	}
+	
+	@RequestMapping(value = "/facts/{id}", method = RequestMethod.GET)
+	public String factsById(@PathVariable("id") Integer id,
+			Map<String, Object> map) {
+			
+		map.put("fact", imperialService.getFact(id));
+		
+		map.put("category", imperialService.getCategory(12));
+		map.put("categoryList", imperialService.listCategory());
+
+		
+		return "factsById";
 	}
 	
 	@RequestMapping("/search/nav/{id}")

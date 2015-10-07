@@ -217,7 +217,7 @@
 									<div class="b2" style="margin-right: 0px;"></div>
 									<div id="know" style="float: right; padding-right: 17px;">
 										<a class="newbut knw"
-											href="<c:url value="/fact/${fact.id}" />"> <spring:message
+											href="<c:url value="/facts/${fact.id}" />"> <spring:message
 												code="label.more" /> <span></span>
 										</a>
 									</div>
