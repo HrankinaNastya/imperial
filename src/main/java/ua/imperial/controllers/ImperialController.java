@@ -3,6 +3,7 @@ package ua.imperial.controllers;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -79,6 +80,41 @@ public class ImperialController {
 		map.put("feedback", new Feedback());
 		
 		return "feedbacks";
+	}
+	
+	@RequestMapping("/sitemap")
+	public String sitemap(Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(10));
+		
+		List<Category> categories = imperialService.listCategory();
+		Iterator<Category> iter = categories.iterator();
+		
+		while(iter.hasNext()){
+			Category category = iter.next();
+			category.setSubcategories(imperialService.listSubcategoryfromCategory(
+							category.getId()));
+		}
+		
+ 		map.put("categoryList", categories);
+		
+ 		iter = categories.iterator();
+		
+		while(iter.hasNext()){
+			Category category = iter.next();
+			System.out.println(category.getName());
+			for(Subcategory sub: category.getSubcategories()){
+				System.out.println("__ " + sub.getName());
+			}
+		}
+	
+		
+		
+		return "sitemap";
 	}
 	
 	@RequestMapping("/news")

@@ -47,6 +47,7 @@
 								<td><a href="/admin/getCoordinates/${coordinates.id}">Edit</a></td>
 								<td><a href="/admin/deleteCoordinates/${coordinates.id}">Delete</a></td>
 							</tr>
+							
 						</c:forEach>
 					</table>
 				</div>

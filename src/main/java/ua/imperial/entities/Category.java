@@ -41,7 +41,10 @@ public class Category {
 	
 	@Column(name = "PATH")
 	private String path;
-
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+	private List<Subcategory> subcategories = new ArrayList<Subcategory>();
+	
 	public Category() {
 		super();
 	}
@@ -110,5 +113,14 @@ public class Category {
 		this.path = path;
 	}
 
+	public List<Subcategory> getSubcategories() {
+		return subcategories;
+	}
+
+	public void setSubcategories(List<Subcategory> subcategories) {
+		this.subcategories = subcategories;
+	}
+
+	
 	
 }

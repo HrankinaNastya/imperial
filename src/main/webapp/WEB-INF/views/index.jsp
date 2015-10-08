@@ -300,26 +300,7 @@
 										<td style="padding-right: 50px;"><input
 											class="shadow text w100" style="color: #b8b8b8;" name="mail"
 											value="<spring:message code="label.youremail" />"
-											onfocus="if(this.value==adr){this.value=''; document.getElementById('addfilds').style.display='block'};">
-
-											<div id="addfilds" style="display: none;">
-
-												<div class="form">
-													<spring:message code="label.FIO" />
-												</div>
-												<input class="shadow text w100" name="name">
-
-												<div class="form">
-													<spring:message code="label.company" />
-												</div>
-												<input class="shadow text w100" name="company">
-
-												<div class="form">
-													<spring:message code="label.city" />
-												</div>
-												<input class="shadow text w100" name="city">
-
-											</div>
+											onfocus="if(this.value==adr){this.value='';">
 
 
 											<div style="margin-top: 15px">
