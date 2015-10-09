@@ -155,15 +155,11 @@ public class News {
 	}
 
 	public void setCreated(Date created) {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy ' ' HH:mm");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
 		this.created = dateFormat.format(created);
 	}
 	
 	public void setCreated(String created) {
-		this.created = created;
-	}
-	
-	public void sortByDate() {
 		this.created = created;
 	}
 

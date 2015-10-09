@@ -12,5 +12,6 @@
 		<mapping class="ua.imperial.entities.Feedback" />
 		<mapping class="ua.imperial.entities.Coordinates" />
 		<mapping class="ua.imperial.entities.News" />
+		<mapping class="ua.imperial.entities.Subscribe" />
 	</session-factory>
 </hibernate-configuration>

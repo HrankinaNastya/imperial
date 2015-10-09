@@ -254,13 +254,14 @@
 															<form:label path="fullname">*<spring:message
 																	code="label.FIO" />
 															</form:label>
-														</div> <form:input path="fullname" required="required" /></td>
+														</div> <form:input path="fullname" required="required" 
+														id="fullname"/></td>
 
 													<td><div>
 															<form:label path="email">*<spring:message
 																	code="label.email" />
 															</form:label>
-														</div> <form:input path="email" required="required" /></td>
+														</div> <form:input path="email" required="required" id="email"/></td>
 
 												</tr>
 
@@ -270,13 +271,14 @@
 															<form:label path="company">
 																<spring:message code="label.company" />
 															</form:label>
-														</div> <form:input path="company" /></td>
+														</div> <form:input path="company" id="company"/></td>
+														
 
 													<td><div>
 															<form:label path="city">
 																<spring:message code="label.city" />
 															</form:label>
-														</div> <form:input path="city" /></td>
+														</div> <form:input path="city" id="city"/></td>
 
 												</tr>
 
@@ -286,7 +288,7 @@
 															<form:label path="message">*<spring:message
 																	code="label.message" />
 															</form:label>
-														</div> <form:textarea rows="5" path="message"
+														</div> <form:textarea rows="5" path="message" id="message"
 															required="required"></form:textarea></td>
 
 												</tr>
@@ -371,7 +373,37 @@
 				</div></td>
 		</tr>
 	</table>
+<script type="text/javascript">
+$(document).ready(function(){   
+    $('#fullname').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 200)
+            $this.val($this.val().substr(0, 200));           
+    });
+    $('#company').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#email').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#city').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#message').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 1000)
+            $this.val($this.val().substr(0, 1000));           
+    });
 
+     });
+     
+</script>
 </body>
 
 </html>

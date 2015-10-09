@@ -22,26 +22,26 @@
 					</tr>
 					<tr>
 						<td><form:label path="fullname">Fullname</form:label></td>
-						<td><form:input path="fullname" required="required"
+						<td><form:input path="fullname" required="required" id="fullname"
 								class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="company">Company</form:label></td>
-						<td><form:input path="company" required="required"
+						<td><form:input path="company" required="required" id="company"
 								class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="email">Email</form:label></td>
-						<td><form:input path="email" required="required"
+						<td><form:input path="email" required="required" id="email"
 								class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="city">City</form:label></td>
-						<td><form:input path="city" class="input_width" /></td>
+						<td><form:input path="city" class="input_width" id="city"/></td>
 					</tr>
 					<tr>
 						<td><form:label path="message">Message</form:label></td>
-						<td><form:textarea path="message"></form:textarea></td>
+						<td><form:textarea path="message" id="message"></form:textarea></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -58,5 +58,36 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){   
+    $('#fullname').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 200)
+            $this.val($this.val().substr(0, 200));           
+    });
+    $('#company').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#email').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#city').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+    $('#message').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 1000)
+            $this.val($this.val().substr(0, 1000));           
+    });
+
+     });  
+</script>
 
 <jsp:include page="adminfooter.jsp" />

@@ -9,6 +9,7 @@ import ua.imperial.entities.Feedback;
 import ua.imperial.entities.News;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
+import ua.imperial.entities.Subscribe;
 
 public interface ImperialService {
 
@@ -96,4 +97,18 @@ public interface ImperialService {
 
 	public void removeNews(Integer id);
 	
+	/*
+	 * SubscribeDAO
+	 */
+
+	public void addSubscribe(Subscribe subscribe);
+
+	public Subscribe getSubscribe(Integer id);
+	
+	public List<Subscribe> listSubscribe();
+	
+	public void updateSubscribe(Subscribe subscribe);
+
+	public void removeSubscribe(Integer id);
+
 }

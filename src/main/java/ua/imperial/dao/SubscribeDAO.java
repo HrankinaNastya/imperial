@@ -2,7 +2,6 @@ package ua.imperial.dao;
 
 import java.util.List;
 
-import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Subscribe;
 
 public interface SubscribeDAO {

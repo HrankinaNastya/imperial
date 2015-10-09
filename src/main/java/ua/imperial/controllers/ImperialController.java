@@ -1,8 +1,6 @@
 package ua.imperial.controllers;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +8,6 @@ import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import ua.imperial.dao.FactDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
@@ -30,10 +26,9 @@ import ua.imperial.entities.PageFact;
 import ua.imperial.entities.PageSearch;
 import ua.imperial.entities.Post;
 import ua.imperial.entities.Search;
-import ua.imperial.entities.SearchResult;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
-import ua.imperial.entities.Year;
+import ua.imperial.entities.Subscribe;
 import ua.imperial.service.ImperialService;
 
 
@@ -64,6 +59,7 @@ public class ImperialController {
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("coordinatesList", imperialService.listCoordinates());
+		map.put("subscribe", new Subscribe());
 		
 		return "index";
 	}
@@ -325,7 +321,7 @@ public class ImperialController {
 	@RequestMapping("/news/cat/{id_subcat}/{id}")
 	public String newsCat(@PathVariable("id_subcat") Integer id_subcat, @PathVariable("id") Integer id, 
 			Map<String, Object> map) {
-		
+		  
 		List<Fact> facts = imperialService.listFactfromSection(1);
 		int index = random.nextInt(facts.size());		
 		map.put("fact", facts.get(index));
@@ -873,6 +869,53 @@ public class ImperialController {
 		imperialService.removeNews(newsId);
 
 		return "redirect:/admin/news";
+	}
+	
+	/*
+	 * SubscribeDAO
+	 */
+	
+	@RequestMapping(value = "/addSubscribe", method = RequestMethod.POST)
+	public String addSubscribe(@ModelAttribute("subscribe") Subscribe subscribe,
+			BindingResult result) {
+		
+		imperialService.addSubscribe(subscribe);
+
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "admin/getSubscribe/{id}", method = RequestMethod.GET)
+	public String getSubscribe(@PathVariable("id") Integer id, 
+			Map<String, Object> map) {
+
+		map.put("subscribe", imperialService.getSubscribe(id));
+		
+        return "getSubscribe";
+	}
+	
+	@RequestMapping("admin/subscribes")
+	public String subscribes(Map<String, Object> map) {
+
+		map.put("subscribeList", imperialService.listSubscribe());
+		
+		return "listOfSubscribes";
+	}
+	
+	@RequestMapping(value = "admin/editSubscribe", method = RequestMethod.POST)
+	public String editNews(@ModelAttribute("subscribe") Subscribe subscribe, 
+			BindingResult result) {
+		
+		imperialService.updateSubscribe(subscribe);
+
+		return "redirect:/admin/subscribes";
+	}
+
+	@RequestMapping("admin/deleteSubscribe/{subscribeId}")
+	public String deleteSubscribe(@PathVariable("subscribeId") Integer subscribeId) {
+
+		imperialService.removeSubscribe(subscribeId);
+
+		return "redirect:/admin/subscribes";
 	}
 	
 }

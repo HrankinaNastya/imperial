@@ -13,6 +13,7 @@ import ua.imperial.dao.FactDAO;
 import ua.imperial.dao.FeedbackDAO;
 import ua.imperial.dao.CoordinatesDAO;
 import ua.imperial.dao.NewsDAO;
+import ua.imperial.dao.SubscribeDAO;
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
@@ -20,6 +21,7 @@ import ua.imperial.entities.News;
 import ua.imperial.entities.Section;
 import ua.imperial.entities.Subcategory;
 import ua.imperial.entities.Coordinates;
+import ua.imperial.entities.Subscribe;
 import ua.imperial.service.ImperialService;
 
  
@@ -41,6 +43,8 @@ public class ImperialServiceImpl implements ImperialService {
     @Autowired
     private NewsDAO newsDAO;
 
+    @Autowired
+    private SubscribeDAO subscribeDAO;
     
     /*
 	 * CategoryDAO
@@ -300,6 +304,40 @@ public class ImperialServiceImpl implements ImperialService {
 	@Transactional
 	public void removeNews(Integer id) {
 		newsDAO.removeNews(id);
+	}
+	
+	/*
+	 * SubscribeDAO
+	 */
+
+	@Override
+	@Transactional
+	public void addSubscribe(Subscribe subscribe) {
+		subscribeDAO.addSubscribe(subscribe);
+	}
+
+	@Override
+	@Transactional
+	public Subscribe getSubscribe(Integer id) {
+		return subscribeDAO.getSubscribe(id);
+	}
+
+	@Override
+	@Transactional
+	public List<Subscribe> listSubscribe() {
+		return subscribeDAO.listSubscribe();
+	}
+
+	@Override
+	@Transactional
+	public void updateSubscribe(Subscribe subscribe) {
+		subscribeDAO.updateSubscribe(subscribe);
+	}
+
+	@Override
+	@Transactional
+	public void removeSubscribe(Integer id) {
+		subscribeDAO.removeSubscribe(id);
 	}
 	
 	

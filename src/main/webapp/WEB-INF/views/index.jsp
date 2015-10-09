@@ -292,24 +292,21 @@
 									<td width="7%;"></td>
 
 
-									<form name="subscribe"
-										action="publication/modules/subscribe/index.php"
-										target="subtag" method="post"
-										onsubmit="return ChaeckSubscribe();">
-
-										<td style="padding-right: 50px;"><input
-											class="shadow text w100" style="color: #b8b8b8;" name="mail"
-											value="<spring:message code="label.youremail" />"
-											onfocus="if(this.value==adr){this.value='';">
-
-
+									<form:form method="post" action="addSubscribe"
+											commandName="subscribe">
+										
+										<td style="padding-right: 50px;">
+										<form:label path="email" style="color: #b8b8b8; margin-botoom:5px;" ><spring:message code='label.youremail'/></form:label><br>
+										<form:input path="email" required="required" class="shadow text w100" type="email" id="email" />
+											<form:input path="created" hidden="true" />	
 											<div style="margin-top: 15px">
-												<a class="newbut" href=""
-													onclick="if(ChaeckSubscribe())document.subscribe.submit(); return false;"><spring:message
-														code="label.subscribe" /><span></span></a>
-											</div></td>
+												<button type="submit" class="newbut">
+													<spring:message code="label.subscribe" /><span></span>
+											</button>
+											</div>
+											</td>
 
-									</form>
+									</form:form>
 
 								</tr>
 
@@ -317,7 +314,7 @@
 							<div id="scht">
 								<a href="http://top100.rambler.ru/home?id=2164113"> <img
 									src="http://cnt.rambler.ru/top100.cnt?2164113"
-									alt="Rambler's Top100" width="81" height="63" border="0" />
+									alt="Rambler's Top100" width="81" height="63" border="0" /></a>
 							</div>
 
 
@@ -434,7 +431,17 @@
 		</tr>
 	</table>
 
+<script type="text/javascript">
+$(document).ready(function(){   
 
+    $('#email').keyup( function() {
+        var $this = $(this);
+        if($this.val().length > 50)
+            $this.val($this.val().substr(0, 50));           
+    });
+
+     });  
+</script>
 
 </body>
 </html>

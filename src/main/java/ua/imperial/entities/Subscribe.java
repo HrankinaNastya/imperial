@@ -1,5 +1,7 @@
 package ua.imperial.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,9 +20,13 @@ public class Subscribe {
 
 	@Column(name = "EMAIL", nullable = false)
 	private String email;
+	
+	@Column(name = "CREATED", nullable=false)
+	private Date created;
 
 	public Subscribe() {
 		super();
+		setCreated(new Date());
 	}
 
 	public Integer getId() {
@@ -37,6 +43,14 @@ public class Subscribe {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public Date getCreated() {
+		return created;
+	}
+
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 	
 
