@@ -60,11 +60,11 @@
 				<div class="lang">
 					<span><img src="/resources/images/l2.png" hspace="0">
 						<div>
-							<a href="http://imperial.ua/about_us.html"><img
+							<a href="?lang=ru"><img
 								src="/resources/images/flag_rus.gif"
 								alt="<spring:message code="label.ru" />"
 								title="<spring:message code="label.ru" />" class="cur"></a><a
-								href="http://imperial.ua/1/eng/index.html"><img
+								href="?lang=en"><img
 								src="/resources/images/flag_eng.gif"
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
@@ -81,13 +81,13 @@
 				</div>
 
 				<div class="hmc">
-					<a href="<c:url value="/" />"><img
+					<a href="<c:url value="/${locale}" />"><img
 						src="<c:url value="/resources/images/pic_home.gif" />"
 						title="<spring:message code="label.home" />"></a><a class=""
-						href="<c:url value="/sitemap" />"><img
+						href="<c:url value="/sitemap${locale}" />"><img
 						src="<c:url value="/resources/images/pic_map.gif" />"
 						title="<spring:message code="label.sitemap" />"></a><a class=""
-						href="<c:url value="/feedback" />"><img
+						href="<c:url value="/feedback${locale}" />"><img
 						src="<c:url value="/resources/images/pic_mail.gif" />"
 						title="<spring:message code="label.feedback" />"></a>
 				</div>
@@ -98,23 +98,23 @@
 						<ul>
 
 							<li style="text-align: left;" class="cur"><a
-								href="<c:url value="/" />"><img
+								href="<c:url value="/${locale}" />"><img
 									src="/resources/images/l4.png" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==1}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r4.png" hspace="0"></a></li>
-							<li><a href="<c:url value="/feedback" />"><img
+							<li><a href="<c:url value="/feedback${locale}" />"><img
 									src="/resources/images/l2.png" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==4}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
-							<li><a href="<c:url value="/news" />"><img
+							<li><a href="<c:url value="/news${locale}" />"><img
 									src="/resources/images/l2.png" hspace="0" alt=""><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==5}">${category.name}</c:if>
 										</c:forEach></b><img src="/resources/images/r2.png" hspace="0"></a></li>
 							<li style="text-align: right;"><a
-								href="<c:url value="/contacts/1" />"><img
+								href="<c:url value="/contacts/1${locale}" />"><img
 									src="/resources/images/l2.png" hspace="0"><b><c:forEach
 											items="${categoryList}" var="category">
 											<c:if test="${category.id==6}">${category.name}</c:if>
@@ -128,8 +128,8 @@
 				<table id="cb" cellspacing="0" border="0" cellpadding="0"
 					width="100%" style="clear: both">
 					<tr valign="top">
-						<td onclick="location.href='<c:url value="/ecuador" />'"><a
-							href="<c:url value="/ecuador" />"><ul id="slide_meat"
+						<td onclick="location.href='<c:url value="/ecuador${locale}" />'"><a
+							href="<c:url value="/ecuador${locale}" />"><ul id="slide_meat"
 									style="list-style: none;">
 									<li><img class="frst"
 										src="/resources/images/pic_fruit4.png" /></li>
@@ -138,22 +138,22 @@
 								</ul> </a>
 							<div class="meat_n">
 								<h2 class="roboto2">
-									<a href="<c:url value="/ecuador" />"><c:forEach items="${categoryList}"
+									<a href="<c:url value="/ecuador${locale}" />"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==7}">${category.name}</c:if>
 										</c:forEach></a>
 								</h2>
 							</div></td>
 
-						<td onclick="location.href='<c:url value="/bananas" />'">
-							<a style="cursor: pointer;" href="<c:url value="/bananas" />">
+						<td onclick="location.href='<c:url value="/bananas${locale}" />'">
+							<a style="cursor: pointer;" href="<c:url value="/bananas${locale}" />">
 								<ul id="slide_fruit" style="list-style: none;">
 									<li><img src="/resources/images/pic_fruit1.png" /></li>
 								</ul>
 						</a>
 							<div class="fruit_n">
 								<h2 class="roboto2">
-									<a href="<c:url value="/bananas" />"><c:forEach items="${categoryList}"
+									<a href="<c:url value="/bananas${locale}" />"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==8}">${category.name}</c:if>
 										</c:forEach></a>
@@ -161,16 +161,16 @@
 							</div>
 						</td>
 
-						<td onclick="location.href='<c:url value="/logistics" />'">
+						<td onclick="location.href='<c:url value="/logistics${locale}" />'">
 
-							<a style="cursor: pointer;" href="<c:url value="/logistics" />">
+							<a style="cursor: pointer;" href="<c:url value="/logistics${locale}" />">
 								<ul id="slide_trans" style="list-style: none;">
 									<li><img src="/resources/images/pic_trans1.png" /></li>
 								</ul>
 						</a>
 							<div class="trans_n">
 								<h2 class="roboto2">
-									<a href="<c:url value="/logistics" />"><c:forEach items="${categoryList}"
+									<a href="<c:url value="/logistics${locale}" />"><c:forEach items="${categoryList}"
 											var="category">
 											<c:if test="${category.id==9}">${category.name}</c:if>
 										</c:forEach></a>
@@ -191,7 +191,7 @@
 
 								</ul>
 							</div> <a
-							href="http://imperial.ua/index.php?PublicationID=6&Language=rus"
+							href="<c:url value="/news${locale}" />"
 							style="color: #9acfe9; display: block; margin: 37px 47px 41px;"><spring:message
 									code="label.allnews" /></a> <img src="/resources/images/tl.png"
 							hspace="0" style="float: left;"><img
@@ -202,7 +202,7 @@
 
 
 
-								<form method="get" action="<c:url value="/search" />"
+								<form method="get" action="<c:url value="/search${locale}" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 
@@ -292,7 +292,7 @@
 									<td width="7%;"></td>
 
 
-									<form:form method="post" action="addSubscribe"
+									<form:form method="post" action="addSubscribe${locale}"
 											commandName="subscribe">
 										
 										<td style="padding-right: 50px;">

@@ -8,6 +8,7 @@ http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 	<http access-denied-page="/error403.jsp">
 		<intercept-url pattern="/" access="ROLE_USER,ROLE_ANONYMOUS" />
 		<intercept-url pattern="/addSubscribe" access="ROLE_USER,ROLE_ANONYMOUS" />
+		<intercept-url pattern="/addFeedback" access="ROLE_USER,ROLE_ANONYMOUS" />
 		<intercept-url pattern="/bananas" access="ROLE_USER,ROLE_ANONYMOUS" />
 		<intercept-url pattern="/ecuador" access="ROLE_USER,ROLE_ANONYMOUS" />
 		<intercept-url pattern="/logistics" access="ROLE_USER,ROLE_ANONYMOUS" />

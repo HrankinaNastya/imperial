@@ -3,10 +3,12 @@ package ua.imperial.controllers;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,7 +44,41 @@ public class ImperialController {
 	@Autowired
 	private ImperialService imperialService;
 	
+	@Autowired
+	private MessageSource messageSource;
+	
 	private Random random = new Random();
+	
+	
+	public String getLocale(Locale locale){
+		
+		if (locale.getDisplayLanguage().equals("русский")){
+			return "?lang=ru";
+		}
+		else if (locale.getDisplayLanguage().equals("английский")){
+			return "?lang=en";
+		}
+		else if (locale.getDisplayLanguage().equals("испанский")){
+			return "?lang=es";
+		}
+		else return "";
+		
+	}
+	
+	public String getLang(Locale locale){
+		
+		if (locale.getDisplayLanguage().equals("русский")){
+			return "ru";
+		}
+		else if (locale.getDisplayLanguage().equals("английский")){
+			return "en";
+		}
+		else if (locale.getDisplayLanguage().equals("испанский")){
+			return "es";
+		}
+		else return "ru";
+		
+	}
 
 	@RequestMapping("/index")
 	public String list(Map<String, Object> map) {
@@ -54,8 +90,11 @@ public class ImperialController {
 	}
 	
 	@RequestMapping("/")
-	public String home(Map<String, Object> map) {
+	public String home(Locale locale, Map<String, Object> map) {
 		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
+
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("coordinatesList", imperialService.listCoordinates());
