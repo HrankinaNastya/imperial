@@ -156,7 +156,7 @@
 
 
 								<form method="get" action="<c:url value="/search" />">
-									
+
 									<div style="_width: 90%;">
 
 										<input type="text" name="q" class="shadow text"
@@ -170,10 +170,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -231,25 +231,31 @@
 									</c:if>
 									<c:if test="${!empty categoryList}">
 										<c:forEach items="${categoryList}" var="category">
-										<div style="margin-bottom:10px;"><img src="<c:url value="/resources/images/arrow.png" />" style="margin-right:10px;">
-											<a style="position:relative; top:-11px;" href="<c:url value="${category.path}" />"  class="roboto4" >${category.name}</a>
-											<c:forEach items="${category.subcategories}" var="subcategory">
-											<c:choose>
-												<c:when test="${category.id==5}">
-													<a style="display:block; margin:0px 0 10px 35px; font-size:16px; text-decoration:none; 
-													border-bottom:1px dashed white;" href="/news/cat/${subcategory.id}/1">${subcategory.name}</a>
-												</c:when>
-												<c:otherwise>
-													<a style="display:block; margin:0px 0 10px 35px; font-size:16px; text-decoration:none; 
-													border-bottom:1px dashed white;" href="${category.path}/${subcategory.id}">${subcategory.name}</a>
-												</c:otherwise>
-											</c:choose>
-											</c:forEach>
-										</div>
+											<div style="margin-bottom: 10px;">
+												<img src="<c:url value="/resources/images/arrow.png" />"
+													style="margin-right: 10px;"> <a
+													style="position: relative; top: -11px;"
+													href="<c:url value="${category.path}" />" class="roboto4">${category.name}</a>
+												<c:forEach items="${category.subcategories}"
+													var="subcategory">
+													<c:choose>
+														<c:when test="${category.id==5}">
+															<a
+																style="display: block; margin: 0px 0 10px 35px; font-size: 16px; text-decoration: none; border-bottom: 1px dashed white;"
+																href="/news/cat/${subcategory.id}/1">${subcategory.name}</a>
+														</c:when>
+														<c:otherwise>
+															<a
+																style="display: block; margin: 0px 0 10px 35px; font-size: 16px; text-decoration: none; border-bottom: 1px dashed white;"
+																href="${category.path}/${subcategory.id}">${subcategory.name}</a>
+														</c:otherwise>
+													</c:choose>
+												</c:forEach>
+											</div>
 										</c:forEach>
 									</c:if>
 								</p>
-								
+
 								<div></div>
 
 							</div>

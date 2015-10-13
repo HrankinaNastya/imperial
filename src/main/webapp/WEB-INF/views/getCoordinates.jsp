@@ -27,38 +27,38 @@
 					</tr>
 					<tr>
 						<td><form:label path="city_en">Сity_en</form:label></td>
-						<td><form:input path="city_en" required="required" id="city_en"
-								class="input_width" /></td>
+						<td><form:input path="city_en" required="required"
+								id="city_en" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="city_es">Сity_es</form:label></td>
-						<td><form:input path="city_es" required="required" id="city_es"
-								class="input_width" /></td>
+						<td><form:input path="city_es" required="required"
+								id="city_es" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="latitude">Latitude</form:label></td>
-						<td><form:input path="latitude" required="required" id="latitude"
-								class="input_width" /></td>
+						<td><form:input path="latitude" required="required"
+								id="latitude" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="longitude">Longitude</form:label></td>
-						<td><form:input path="longitude" required="required" id="longitude"
-								class="input_width" /></td>
+						<td><form:input path="longitude" required="required"
+								id="longitude" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="address">Address</form:label></td>
-						<td><form:input path="address" required="required" id="address"
-								class="input_width" /></td>
+						<td><form:input path="address" required="required"
+								id="address" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="address_en">Address_en</form:label></td>
-						<td><form:input path="address_en" required="required" id="address_en"
-								class="input_width" /></td>
+						<td><form:input path="address_en" required="required"
+								id="address_en" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="address_es">Address_es</form:label></td>
-						<td><form:input path="address_es" required="required" id="address_es"
-								class="input_width" /></td>
+						<td><form:input path="address_es" required="required"
+								id="address_es" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="phone">Phone</form:label></td>
@@ -70,7 +70,7 @@
 					</tr>
 					<tr>
 						<td><form:label path="email">Email</form:label></td>
-						<td><form:input path="email" class="input_width" id="email"/></td>
+						<td><form:input path="email" class="input_width" id="email" /></td>
 					</tr>
 					<tr>
 						<td colspan="2"><button type="submit" class="btn">Save

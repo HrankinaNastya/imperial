@@ -13,7 +13,7 @@
 	<mvc:annotation-driven />
 
 	<context:component-scan base-package="ua.imperial" />
-	
+
 	<!-- Всю статику (изображения, css-файлы, javascript) положим в папку webapp/resources 
 		и замаппим их на урл вида /resources/** -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
@@ -27,24 +27,25 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
-	<mvc:interceptors> 
-		<mvc:interceptor> 
-			<mvc:mapping path="/*"/> 
-			<ref bean="localeChangeInterceptor"/> 
-		</mvc:interceptor> 
- 	</mvc:interceptors>
-	
-	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" 
-		id="localeChangeInterceptor"> 
-		<property value="lang" name="paramName"/> 
-	</bean> 
-	
-	<bean class="org.springframework.web.servlet.i18n.SessionLocaleResolver" id="localeResolver"> 
-		<property value="ru" name="defaultLocale"/> 
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*" />
+			<ref bean="localeChangeInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"
+		id="localeChangeInterceptor">
+		<property value="lang" name="paramName" />
+	</bean>
+
+	<bean class="org.springframework.web.servlet.i18n.SessionLocaleResolver"
+		id="localeResolver">
+		<property value="ru" name="defaultLocale" />
 	</bean>
 
 	<!-- Файл с настройками контроллеров -->
 	<import resource="controllers.xml" />
-	
+
 </beans>

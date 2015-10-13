@@ -22,22 +22,23 @@
 					</tr>
 					<tr>
 						<td><form:label path="description">Description</form:label></td>
-						<td><form:input path="description" required="required" id="description"
-								class="input_width" /></td>
+						<td><form:input path="description" required="required"
+								id="description" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="description_en">Description_en</form:label></td>
-						<td><form:input path="description_en" class="input_width" 
-						id="description_en"/></td>
+						<td><form:input path="description_en" class="input_width"
+								id="description_en" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="description_es">Description_es</form:label></td>
-						<td><form:input path="description_es" class="input_width" 
-						id="description_es"/></td>
+						<td><form:input path="description_es" class="input_width"
+								id="description_es" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="content">Content</form:label></td>
-						<td><form:textarea path="content" required="required" id="content"></form:textarea></td>
+						<td><form:textarea path="content" required="required"
+								id="content"></form:textarea></td>
 					</tr>
 					<tr>
 						<td><form:label path="content_en">Content_en</form:label></td>

@@ -37,7 +37,7 @@
 
 </head>
 
-<body class="blue">
+<body class="blue" onload='player("rtsp://admin:admin@10.0.7.254");'>
 
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
@@ -158,6 +158,7 @@
 							<div class="m">
 
 
+
 								<form method="get" action="<c:url value="/search" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
@@ -228,23 +229,32 @@
 
 							<div style="position: relative; top: -230px; clear: both;">
 								<h1 class="roboto1">
-									<c:choose>
-										<c:when test="${subcategory.id == 4}">
-											<spring:message code="label.transportation" />
-										</c:when>
-										<c:otherwise>
-										${subcategory.name}
-									</c:otherwise>
-									</c:choose>
-
+									<c:if test="${!empty category}">${category.name}</c:if>
 								</h1>
-								<p>
-									<c:if test="${!empty subcategory}">
-										<p>${subcategory.content}</p>
-									</c:if>
-
-								</p>
-
+								
+<object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" width="640" height="360" id="vlc" events="True">
+  <param name="MRL" value="" />
+  <param name="ShowDisplay" value="True" />
+  <param name="AutoLoop" value="False" />
+  <param name="AutoPlay" value="False" />
+  <param name="Volume" value="50" />
+  <param name="toolbar" value="true" />
+  <param name="StartTime" value="0" />
+  <EMBED pluginspage="http://www.videolan.org"
+    type="application/x-vlc-plugin"
+    version="VideoLAN.VLCPlugin.2"
+    width="640"
+    height="360"
+    toolbar="true"
+    loop="false"
+    text="Waiting for video"
+    name="vlc"
+	id="vlc" 
+	loop="yes"
+	autoplay="yes" 
+	target="rtsp://admin:admin@10.0.7.254">
+  </EMBED>
+</object>
 								<div></div>
 
 							</div>

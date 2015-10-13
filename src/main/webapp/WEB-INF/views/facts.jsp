@@ -56,8 +56,7 @@
 								src="<c:url value="/resources/images/flag_eng.gif" />"
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
-						</div> 
-						<img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
+						</div> <img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
 				</div>
 
 				<div class="phone">
@@ -144,8 +143,7 @@
 								<a href="<c:url value="/facts" />" class="roboto5"> <c:if
 										test="${!empty category}">${category.name}</c:if>
 								</a>
-							</div>
-							 <img src="<c:url value="/resources/images/tld.png" />"
+							</div> <img src="<c:url value="/resources/images/tld.png" />"
 							hspace="0" style="float: left;"> <img
 							src="<c:url value="/resources/images/trd.png" />" hspace="0"
 							style="float: right;">
@@ -172,10 +170,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -192,8 +190,10 @@
 						<td class="lh" style="padding: 0 23px;">
 
 
-							<div style="position:relative; top:-7px; left:-43px; height:214px;"><img src="<c:url value="/resources/images/img_fruits.png" />" ></div> <c:if
-								test="${!empty fact}">
+							<div
+								style="position: relative; top: -7px; left: -43px; height: 214px;">
+								<img src="<c:url value="/resources/images/img_fruits.png" />">
+							</div> <c:if test="${!empty fact}">
 								<div class="quote">
 
 									<img src="<c:url value="/resources/images/tl2.png" />"
@@ -227,44 +227,49 @@
 								<h1 class="roboto1">
 									<c:if test="${!empty category}">${category.name}</c:if>
 								</h1>
-								<div style="position:relative; top:-230px; clear:both;">
+								<div style="position: relative; top: -230px; clear: both;">
 									<c:if test="${!empty category}">
 										<p>${category.content}</p>
 									</c:if>
 								</div>
-								
-								<c:if test="${!empty facts}">
-										<c:forEach items="${facts}" var="f">
-										<div style="margin-bottom:25px;">
-										${f.description}
-											<div style="font-style:italic; font-weight:bold; font-size:13px;">
-												<a href="<c:url value="/facts/${f.id}" />"><spring:message code="label.more" /></a>
-											</div>
-										</div>
-										</c:forEach>
-								</c:if>
-								
 
 								<c:if test="${!empty facts}">
-								<div class="navigator">	
-									<div id="navigator">
-										<br>Записей: ${page.lengthOfFact}<br>Страница: ${post.id}
-										из ${page.pages}<br>
-										<c:forEach items="${navList}" var="nav">
-											<c:choose>
-												<c:when test="${nav.id == post.id}">
-													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
-												</c:when>
-												<c:otherwise>
-													[ <a href="<c:url value="/facts/nav/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
-												</c:otherwise>
-											</c:choose>
-										</c:forEach>
-										
-									</div>
-								</div>
+									<c:forEach items="${facts}" var="f">
+										<div style="margin-bottom: 25px;">
+											${f.description}
+											<div
+												style="font-style: italic; font-weight: bold; font-size: 13px;">
+												<a href="<c:url value="/facts/${f.id}" />"><spring:message
+														code="label.more" /></a>
+											</div>
+										</div>
+									</c:forEach>
 								</c:if>
-								
+
+
+								<c:if test="${!empty facts}">
+									<div class="navigator">
+										<div id="navigator">
+											<br>Записей: ${page.lengthOfFact}<br>Страница:
+											${post.id} из ${page.pages}<br>
+											<c:forEach items="${navList}" var="nav">
+												<c:choose>
+													<c:when test="${nav.id == post.id}">
+													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if>
+														</u>]
+												</c:when>
+													<c:otherwise>
+													[ <a href="<c:url value="/facts/nav/${nav.id}" />">
+															${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if>
+														</a> ]
+												</c:otherwise>
+												</c:choose>
+											</c:forEach>
+
+										</div>
+									</div>
+								</c:if>
+
 								<div></div>
 
 							</div>

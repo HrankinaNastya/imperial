@@ -23,7 +23,7 @@
 
 <script type="text/javascript"
 	src="<c:url value="/resources/js/jquery.js" />"></script>
-	
+
 </head>
 <body>
 	<div class="container_12">

@@ -28,7 +28,7 @@
 								<td>${subscribe.created}</td>
 								<td><a href="/admin/getSubscribe/${subscribe.id}">Edit</a></td>
 								<td><a href="/admin/deleteSubscribe/${subscribe.id}">Delete</a></td>
-							</tr>	
+							</tr>
 						</c:forEach>
 					</table>
 				</div>

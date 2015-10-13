@@ -174,10 +174,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -194,8 +194,10 @@
 						<td class="lh" style="padding: 0 23px;">
 
 
-							<div style="position:relative; top:-7px; left:-43px; height:214px;"><img src="<c:url value="/resources/images/img_fruits.png" />" ></div> <c:if
-								test="${!empty fact}">
+							<div
+								style="position: relative; top: -7px; left: -43px; height: 214px;">
+								<img src="<c:url value="/resources/images/img_fruits.png" />">
+							</div> <c:if test="${!empty fact}">
 								<div class="quote">
 
 									<img src="<c:url value="/resources/images/tl2.png" />"
@@ -233,7 +235,7 @@
 									<c:if test="${!empty subcategory}">
 										<p>${subcategory.content}</p>
 									</c:if>
-						
+
 								</p>
 
 								<div></div>

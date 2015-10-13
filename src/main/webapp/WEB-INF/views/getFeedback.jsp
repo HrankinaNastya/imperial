@@ -22,13 +22,13 @@
 					</tr>
 					<tr>
 						<td><form:label path="fullname">Fullname</form:label></td>
-						<td><form:input path="fullname" required="required" id="fullname"
-								class="input_width" /></td>
+						<td><form:input path="fullname" required="required"
+								id="fullname" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="company">Company</form:label></td>
-						<td><form:input path="company" required="required" id="company"
-								class="input_width" /></td>
+						<td><form:input path="company" required="required"
+								id="company" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="email">Email</form:label></td>
@@ -37,7 +37,7 @@
 					</tr>
 					<tr>
 						<td><form:label path="city">City</form:label></td>
-						<td><form:input path="city" class="input_width" id="city"/></td>
+						<td><form:input path="city" class="input_width" id="city" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="message">Message</form:label></td>

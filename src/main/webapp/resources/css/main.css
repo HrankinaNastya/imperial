@@ -1011,6 +1011,7 @@ div.h1 {
 	margin: 36px 0 0 32px;
 	height: 63px;
 }
+
 div.h11 {
 	margin: 36px 0 0 32px;
 	height: 100px;
@@ -1358,6 +1359,6 @@ div.contacts {
 	text-decoration: none;
 }
 
-.a_blue{
+.a_blue {
 	color: #00d0ed;
 }

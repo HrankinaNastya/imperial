@@ -156,7 +156,7 @@
 
 
 								<form method="get" action="<c:url value="/search" />">
-									
+
 									<div style="_width: 90%;">
 
 										<input type="text" name="q" class="shadow text"
@@ -170,10 +170,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -232,33 +232,37 @@
 									<c:if test="${!empty listSearchR}">
 										<c:forEach items="${listSearchR}" var="search">
 											<div class="news">
-												${news.created} <a style="color:white;" href="<c:url value="${search.path}" />"
-													class="text">${search.name}</a> <strong><p>${search.description}</p></strong>
+												${news.created} <a style="color: white;"
+													href="<c:url value="${search.path}" />" class="text">${search.name}</a>
+												<strong><p>${search.description}</p></strong>
 											</div>
 										</c:forEach>
 									</c:if>
 								</p>
 
 								<c:if test="${!empty listSearchR}">
-								<div class="navigator">	
-									<div id="navigator">
-										<br>Записей: ${page.lengthOfSearch}<br>Страница: ${post.id}
-										из ${page.pages}<br>
-										<c:forEach items="${navList}" var="nav">
-											<c:choose>
-												<c:when test="${nav.id == post.id}">
-													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
+									<div class="navigator">
+										<div id="navigator">
+											<br>Записей: ${page.lengthOfSearch}<br>Страница:
+											${post.id} из ${page.pages}<br>
+											<c:forEach items="${navList}" var="nav">
+												<c:choose>
+													<c:when test="${nav.id == post.id}">
+													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if>
+														</u>]
 												</c:when>
-												<c:otherwise>
-													[ <a href="<c:url value="/search/nav/${nav.id}?q=${q}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
+													<c:otherwise>
+													[ <a href="<c:url value="/search/nav/${nav.id}?q=${q}" />">
+															${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if>
+														</a> ]
 												</c:otherwise>
-											</c:choose>
-										</c:forEach>
-										
+												</c:choose>
+											</c:forEach>
+
+										</div>
 									</div>
-								</div>
 								</c:if>
-								
+
 								<div></div>
 
 							</div>

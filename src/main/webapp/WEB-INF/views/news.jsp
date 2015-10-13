@@ -178,10 +178,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -247,27 +247,31 @@
 									</c:if>
 								</p>
 
-								
+
 								<c:if test="${!empty newsList}">
-								<div class="navigator">	
-									<div id="navigator" name="news">
-										<br>Записей: ${page.lengthOfNews}<br>Страница: ${post.id}
-										из ${page.pages}<br>
-										<c:forEach items="${navList}" var="nav">
-											<c:choose>
-												<c:when test="${nav.id == post.id}">
-													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if> </u>]
+									<div class="navigator">
+										<div id="navigator" name="news">
+											<br>Записей: ${page.lengthOfNews}<br>Страница:
+											${post.id} из ${page.pages}<br>
+											<c:forEach items="${navList}" var="nav">
+												<c:choose>
+													<c:when test="${nav.id == post.id}">
+													[<u> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if>
+														</u>]
 												</c:when>
-												<c:otherwise>
-													[ <a href="<c:url value="/news/nav/${subcategory.id}/${nav.id}" />"> ${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if></a> ]
+													<c:otherwise>
+													[ <a
+															href="<c:url value="/news/nav/${subcategory.id}/${nav.id}" />">
+															${nav.start}<c:if test="${nav.start != nav.end}">..${nav.end}</c:if>
+														</a> ]
 												</c:otherwise>
-											</c:choose>
-										</c:forEach>
-										
+												</c:choose>
+											</c:forEach>
+
+										</div>
 									</div>
-								</div>
 								</c:if>
-								
+
 								<div></div>
 
 							</div>

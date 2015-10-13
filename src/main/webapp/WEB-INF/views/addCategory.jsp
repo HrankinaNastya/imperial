@@ -20,13 +20,13 @@
 					</tr>
 					<tr>
 						<td><form:label path="name_en">Name_en</form:label></td>
-						<td><form:input path="name_en" required="required" id="name_en"
-								class="input_width" /></td>
+						<td><form:input path="name_en" required="required"
+								id="name_en" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="name_es">Name_es</form:label></td>
-						<td><form:input path="name_es" required="required" id="name_es"
-								class="input_width" /></td>
+						<td><form:input path="name_es" required="required"
+								id="name_es" class="input_width" /></td>
 					</tr>
 					<tr>
 						<td><form:label path="path">Path</form:label></td>

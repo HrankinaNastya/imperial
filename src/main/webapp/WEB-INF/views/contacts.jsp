@@ -189,10 +189,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -273,7 +273,7 @@
 
 									</c:if>
 								</div>
-<script type="text/javascript">
+								<script type="text/javascript">
  
 var a = ${coordinates.latitude};
 var b = ${coordinates.longitude};
@@ -309,7 +309,7 @@ markers.addLayer(geoLayer);
 map.addLayer(markers);
 
 </script>
-								
+
 								<div></div>
 
 							</div>

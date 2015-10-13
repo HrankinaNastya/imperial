@@ -56,8 +56,7 @@
 								src="<c:url value="/resources/images/flag_eng.gif" />"
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
-						</div> 
-						<img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
+						</div> <img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
 				</div>
 
 				<div class="phone">
@@ -144,8 +143,7 @@
 								<a href="<c:url value="/facts" />" class="roboto5"> <c:if
 										test="${!empty category}">${category.name}</c:if>
 								</a>
-							</div>
-							 <img src="<c:url value="/resources/images/tld.png" />"
+							</div> <img src="<c:url value="/resources/images/tld.png" />"
 							hspace="0" style="float: left;"> <img
 							src="<c:url value="/resources/images/trd.png" />" hspace="0"
 							style="float: right;">
@@ -172,10 +170,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -192,8 +190,10 @@
 						<td class="lh" style="padding: 0 23px;">
 
 
-							<div style="position:relative; top:-7px; left:-43px; height:214px;"><img src="<c:url value="/resources/images/img_fruits.png" />" ></div> <c:if
-								test="${!empty fact}">
+							<div
+								style="position: relative; top: -7px; left: -43px; height: 214px;">
+								<img src="<c:url value="/resources/images/img_fruits.png" />">
+							</div> <c:if test="${!empty fact}">
 								<div class="quote">
 
 									<img src="<c:url value="/resources/images/tl2.png" />"
@@ -214,8 +214,8 @@
 										hspace="0" style="float: left;">
 									<div class="b2" style="margin-right: 0px;"></div>
 									<div id="know" style="float: right; padding-right: 17px;">
-										<a class="newbut knw"
-											href="<c:url value="/facts" />"> Теперь знаю!<span></span>
+										<a class="newbut knw" href="<c:url value="/facts" />">
+											Теперь знаю!<span></span>
 										</a>
 									</div>
 
@@ -226,14 +226,12 @@
 								<h1 class="roboto1">
 									<c:if test="${!empty category}">${category.name}</c:if>
 								</h1>
-									<c:if test="${!empty fact}">
-										<div style="margin-bottom:45px;">
-										${fact.content}		
-										</div>
-									</c:if>
-								
-						
-								
+								<c:if test="${!empty fact}">
+									<div style="margin-bottom: 45px;">${fact.content}</div>
+								</c:if>
+
+
+
 								<div></div>
 
 							</div>

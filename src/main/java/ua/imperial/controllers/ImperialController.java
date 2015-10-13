@@ -92,6 +92,7 @@ public class ImperialController {
 	@RequestMapping("/")
 	public String home(Locale locale, Map<String, Object> map) {
 		
+
 		map.put("locale", getLocale(locale));
 		map.put("lang", getLang(locale));
 
@@ -104,7 +105,10 @@ public class ImperialController {
 	}
 	
 	@RequestMapping("/feedback")
-	public String feedback(Map<String, Object> map) {
+	public String feedback(Locale locale, Map<String, Object> map) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
 		int index = random.nextInt(facts.size());		
@@ -432,6 +436,20 @@ public class ImperialController {
 		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(9));
 		
 		return "logistics";
+	}
+	
+	@RequestMapping("/warehouse")
+	public String warehouse(Map<String, Object> map) {
+		
+		List<Fact> facts = imperialService.listFactfromSection(1);
+		int index = random.nextInt(facts.size());		
+		map.put("fact", facts.get(index));
+		
+		map.put("category", imperialService.getCategory(9));
+		map.put("categoryList", imperialService.listCategory());
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(9));
+		
+		return "warehouse";
 	}
 	
 	@RequestMapping(value = "/logistics/{id}", method = RequestMethod.GET)

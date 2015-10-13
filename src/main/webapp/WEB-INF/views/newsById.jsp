@@ -178,10 +178,10 @@
 										</div>
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
-												<spring:message
-													code="label.search" /><span></span>
+												<spring:message code="label.search" />
+												<span></span>
 											</button>
-											
+
 										</div>
 										<br style="clear: both" />
 									</div>
@@ -244,7 +244,7 @@
 										<a href="<c:url value="/news" />">Все новости</a>
 									</c:if>
 								</p>
-								
+
 								<div></div>
 
 							</div>
