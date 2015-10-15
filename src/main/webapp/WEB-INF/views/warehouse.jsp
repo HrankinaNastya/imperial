@@ -7,7 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords"
 	content="бананы в мясо говядина грузоперевозки курицы логистика логистика в украине логистические услуги мяса мясо мясо говядина мясо свинина рыба свиная свинина" />
 
@@ -32,12 +32,17 @@
 
 <script type="text/javascript"
 	src="<c:url value="/resources/js/jquery.js" />"></script>
+	
+<link href="<c:url value="/resources/css/style.css" />"
+	rel="stylesheet" media="screen">
+	
+<script src="<c:url value="/resources/js/countdown.js" />"></script>
 
 <title><spring:message code="label.imperial.logistics" /></title>
 
 </head>
 
-<body class="blue" onload='player("rtsp://admin:admin@10.0.7.254");'>
+<body class="blue">
 
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
@@ -231,7 +236,14 @@
 								<h1 class="roboto1">
 									<c:if test="${!empty category}">${category.name}</c:if>
 								</h1>
-								
+								<div class="timer">
+	  								<div class="container">
+	  
+		    							<h2>ВПЕРВЫЕ НА УКРАИНЕ ОТКРЫТИЕ СУПЕР СКЛАДА ВЕРСИИ 2025 года. Осталось :</h2>
+		    							<div id="CDT"></div>
+	  								</div>
+  								</div>
+<div onload='player("rtsp://admin:admin@10.0.7.254");'>								
 <object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" width="640" height="360" id="vlc" events="True">
   <param name="MRL" value="" />
   <param name="ShowDisplay" value="True" />
@@ -252,9 +264,10 @@
 	id="vlc" 
 	loop="yes"
 	autoplay="yes" 
-	target="rtsp://admin:admin@10.0.7.254">
+	target="rtsp://admin:admin@91.203.138.32:2554">
   </EMBED>
 </object>
+</div>
 								<div></div>
 
 							</div>

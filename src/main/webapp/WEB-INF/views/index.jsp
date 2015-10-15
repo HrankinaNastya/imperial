@@ -7,7 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords"
 	content="бананы в мясо говядина грузоперевозки курицы логистика логистика в украине логистические услуги мяса мясо мясо говядина мясо свинина рыба свиная свинина" />
 
@@ -23,10 +23,10 @@
 <link href="<c:url value="/resources/css/custom.css?nocache" />"
 	rel="stylesheet" media="screen">
 
-<link rel="icon"
-	href="<c:url value=
+<link rel="icon" href="<c:url value=
 "/resources/images/favicon.ico" />"
 	type="image/x-icon">
+	
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
@@ -47,6 +47,10 @@
 
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 
 <title><spring:message code="label.imperial" /></title>
 </head>
