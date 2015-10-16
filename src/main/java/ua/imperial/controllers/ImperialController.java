@@ -445,9 +445,9 @@ public class ImperialController {
 		int index = random.nextInt(facts.size());		
 		map.put("fact", facts.get(index));
 		
-		map.put("category", imperialService.getCategory(9));
+		map.put("category", imperialService.getCategory(13));
 		map.put("categoryList", imperialService.listCategory());
-		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(9));
+		map.put("subcategoryList", imperialService.listSubcategoryfromCategory(13));
 		
 		return "warehouse";
 	}

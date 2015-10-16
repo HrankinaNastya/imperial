@@ -29,15 +29,42 @@
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico"  />"
 	type="image/x-icon">
-
-<script type="text/javascript"
-	src="<c:url value="/resources/js/jquery.js" />"></script>
 	
 <link href="<c:url value="/resources/css/style.css" />"
 	rel="stylesheet" media="screen">
 	
 <script src="<c:url value="/resources/js/countdown.js" />"></script>
 
+<script src="<c:url value="/resources/unitegallery/js/jquery-11.0.min.js" />"></script>	
+<script src="<c:url value="/resources/unitegallery/js/ug-common-libraries.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-functions.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-thumbsgeneral.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-thumbsstrip.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-touchthumbs.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-panelsbase.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-strippanel.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-gridpanel.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-thumbsgrid.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-tiles.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-tiledesign.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-avia.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-slider.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-sliderassets.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-touchslider.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-zoomslider.js" />"></script>	
+<script src="<c:url value="/resources/unitegallery/js/ug-video.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-gallery.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-lightbox.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-carousel.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/ug-api.js" />"></script>
+
+<link href="<c:url value="/resources/unitegallery/css/unite-gallery.css" />"
+	rel="stylesheet" media="screen">
+	
+<script src="<c:url value="/resources/unitegallery/themes/default/ug-theme-default.js" />"></script>
+<link href="<c:url value="/resources/unitegallery/themes/default/ug-theme-default.css" />"
+	rel="stylesheet" media="screen">
+	
 <title><spring:message code="label.imperial.logistics" /></title>
 
 </head>
@@ -116,6 +143,13 @@
 											<c:if test="${category.id==6}">${category.name}</c:if>
 										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
+							<li  class="cur" style="text-align: right;"><a
+								href="<c:url value="/warehouse" />"><img
+									src="<c:url value="/resources/images/l4.png" />" hspace="0"><b><c:forEach
+											items="${categoryList}" var="category">
+											<c:if test="${category.id==13}">${category.name}</c:if>
+										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
+									hspace="0"></a></li>
 
 
 						</ul>
@@ -141,15 +175,15 @@
 							src="<c:url value="/resources/images/arrow2.png" />"
 							class="h1but">
 							<div class="h1">
-								<a href="<c:url value="/logistics" />" class="roboto5"> <c:if
+								<a href="<c:url value="/warehouse" />" class="roboto5"> <c:if
 										test="${!empty category}">${category.name}</c:if>
 								</a>
 							</div>
 							<div class="submenu">
 								<c:if test="${!empty subcategoryList}">
 									<c:forEach items="${subcategoryList}" var="subcategory">
-										<li><a class=" a_blue"
-											href="<c:url value="/logistics/${subcategory.id}" />">${subcategory.name}</a></li>
+										<li><a class="a_blue"
+											href="<c:url value="/warehouse/${subcategory.id}" />">${subcategory.name}</a></li>
 									</c:forEach>
 								</c:if>
 							</div> <img src="<c:url value="/resources/images/tld.png" />"
@@ -233,13 +267,10 @@
 							</c:if>
 
 							<div style="position: relative; top: -230px; clear: both;">
-								<h1 class="roboto1">
-									<c:if test="${!empty category}">${category.name}</c:if>
-								</h1>
 								<div class="timer">
 	  								<div class="container">
 	  
-		    							<h2>ВПЕРВЫЕ НА УКРАИНЕ ОТКРЫТИЕ СУПЕР СКЛАДА ВЕРСИИ 2025 года. Осталось :</h2>
+		    							<h1>ВПЕРВЫЕ НА УКРАИНЕ ОТКРЫТИЕ СУПЕР СКЛАДА ВЕРСИИ 2025 года. Осталось :</h1>
 		    							<div id="CDT"></div>
 	  								</div>
   								</div>
@@ -268,6 +299,49 @@
   </EMBED>
 </object>
 </div>
+								<div id="gallery" style="display:none;margin-top:50px;">
+	
+								<img alt="Preview Image 1"
+									 src="<c:url value="/resources/images/thumbs/thumb1.jpg" />"
+									 data-image="<c:url value="/resources/images/big/1.jpg" />"
+									 data-description="Imperial DAF">
+								
+								<img alt="Preview Image 2"
+									 src="<c:url value="/resources/images/thumbs/thumb2.jpg" />"
+									 data-image="<c:url value="/resources/images/big/2.jpg" />"
+									 data-description="Imperial DAF">
+									 
+								<img alt="Preview Image 3"
+									 src="<c:url value="/resources/images/thumbs/thumb3.jpg" />"
+									 data-image="<c:url value="/resources/images/big/3.jpg" />"
+									 data-description="Imperial DAF">
+									
+								<img alt="Preview Image 4"
+									 src="<c:url value="/resources/images/thumbs/thumb4.jpg" />"
+									 data-image="<c:url value="/resources/images/big/4.jpg" />"
+									 data-description="Imperial DAF">
+								
+								<img alt="Preview Image 5"
+									 src="<c:url value="/resources/images/thumbs/thumb5.jpg" />"
+									 data-image="<c:url value="/resources/images/big/5.jpg" />"
+									 data-description="Imperial DAF">
+										
+								<img alt="Preview Image 6"
+									 src="<c:url value="/resources/images/thumbs/thumb6.jpg" />"
+									 data-image="<c:url value="/resources/images/big/6.jpg" />"
+									 data-description="Imperial DAF">
+									 			 
+							</div>
+							
+							<script type="text/javascript">
+						
+								jQuery(document).ready(function(){
+						
+									jQuery("#gallery").unitegallery();
+						
+								});
+								
+							</script>
 								<div></div>
 
 							</div>
