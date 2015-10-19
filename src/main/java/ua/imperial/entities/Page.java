@@ -24,7 +24,7 @@ public class Page {
 		this.news = news;
 		this.lengthOfNews = news.size();
 		this.count = 0;
-		this.size = 2;
+		this.size = 20;
 		pages = 0;
 		setPosts();
 	}

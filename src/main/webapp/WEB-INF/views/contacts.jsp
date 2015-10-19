@@ -57,19 +57,26 @@
 			<td id="top">
 
 				<div class="lang">
-					<span><img src="<c:url value="/resources/images/l2.png" />"
-						hspace="0">
+					<span><img src="/resources/images/l2.png" hspace="0">
 						<div>
-							<a href="http://imperial.ua/contacts.html"><img
-								src="<c:url value="/resources/images/flag_rus.gif" />"
+							<a href="?lang=ru"><img id="ru"
+								src="/resources/images/flag_rus.gif"
 								alt="<spring:message code="label.ru" />"
-								title="<spring:message code="label.ru" />" class="cur"></a><a
-								href="http://imperial.ua/7/eng/index.html"><img
-								src="<c:url value="/resources/images/flag_eng.gif" />"
+								title="<spring:message code="label.ru" />"></a><a
+								href="?lang=en"><img id="en"
+								src="/resources/images/flag_eng.gif"
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
-						</div> <img src="<c:url value="/resources/images/r2.png" />" hspace="0"></span>
-				</div>
+						</div> <img src="/resources/images/r2.png" hspace="0"></span>
+				</div> <c:if test="${lang eq 'ru'}">
+					<script type="text/javascript">
+						$('img#ru').attr('class', 'cur');
+					</script>
+				</c:if> <c:if test="${lang eq 'en'}">
+					<script type="text/javascript">
+						$('img#en').attr('class', 'cur');
+					</script>
+				</c:if>
 
 				<div class="phone">
 					<img src="<c:url value="/resources/images/r1d.png" />" hspace="0">
@@ -81,13 +88,13 @@
 				</div>
 
 				<div class="hmc">
-					<a href="<c:url value="/" />"><img
+					<a href="<c:url value="/${locale}" />"><img
 						src="<c:url value="/resources/images/pic_home.gif" />"
 						title="<spring:message code="label.home" />"></a><a class=""
-						href="<c:url value="/sitemap" />"><img
+						href="<c:url value="/sitemap${locale}" />"><img
 						src="<c:url value="/resources/images/pic_map.gif" />"
 						title="<spring:message code="label.sitemap" />"></a><a class=""
-						href="<c:url value="/feedback" />"><img
+						href="<c:url value="/feedback${locale}" />"><img
 						src="<c:url value="/resources/images/pic_mail.gif" />"
 						title="<spring:message code="label.feedback" />"></a>
 				</div>
@@ -98,31 +105,44 @@
 					<div style="width: 100%;">
 						<ul>
 
-							<li style="text-align: left;"><a href="<c:url value="/" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
-											items="${categoryList}" var="category">
-											<c:if test="${category.id==1}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
-									hspace="0"></a></li>
-							<li><a href="<c:url value="/feedback" />"><img
-									src="<c:url value="/resources/images/l2.png"  />" hspace="0"><b><c:forEach
-											items="${categoryList}" var="category">
-											<c:if test="${category.id==4}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
-									hspace="0"></a></li>
-							<li><a href="<c:url value="/news" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:forEach
-											items="${categoryList}" var="category">
-											<c:if test="${category.id==5}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r2.png" />"
-									hspace="0"></a></li>
+							<li style="text-align: left;"><a
+								href="<c:url value="/${locale}" />"><img
+									src="/resources/images/l2.png" hspace="0"><b><c:if
+											test="${!empty categoryList[0].id}">
+											<c:choose>
+												<c:when test="${lang eq 'en'}">${categoryList[0].name_en}</c:when>
+												<c:when test="${lang eq 'es'}">${categoryList[0].name_es}</c:when>
+												<c:otherwise>${categoryList[0].name}</c:otherwise>
+											</c:choose>
+										</c:if> </b><img src="/resources/images/r2.png" hspace="0"></a></li>
+							<li><a href="<c:url value="/feedback${locale}" />"><img
+									src="/resources/images/l2.png" hspace="0"><b><c:if
+											test="${!empty categoryList[1].id}">
+											<c:choose>
+												<c:when test="${lang eq 'en'}">${categoryList[1].name_en}</c:when>
+												<c:when test="${lang eq 'es'}">${categoryList[1].name_es}</c:when>
+												<c:otherwise>${categoryList[1].name}</c:otherwise>
+											</c:choose>
+										</c:if></b><img src="/resources/images/r2.png" hspace="0"></a></li>
+							<li><a href="<c:url value="/news${locale}" />"><img
+									src="/resources/images/l2.png" hspace="0" alt=""><b><c:if
+											test="${!empty categoryList[2].id}">
+											<c:choose>
+												<c:when test="${lang eq 'en'}">${categoryList[2].name_en}</c:when>
+												<c:when test="${lang eq 'es'}">${categoryList[2].name_es}</c:when>
+												<c:otherwise>${categoryList[2].name}</c:otherwise>
+											</c:choose>
+										</c:if></b><img src="/resources/images/r2.png" hspace="0"></a></li>
 							<li class="cur" style="text-align: right;"><a
-								href="<c:url value="/contacts/1" />"><img
-									src="<c:url value="/resources/images/l4.png" />" hspace="0"><b><c:forEach
-											items="${categoryList}" var="category">
-											<c:if test="${category.id==6}">${category.name}</c:if>
-										</c:forEach></b><img src="<c:url value="/resources/images/r4.png" />"
-									hspace="0"></a></li>
+								href="<c:url value="/contacts/1${locale}" />"><img
+									src="/resources/images/l4.png" hspace="0"><b><c:if
+											test="${!empty categoryList[3].id}">
+											<c:choose>
+												<c:when test="${lang eq 'en'}">${categoryList[3].name_en}</c:when>
+												<c:when test="${lang eq 'es'}">${categoryList[3].name_es}</c:when>
+												<c:otherwise>${categoryList[3].name}</c:otherwise>
+											</c:choose>
+										</c:if></b><img src="/resources/images/r4.png" hspace="0"></a></li>
 
 
 						</ul>
@@ -131,16 +151,17 @@
 					src="<c:url value="/resources/images/r7d.png" />" hspace="0">
 					<div>
 						<img src="<c:url value="/resources/images/arrow.png" />"><a
-							href="<c:url value="/ecuador" />" class="roboto4"><c:forEach
+							href="<c:url value="/ecuador${locale}" />" class="roboto4"><c:forEach
 								items="${categoryList}" var="category">
 								<c:if test="${category.id==7}">${category.name}</c:if>
 							</c:forEach></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
-							href="<c:url value="/bananas" />" class="roboto4"><c:forEach
+							href="<c:url value="/bananas${locale}" />" class="roboto4"><c:forEach
 								items="${categoryList}" var="category">
 								<c:if test="${category.id==8}">${category.name}</c:if>
 							</c:forEach></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
-							href="<c:url value="/logistics" />" class="roboto4 lastrob"><c:forEach
-								items="${categoryList}" var="category">
+							href="<c:url value="/logistics${locale}" />"
+							class="roboto4 lastrob"><c:forEach items="${categoryList}"
+								var="category">
 								<c:if test="${category.id==9}">${category.name}</c:if>
 							</c:forEach></a>
 					</div> <img src="<c:url value="/resources/images/l7d.png" />" hspace="0"></span>
@@ -152,15 +173,27 @@
 							src="<c:url value="/resources/images/arrow2.png" />"
 							class="h1but">
 							<div class="h1">
-								<a href="<c:url value="/contacts/1" />" class="roboto5"> <c:if
-										test="${!empty category}">${category.name}</c:if>
+								<a href="<c:url value="/contacts/1${locale}" />" class="roboto5">
+									<c:if test="${!empty category}">
+										<c:choose>
+											<c:when test="${lang eq 'en'}">${category.name_en}</c:when>
+											<c:when test="${lang eq 'es'}">${category.name_es}</c:when>
+											<c:otherwise>${category.name}</c:otherwise>
+										</c:choose>
+									</c:if>
 								</a>
 							</div>
 							<div class="coordinates">
 								<c:if test="${!empty coordinatesList}">
 									<c:forEach items="${coordinatesList}" var="coordinates">
 										<li><a
-											href="<c:url value="/contacts/${coordinates.id}" />">${coordinates.city}</a></li>
+											href="<c:url value="/contacts/${coordinates.id}/${locale}" />">
+												<c:choose>
+													<c:when test="${lang eq 'en'}">${coordinates.city_en}</c:when>
+													<c:when test="${lang eq 'es'}">${coordinates.city_es}</c:when>
+													<c:otherwise>${coordinates.city}</c:otherwise>
+												</c:choose>
+										</a></li>
 									</c:forEach>
 								</c:if>
 							</div> <img src="<c:url value="/resources/images/tld.png" />"
@@ -174,7 +207,7 @@
 							<div class="m">
 
 
-								<form method="get" action="<c:url value="/search" />"
+								<form method="get" action="<c:url value="/search${locale}" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 
@@ -223,8 +256,11 @@
 										<h2 class="roboto6">
 											<spring:message code="label.doyouknow" />
 										</h2>
-										${fact.description} &nbsp;
-
+										<c:choose>
+											<c:when test="${lang eq 'en'}">${fact.description_en} &nbsp;</c:when>
+											<c:when test="${lang eq 'es'}">${fact.description_es} &nbsp;</c:when>
+											<c:otherwise>${fact.description} &nbsp;</c:otherwise>
+										</c:choose>
 									</div>
 
 									<img src="<c:url value="/resources/images/bl2.png" />"
@@ -232,7 +268,7 @@
 									<div class="b2" style="margin-right: 0px;"></div>
 									<div id="know" style="float: right; padding-right: 17px;">
 										<a class="newbut knw"
-											href="<c:url value="/facts/${fact.id}" />"> <spring:message
+											href="<c:url value="/facts/${fact.id}${locale}" />"> <spring:message
 												code="label.more" /> <span></span>
 										</a>
 									</div>
@@ -242,14 +278,24 @@
 
 							<div style="position: relative; top: -230px; clear: both;">
 								<h1 class="roboto1">
-									<c:if test="${!empty coordinates}">${coordinates.city}</c:if>
+									<c:if test="${!empty coordinates}">
+										<c:choose>
+											<c:when test="${lang eq 'en'}">${coordinates.city_en} &nbsp;</c:when>
+											<c:when test="${lang eq 'es'}">${coordinates.city_es} &nbsp;</c:when>
+											<c:otherwise>${coordinates.city} &nbsp;</c:otherwise>
+										</c:choose>
+									</c:if>
 								</h1>
 								<p>
 									<c:if test="${!empty category}">
 										<p>${category.content}</p>
 									</c:if>
 									<c:if test="${!empty coordinates.address}">
-										<spring:message code="label.address" />: ${coordinates.address}<br>
+										<spring:message code="label.address" />: <c:choose>
+											<c:when test="${lang eq 'en'}">${coordinates.address_en} &nbsp;</c:when>
+											<c:when test="${lang eq 'es'}">${coordinates.address_es} &nbsp;</c:when>
+											<c:otherwise>${coordinates.address} &nbsp;</c:otherwise>
+										</c:choose><br>
 									</c:if>
 									<c:if test="${!empty coordinates.phone}">
 										<spring:message code="label.phone" />: ${coordinates.phone}<br>
@@ -266,7 +312,7 @@
 
 								<div id="locations" style="white-space: pre; display: none">
 									<c:if test="${!empty coordinatesList}">
-
+										
 										<c:forEach items="${coordinatesList}" var="coordinates">
 												${coordinates.longitude},${coordinates.latitude},${coordinates.city},${coordinates.city}: ${coordinates.address}
   											</c:forEach>

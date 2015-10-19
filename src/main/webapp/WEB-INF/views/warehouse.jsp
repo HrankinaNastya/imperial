@@ -270,35 +270,33 @@
 								<div class="timer">
 	  								<div class="container">
 	  
-		    							<h1>ВПЕРВЫЕ НА УКРАИНЕ ОТКРЫТИЕ СУПЕР СКЛАДА ВЕРСИИ 2025 года. Осталось :</h1>
+		    							<h1>ВПЕРВЫЕ НА УКРАИНЕ ОТКРЫТИЕ НОВОГО ЛОГИСТИЧЕСКОГО ЦЕНТРА. Осталось :</h1>
 		    							<div id="CDT"></div>
 	  								</div>
   								</div>
-<div onload='player("rtsp://admin:admin@10.0.7.254");'>								
-<object classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" width="640" height="360" id="vlc" events="True">
-  <param name="MRL" value="" />
-  <param name="ShowDisplay" value="True" />
-  <param name="AutoLoop" value="False" />
-  <param name="AutoPlay" value="False" />
-  <param name="Volume" value="50" />
-  <param name="toolbar" value="true" />
-  <param name="StartTime" value="0" />
-  <EMBED pluginspage="http://www.videolan.org"
-    type="application/x-vlc-plugin"
-    version="VideoLAN.VLCPlugin.2"
-    width="640"
-    height="360"
-    toolbar="true"
-    loop="false"
-    text="Waiting for video"
-    name="vlc"
-	id="vlc" 
-	loop="yes"
-	autoplay="yes" 
-	target="rtsp://admin:admin@91.203.138.32:2554">
-  </EMBED>
-</object>
-</div>
+								<div class="iv-embed"
+									style="margin: 0 auto; padding: 0; border: 0; width: 642px;">
+									<div class="iv-v"
+										style="display: block; margin: 0; padding: 1px; border: 0; background: #000;">
+										<iframe class="iv-i"
+											style="display: block; margin: 0; padding: 0; border: 0;"
+											src="//open.ivideon.com/embed/v2/?server=100-4ec7454a64a1c412f7c230e5c81b8dac&amp;camera=851968&amp;width=&amp;height=&amp;lang=ru"
+											width="640" height="360" frameborder="0" allowfullscreen>
+										</iframe>
+									</div>
+									<div class="iv-b"
+										style="display: block; margin: 0; padding: 0; border: 0;">
+										<div
+											style="float: right; text-align: right; padding: 0 0 10px; line-height: 10px;">
+											<a class="iv-a"
+												style="font: 10px Verdana, sans-serif; color: inherit; opacity: .6;"
+												href="http://www.ivideon.com/" target="_blank">powered
+												by Ivideon</a>
+										</div>
+										<div style="clear: both; height: 0; overflow: hidden;">&nbsp;</div>
+										<script src="http://open.ivideon.com/embed/v2/embedded.js"></script>
+									</div>
+								</div>
 								<div id="gallery" style="display:none;margin-top:50px;">
 	
 								<img alt="Preview Image 1"
@@ -335,11 +333,14 @@
 							
 							<script type="text/javascript">
 						
+								
 								jQuery(document).ready(function(){
 						
 									jQuery("#gallery").unitegallery();
 						
 								});
+								
+								
 								
 							</script>
 								<div></div>

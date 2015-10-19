@@ -157,7 +157,10 @@ public class ImperialController {
 	}
 	
 	@RequestMapping("/news")
-	public String newspage(Map<String, Object> map) {
+	public String newspage(Locale locale, Map<String, Object> map) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
 		int index = random.nextInt(facts.size());		
@@ -334,7 +337,11 @@ public class ImperialController {
 	}
 	
 	@RequestMapping("/news/nav/{id}")
-	public String newsNav(@PathVariable("id") Integer id, Map<String, Object> map) {
+	public String newsNav(@PathVariable("id") Integer id, 
+			Map<String, Object> map, Locale locale) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
 		int index = random.nextInt(facts.size());		
@@ -362,9 +369,13 @@ public class ImperialController {
 	}
 	
 	@RequestMapping("/news/cat/{id_subcat}/{id}")
-	public String newsCat(@PathVariable("id_subcat") Integer id_subcat, @PathVariable("id") Integer id, 
-			Map<String, Object> map) {
-		  
+	public String newsCat(@PathVariable("id_subcat") Integer id_subcat, 
+			@PathVariable("id") Integer id, Map<String, Object> map,
+			Locale locale) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
+		
 		List<Fact> facts = imperialService.listFactfromSection(1);
 		int index = random.nextInt(facts.size());		
 		map.put("fact", facts.get(index));
@@ -384,6 +395,7 @@ public class ImperialController {
 			for(Post post:posts){
 				navs.add(new Navigation(++number, ++i, (i+= post.getLenght() - 1)));
 			}
+			
 			map.put("post", posts.get(id-1));
 			map.put("newsList", posts.get(id-1).getNews());
 			map.put("page", page);
@@ -500,7 +512,11 @@ public class ImperialController {
 	
 	@RequestMapping(value = "/news/{id}", method = RequestMethod.GET)
 	public String getNewsById(@PathVariable("id") Integer id, 
-			Map<String, Object> map) {
+			Map<String, Object> map, Locale locale) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
+		
 		News news = imperialService.getNews(id);
 
 		map.put("news", news);
@@ -523,8 +539,11 @@ public class ImperialController {
 	}
 	
 	@RequestMapping(value = "contacts/{id}", method = RequestMethod.GET)
-	public String contacts(@PathVariable("id") Integer id, 
+	public String contacts(Locale locale, @PathVariable("id") Integer id, 
 			Map<String, Object> map) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
 		
 		List<Fact> facts = imperialService.listFactfromSection(1);
 		int index = random.nextInt(facts.size());		
