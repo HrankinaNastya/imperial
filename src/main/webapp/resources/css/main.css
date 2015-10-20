@@ -37,7 +37,7 @@ input, textarea, select {
 	font: 19px 'robotoregular', Arial, Helvetica, sans-serif;
 	color: #fff;
 	text-decoration: none;
-	margin: 6px 45px 0 0;
+	margin: 6px 20px 0 0;
 }
 
 .lastrob {
@@ -1361,4 +1361,7 @@ div.contacts {
 
 .a_blue {
 	color: #00d0ed;
+}
+#mapdiv{
+	color:black;
 }

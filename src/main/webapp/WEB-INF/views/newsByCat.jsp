@@ -131,6 +131,17 @@
 												<c:otherwise>${categoryList[3].name}</c:otherwise>
 											</c:choose>
 										</c:if></b><img src="/resources/images/r2.png" hspace="0"></a></li>
+							<li style="text-align: right;"><a
+								href="<c:url value="/warehouse${locale}" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
+											test="${!empty categoryList[9].id}">
+											<c:choose>
+												<c:when test="${lang eq 'en'}">${categoryList[9].name_en}</c:when>
+												<c:when test="${lang eq 'es'}">${categoryList[9].name_es}</c:when>
+												<c:otherwise>${categoryList[9].name}</c:otherwise>
+											</c:choose>
+										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
+									hspace="0"></a></li>
 
 
 						</ul>
@@ -139,19 +150,31 @@
 					src="<c:url value="/resources/images/r7d.png" />" hspace="0">
 					<div>
 						<img src="<c:url value="/resources/images/arrow.png" />"><a
-							href="<c:url value="/ecuador${locale}" />" class="roboto4"><c:forEach
-								items="${categoryList}" var="category">
-								<c:if test="${category.id==7}">${category.name}</c:if>
-							</c:forEach></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
-							href="<c:url value="/bananas${locale}" />" class="roboto4"><c:forEach
-								items="${categoryList}" var="category">
-								<c:if test="${category.id==8}">${category.name}</c:if>
-							</c:forEach></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
+							href="<c:url value="/ecuador${locale}" />" class="roboto4"><c:if
+								test="${!empty categoryList[4].id}">
+								<c:choose>
+									<c:when test="${lang eq 'en'}">${categoryList[4].name_en}</c:when>
+									<c:when test="${lang eq 'es'}">${categoryList[4].name_es}</c:when>
+									<c:otherwise>${categoryList[4].name}</c:otherwise>
+								</c:choose>
+							</c:if></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
+							href="<c:url value="/bananas${locale}" />" class="roboto4"><c:if
+								test="${!empty categoryList[5].id}">
+								<c:choose>
+									<c:when test="${lang eq 'en'}">${categoryList[5].name_en}</c:when>
+									<c:when test="${lang eq 'es'}">${categoryList[5].name_es}</c:when>
+									<c:otherwise>${categoryList[5].name}</c:otherwise>
+								</c:choose>
+							</c:if></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
 							href="<c:url value="/logistics${locale}" />"
-							class="roboto4 lastrob"><c:forEach items="${categoryList}"
-								var="category">
-								<c:if test="${category.id==9}">${category.name}</c:if>
-							</c:forEach></a>
+							class="roboto4 lastrob"><c:if
+								test="${!empty categoryList[6].id}">
+								<c:choose>
+									<c:when test="${lang eq 'en'}">${categoryList[6].name_en}</c:when>
+									<c:when test="${lang eq 'es'}">${categoryList[6].name_es}</c:when>
+									<c:otherwise>${categoryList[6].name}</c:otherwise>
+								</c:choose>
+							</c:if></a>
 					</div> <img src="<c:url value="/resources/images/l7d.png" />" hspace="0"></span>
 
 
@@ -175,7 +198,7 @@
 								<c:if test="${!empty subcategoryList}">
 									<c:forEach items="${subcategoryList}" var="subcategory">
 										<li><a
-											href="<c:url value="/news/cat/${subcategory.id}/${subcategory.id}/${locale}" />">
+											href="<c:url value="/news/cat/${subcategory.id}/1/${locale}" />">
 												<c:choose>
 													<c:when test="${lang eq 'en'}">${subcategory.name_en}</c:when>
 													<c:when test="${lang eq 'es'}">${subcategory.name_es}</c:when>
@@ -231,39 +254,7 @@
 							<td class="lh" style="padding: 0 23px;">
 
 
-							<div style="position: relative; height: 214px;"></div> <c:if
-								test="${!empty fact}">
-								<div class="quote">
-
-									<img src="<c:url value="/resources/images/tl2.png" />"
-										hspace="0" style="float: left;"><img
-										src="<c:url value="/resources/images/tr2.png" />" hspace="0"
-										style="float: right;">
-									<div class="t2"></div>
-
-									<div class="m2">
-										<h2 class="roboto6">
-											<spring:message code="label.doyouknow" />
-										</h2>
-										<c:choose>
-											<c:when test="${lang eq 'en'}">${fact.description_en} &nbsp;</c:when>
-											<c:when test="${lang eq 'es'}">${fact.description_es} &nbsp;</c:when>
-											<c:otherwise>${fact.description} &nbsp;</c:otherwise>
-										</c:choose>
-									</div>
-
-									<img src="<c:url value="/resources/images/bl2.png" />"
-										hspace="0" style="float: left;">
-									<div class="b2" style="margin-right: 0px;"></div>
-									<div id="know" style="float: right; padding-right: 17px;">
-										<a class="newbut knw"
-											href="<c:url value="/facts/${fact.id}${locale}" />"> <spring:message
-												code="label.more" /> <span></span>
-										</a>
-									</div>
-
-								</div>
-							</c:if>
+							<div style="position: relative; height: 260px;"></div> 
 
 							<div style="position: relative; top: -230px; clear: both;">
 								<h1 class="roboto1">

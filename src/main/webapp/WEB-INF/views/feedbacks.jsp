@@ -135,8 +135,18 @@
 											</c:choose>
 										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-
-
+							<li style="text-align: right;"><a
+								href="<c:url value="/warehouse${locale}" />"><img
+									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
+											test="${!empty categoryList[9].id}">
+											<c:choose>
+												<c:when test="${lang eq 'en'}">${categoryList[9].name_en}</c:when>
+												<c:when test="${lang eq 'es'}">${categoryList[9].name_es}</c:when>
+												<c:otherwise>${categoryList[9].name}</c:otherwise>
+											</c:choose>
+										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
+									hspace="0"></a></li>
+							
 						</ul>
 					</div>
 				</div> <span class="submenu"><img
@@ -232,39 +242,7 @@
 						<td class="lh" style="padding: 0 23px;">
 
 
-							<div style="position: relative; height: 214px;"></div> <c:if
-								test="${!empty fact}">
-								<div class="quote">
-
-									<img src="<c:url value="/resources/images/tl2.png" />"
-										hspace="0" style="float: left;"><img
-										src="<c:url value="/resources/images/tr2.png" />" hspace="0"
-										style="float: right;">
-									<div class="t2"></div>
-
-									<div class="m2">
-										<h2 class="roboto6">
-											<spring:message code="label.doyouknow" />
-										</h2>
-										<c:choose>
-											<c:when test="${lang eq 'en'}">${fact.description_en} &nbsp;</c:when>
-											<c:when test="${lang eq 'es'}">${fact.description_es} &nbsp;</c:when>
-											<c:otherwise>${fact.description} &nbsp;</c:otherwise>
-										</c:choose>
-									</div>
-
-									<img src="<c:url value="/resources/images/bl2.png" />"
-										hspace="0" style="float: left;">
-									<div class="b2" style="margin-right: 0px;"></div>
-									<div id="know" style="float: right; padding-right: 17px;">
-										<a class="newbut knw"
-											href="<c:url value="/facts/${fact.id}${locale}" />"> <spring:message
-												code="label.more" /> <span></span>
-										</a>
-									</div>
-
-								</div>
-							</c:if>
+							<div style="position: relative; height: 260px;"></div> 
 
 							<div style="position: relative; top: -230px; clear: both;">
 								<h1 class="roboto1">
