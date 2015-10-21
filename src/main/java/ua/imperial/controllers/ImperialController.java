@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -24,7 +23,6 @@ import ua.imperial.entities.Feedback;
 import ua.imperial.entities.Navigation;
 import ua.imperial.entities.News;
 import ua.imperial.entities.Page;
-import ua.imperial.entities.PageFact;
 import ua.imperial.entities.PageSearch;
 import ua.imperial.entities.Post;
 import ua.imperial.entities.Search;
@@ -125,16 +123,6 @@ public class ImperialController {
 		
  		map.put("categoryList", categories);
 		
- 		iter = categories.iterator();
-		
-		while(iter.hasNext()){
-			Category category = iter.next();
-			System.out.println(category.getName());
-			for(Subcategory sub: category.getSubcategories()){
-				System.out.println("__ " + sub.getName());
-			}
-		}
-		
 		return "sitemap";
 	}
 	
@@ -167,8 +155,10 @@ public class ImperialController {
 		return "news";
 	}
 	
-	@RequestMapping("/search")
-	public String searchresults(@RequestParam(value="q",  required=false) String q, 
+	
+	
+	@RequestMapping(value = "/search", method = RequestMethod.POST)
+	public String searchresults(@ModelAttribute("q") String q,  
 			Map<String, Object> map, Locale locale) {
 		
 		map.put("locale", getLocale(locale));
@@ -204,8 +194,8 @@ public class ImperialController {
 	
 	@RequestMapping("/search/nav/{id}")
 	public String searchresultsByNav(@PathVariable("id") Integer id,
-			@RequestParam(value="q",  required=false) String q, 
-			Map<String, Object> map, Locale locale) {
+			@ModelAttribute("q") String q,  Map<String, Object> map, 
+			Locale locale) {
 		
 		map.put("locale", getLocale(locale));
 		map.put("lang", getLang(locale));
@@ -672,9 +662,13 @@ public class ImperialController {
 	
 	@RequestMapping(value = "addFeedback", method = RequestMethod.POST)
 	public String addFeedback(@ModelAttribute("feedback") Feedback feedback,
-			BindingResult result) {
+			BindingResult result, Locale locale, Map<String, Object> map) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
 		
 		imperialService.addFeedback(feedback);
+		
 
 		return "redirect:/feedback";
 	}

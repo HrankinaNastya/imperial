@@ -218,7 +218,7 @@
 
 
 
-								<form method="get" action="<c:url value="/search${locale}" />"
+								<form method="post" commandName="q" action="<c:url value="/search${locale}" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 

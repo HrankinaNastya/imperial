@@ -124,7 +124,7 @@
 											</c:choose>
 										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-							<li style="text-align: right;"><a
+							<li><a
 								href="<c:url value="/contacts/1${locale}" />"><img
 									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
 											test="${!empty categoryList[3].id}">
@@ -208,7 +208,7 @@
 
 
 
-								<form method="get" action="<c:url value="/search&${locale}" />"
+								<form method="post" commandName="q" action="<c:url value="/search${locale}" />"
 									id="cse-search-box">
 									<div style="_width: 90%;">
 
@@ -277,7 +277,7 @@
 									<div class="m">
 
 
-										<form:form method="post" action="addFeedback${locale}"
+										<form:form method="post" action="addFeedback"
 											commandName="feedback" class="form">
 
 											<table cellspacing="0" cellpadding="0">
