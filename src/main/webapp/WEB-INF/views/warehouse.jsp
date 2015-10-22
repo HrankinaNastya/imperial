@@ -16,8 +16,7 @@
 
 <meta name="robots" content="ALL" />
 
-
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <link href="<c:url value="/resources/css/main.css?v=0.5" />"
 	rel="stylesheet" media="screen">
@@ -64,6 +63,10 @@
 <script src="<c:url value="/resources/unitegallery/themes/default/ug-theme-default.js" />"></script>
 <link href="<c:url value="/resources/unitegallery/themes/default/ug-theme-default.css" />"
 	rel="stylesheet" media="screen">
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 	
 <title><spring:message code="label.imperial.logistics" /></title>
 

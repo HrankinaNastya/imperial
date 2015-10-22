@@ -17,7 +17,7 @@
 <meta name="robots" content="ALL" />
 
 
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <link href="<c:url value="/resources/css/main.css?v=0.5" />"
 	rel="stylesheet" media="screen">
@@ -42,8 +42,11 @@
 	src="/resources/js/leaflet.markercluster.js"></script>
 <script type="text/javascript" src="/resources/js/leaflet.geocsv.js"></script>
 
-<script type="text/javascript"
-	src="<c:url value="/resources/js/jquery.js" />"></script>
+<script src="<c:url value="/resources/unitegallery/js/jquery-11.0.min.js" />"></script>	
+
+<!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 
 <title><spring:message code="label.imperial.contacts" /></title>
 

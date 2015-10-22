@@ -16,7 +16,7 @@
 
 <meta name="robots" content="ALL" />
 
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <link href="<c:url value="/resources/css/main.css?v=0.5" />"
 	rel="stylesheet" media="screen">
@@ -31,7 +31,7 @@
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
 
-<script type="text/javascript" src="/resources/js/jquery.js"></script>
+<script src="<c:url value="/resources/unitegallery/js/jquery-11.0.min.js" />"></script>	
 
 <link rel="stylesheet"
 	href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
@@ -270,7 +270,7 @@
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
 												<spring:message code="label.search" />
-												<span></span>
+												<span>!</span>
 											</button>
 
 										</div>
@@ -307,7 +307,7 @@
 								<br> <br> <br>
 								<div id="mapfirstpage" align="center">
 									<h2>
-										<a href="#"><spring:message code="label.branchoffices" /></a>
+										<a href="<c:url value="/contacts/1${locale}" />"><spring:message code="label.branchoffices" /></a>
 									</h2>
 
 									<div id="mapdiv" style="width: 650px; height: 400px">

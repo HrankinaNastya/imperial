@@ -838,7 +838,9 @@ button.newbut {
 }
 
 button.newbut span, a.newbut span {
+	background: url(../images/newbut.png) -483px 0px no-repeat;
 	position: absolute;
+	zoom:1;
 	top: 0;
 	left: 100%;
 	width: 17px;
@@ -871,10 +873,6 @@ body.red button.newbut, body.red a.newbut {
 a.knw {
 	background: url(../images/nbut9.png) 0px 0px no-repeat;
 	color: #405870;
-}
-
-button.newbut span, a.newbut span {
-	background: url(../images/newbut.png) -483px 0px no-repeat;
 }
 
 a.knw span {
