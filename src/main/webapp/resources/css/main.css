@@ -822,7 +822,7 @@ div.button2 a {
 	_height: 31px;
 }
 
-button.newbut, a.newbut {
+a.newbut {
 	height: 53px; /* trips haslayout, wrap floats IE */
 	float: left;
 	position: relative;
@@ -833,14 +833,10 @@ button.newbut, a.newbut {
 	font-style: italic;
 }
 
-button.newbut {
-	padding: 5px 10px 30px 27px;
-}
-
-button.newbut span, a.newbut span {
+a.newbut span {
 	background: url(../images/newbut.png) -483px 0px no-repeat;
 	position: absolute;
-	zoom:1;
+	zoom: 1;
 	top: 0;
 	left: 100%;
 	width: 17px;
@@ -849,13 +845,39 @@ button.newbut span, a.newbut span {
 	cursor: hand;
 }
 
-button.newbut {
-	border: 0px;
-}
-
-button.newbut, a.newbut {
+a.newbut {
 	background: url(../images/newbut.png) 0px 0px no-repeat;
 	color: #405870;
+}
+
+button.newbut {
+	background: #006dd9;
+	background-image: -webkit-linear-gradient(top, #006dd9, #54d7f5);
+	background-image: -moz-linear-gradient(top, #006dd9, #54d7f5);
+	background-image: -ms-linear-gradient(top, #006dd9, #54d7f5);
+	background-image: -o-linear-gradient(top, #006dd9, #54d7f5);
+	background-image: linear-gradient(to bottom, #006dd9, #54d7f5);
+	-webkit-border-radius: 25;
+	-moz-border-radius: 25;
+	border-radius: 25px;
+	font-size: 13px;
+	font-weight: bold;
+	font-style: italic;
+	color: #405870;
+	text-align: center;
+	padding: 10px 30px;
+	border: solid #44A0FE 1px;
+	text-decoration: none;
+}
+
+button.newbut:hover {
+	background: #3cb0fd;
+	background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
 }
 
 body.green button.newbut, body.green a.newbut {
@@ -879,7 +901,7 @@ a.knw span {
 	background: url(../images/nbut9.png) -283px 0px no-repeat;
 }
 
-button.newbut:hover, a.newbut:hover {
+a.newbut:hover {
 	color: black;
 }
 
@@ -1360,6 +1382,7 @@ div.contacts {
 .a_blue {
 	color: #00d0ed;
 }
-#mapdiv{
-	color:black;
+
+#mapdiv {
+	color: black;
 }

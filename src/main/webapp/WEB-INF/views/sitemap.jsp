@@ -92,7 +92,7 @@
 
 
 				<div class="menu">
-					<div style="width: 100%;">
+					<div style="width: 95%;">
 						<ul>
 
 							<li style="text-align: left;"><a
@@ -184,7 +184,7 @@
 					</div> <img src="<c:url value="/resources/images/l7d.png" />" hspace="0"></span>
 
 
-				<table cellspacing="0" cellpadding="0" id="submain">
+				<table cellspacing="0" id="submain">
 					<tr valign="top">
 						<td width="30%" id="lft"><img
 							src="<c:url value="/resources/images/arrow2.png" />"

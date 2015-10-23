@@ -91,7 +91,7 @@
 
 
 				<div class="menu">
-					<div style="width: 100%;">
+					<div style="width: 95%;">
 						<ul>
 
 							<li style="text-align: left;"><a

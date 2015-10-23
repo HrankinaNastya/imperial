@@ -106,7 +106,7 @@
 
 
 				<div class="menu">
-					<div style="width: 100%;">
+					<div style="width: 95%;">
 						<ul>
 
 							<li style="text-align: left;" class="cur"><a
@@ -270,7 +270,7 @@
 										<div style="padding-top: 15px">
 											<button type="submit" class="newbut">
 												<spring:message code="label.search" />
-												<span>!</span>
+												<span></span>
 											</button>
 
 										</div>

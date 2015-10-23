@@ -155,7 +155,17 @@ public class ImperialController {
 		return "news";
 	}
 	
-	
+	@RequestMapping(value = "/search")
+	public String searchresults2(Map<String, Object> map, Locale locale) {
+		
+		map.put("locale", getLocale(locale));
+		map.put("lang", getLang(locale));
+		
+		map.put("category", imperialService.getCategory(11));
+		map.put("categoryList", imperialService.listCategory());
+
+		return "search";
+	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.POST)
 	public String searchresults(@ModelAttribute("q") String q,  

@@ -18,50 +18,50 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-<link href="<c:url value="/resources/css/main.css?v=0.5" />"
+<link href="<c:url value="resources/css/main.css?v=0.5" />"
 	rel="stylesheet" media="screen">
-<link href="<c:url value="/resources/css/custom.css?nocache" />"
+<link href="<c:url value="resources/css/custom.css?nocache" />"
 	rel="stylesheet" media="screen">
 
-<link rel="icon" href="<c:url value="/resources/images/favicon.ico" />"
+<link rel="icon" href="<c:url value="resources/images/favicon.ico" />"
 	type="image/x-icon">
 <link rel="shortcut icon"
-	href="<c:url value="/resources/images/favicon.ico"  />"
+	href="<c:url value="resources/images/favicon.ico"  />"
 	type="image/x-icon">
 	
-<link href="<c:url value="/resources/css/style.css" />"
+<link href="<c:url value="resources/css/style.css" />"
 	rel="stylesheet" media="screen">
 	
-<script src="<c:url value="/resources/js/countdown.js" />"></script>
+<script src="<c:url value="resources/js/countdown.js" />"></script>
 
-<script src="<c:url value="/resources/unitegallery/js/jquery-11.0.min.js" />"></script>	
-<script src="<c:url value="/resources/unitegallery/js/ug-common-libraries.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-functions.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-thumbsgeneral.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-thumbsstrip.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-touchthumbs.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-panelsbase.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-strippanel.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-gridpanel.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-thumbsgrid.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-tiles.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-tiledesign.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-avia.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-slider.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-sliderassets.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-touchslider.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-zoomslider.js" />"></script>	
-<script src="<c:url value="/resources/unitegallery/js/ug-video.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-gallery.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-lightbox.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-carousel.js" />"></script>
-<script src="<c:url value="/resources/unitegallery/js/ug-api.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/jquery-11.0.min.js" />"></script>	
+<script src="<c:url value="resources/unitegallery/js/ug-common-libraries.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-functions.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-thumbsgeneral.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-thumbsstrip.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-touchthumbs.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-panelsbase.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-strippanel.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-gridpanel.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-thumbsgrid.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-tiles.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-tiledesign.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-avia.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-slider.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-sliderassets.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-touchslider.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-zoomslider.js" />"></script>	
+<script src="<c:url value="resources/unitegallery/js/ug-video.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-gallery.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-lightbox.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-carousel.js" />"></script>
+<script src="<c:url value="resources/unitegallery/js/ug-api.js" />"></script>
 
-<link href="<c:url value="/resources/unitegallery/css/unite-gallery.css" />"
+<link href="<c:url value="resources/unitegallery/css/unite-gallery.css" />"
 	rel="stylesheet" media="screen">
 	
-<script src="<c:url value="/resources/unitegallery/themes/default/ug-theme-default.js" />"></script>
-<link href="<c:url value="/resources/unitegallery/themes/default/ug-theme-default.css" />"
+<script src="<c:url value="resources/unitegallery/themes/default/ug-theme-default.js" />"></script>
+<link href="<c:url value="resources/unitegallery/themes/default/ug-theme-default.css" />"
 	rel="stylesheet" media="screen">
 
 <!--[if lt IE 9]>
@@ -80,17 +80,17 @@
 			<td id="top">
 
 				<div class="lang">
-					<span><img src="/resources/images/l2.png" hspace="0">
+					<span><img src="resources/images/l2.png" hspace="0">
 						<div>
 							<a href="?lang=ru"><img id="ru"
-								src="/resources/images/flag_rus.gif"
+								src="resources/images/flag_rus.gif"
 								alt="<spring:message code="label.ru" />"
 								title="<spring:message code="label.ru" />"></a><a
 								href="?lang=en"><img id="en"
-								src="/resources/images/flag_eng.gif"
+								src="resources/images/flag_eng.gif"
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
-						</div> <img src="/resources/images/r2.png" hspace="0"></span>
+						</div> <img src="resources/images/r2.png" hspace="0"></span>
 				</div> <c:if test="${lang eq 'ru'}">
 					<script type="text/javascript">
 						$('img#ru').attr('class', 'cur');
@@ -102,23 +102,23 @@
 				</c:if>
 
 				<div class="phone">
-					<img src="<c:url value="/resources/images/r1b.png" />" hspace="0">
+					<img src="<c:url value="resources/images/r1b.png" />" hspace="0">
 					<div>
 						<spring:message code="label.hotline" />
 						&mdash; <b>8 (048) <i>780-14-05</i></b>
 					</div>
-					<img src="<c:url value="/resources/images/l1b.png" />" hspace="0">
+					<img src="<c:url value="resources/images/l1b.png" />" hspace="0">
 				</div>
 
 				<div class="hmc">
 					<a href="<c:url value="/${locale}" />"><img
-						src="<c:url value="/resources/images/pic_home.gif" />"
+						src="<c:url value="resources/images/pic_home.gif" />"
 						title="<spring:message code="label.home" />"></a><a class=""
 						href="<c:url value="/sitemap${locale}" />"><img
-						src="<c:url value="/resources/images/pic_map.gif" />"
+						src="<c:url value="resources/images/pic_map.gif" />"
 						title="<spring:message code="label.sitemap" />"></a><a class=""
 						href="<c:url value="/feedback${locale}" />"><img
-						src="<c:url value="/resources/images/pic_mail.gif" />"
+						src="<c:url value="resources/images/pic_mail.gif" />"
 						title="<spring:message code="label.feedback" />"></a>
 				</div>
 
@@ -130,66 +130,66 @@
 
 							<li style="text-align: left;"><a
 								href="<c:url value="/${locale}" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
+									src="<c:url value="resources/images/l2.png" />" hspace="0"><b><c:if
 											test="${!empty categoryList[0].id}">
 											<c:choose>
 												<c:when test="${lang eq 'en'}">${categoryList[0].name_en}</c:when>
 												<c:when test="${lang eq 'es'}">${categoryList[0].name_es}</c:when>
 												<c:otherwise>${categoryList[0].name}</c:otherwise>
 											</c:choose>
-										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
+										</c:if></b><img src="<c:url value="resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li><a
 								href="<c:url value="/feedback${locale}" />"><img
-									src="<c:url value="/resources/images/l2.png"  />" hspace="0"><b><c:if
+									src="<c:url value="resources/images/l2.png"  />" hspace="0"><b><c:if
 											test="${!empty categoryList[1].id}">
 											<c:choose>
 												<c:when test="${lang eq 'en'}">${categoryList[1].name_en}</c:when>
 												<c:when test="${lang eq 'es'}">${categoryList[1].name_es}</c:when>
 												<c:otherwise>${categoryList[1].name}</c:otherwise>
 											</c:choose>
-										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
+										</c:if></b><img src="<c:url value="resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li><a href="<c:url value="/news${locale}" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
+									src="<c:url value="resources/images/l2.png" />" hspace="0"><b><c:if
 											test="${!empty categoryList[2].id}">
 											<c:choose>
 												<c:when test="${lang eq 'en'}">${categoryList[2].name_en}</c:when>
 												<c:when test="${lang eq 'es'}">${categoryList[2].name_es}</c:when>
 												<c:otherwise>${categoryList[2].name}</c:otherwise>
 											</c:choose>
-										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
+										</c:if></b><img src="<c:url value="resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li style="text-align: right;"><a
 								href="<c:url value="/contacts/1${locale}" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
+									src="<c:url value="resources/images/l2.png" />" hspace="0"><b><c:if
 											test="${!empty categoryList[3].id}">
 											<c:choose>
 												<c:when test="${lang eq 'en'}">${categoryList[3].name_en}</c:when>
 												<c:when test="${lang eq 'es'}">${categoryList[3].name_es}</c:when>
 												<c:otherwise>${categoryList[3].name}</c:otherwise>
 											</c:choose>
-										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
+										</c:if></b><img src="<c:url value="resources/images/r2.png" />"
 									hspace="0"></a></li>
 							<li  class="cur" style="text-align: right;"><a
 								href="<c:url value="/warehouse${locale}" />"><img
-									src="<c:url value="/resources/images/l4.png" />" hspace="0"><b><c:if
+									src="<c:url value="resources/images/l4.png" />" hspace="0"><b><c:if
 											test="${!empty categoryList[9].id}">
 											<c:choose>
 												<c:when test="${lang eq 'en'}">${categoryList[9].name_en}</c:when>
 												<c:when test="${lang eq 'es'}">${categoryList[9].name_es}</c:when>
 												<c:otherwise>${categoryList[9].name}</c:otherwise>
 											</c:choose>
-										</c:if></b><img src="<c:url value="/resources/images/r4.png" />"
+										</c:if></b><img src="<c:url value="resources/images/r4.png" />"
 									hspace="0"></a></li>
 
 
 						</ul>
 					</div>
 				</div> <span class="submenu"><img
-					src="<c:url value="/resources/images/r7b.png" />" hspace="0">
+					src="<c:url value="resources/images/r7b.png" />" hspace="0">
 					<div>
-						<img src="<c:url value="/resources/images/arrow.png" />"><a
+						<img src="<c:url value="resources/images/arrow.png" />"><a
 							href="<c:url value="/ecuador${locale}" />" class="roboto4"><c:if
 								test="${!empty categoryList[4].id}">
 								<c:choose>
@@ -197,7 +197,7 @@
 									<c:when test="${lang eq 'es'}">${categoryList[4].name_es}</c:when>
 									<c:otherwise>${categoryList[4].name}</c:otherwise>
 								</c:choose>
-							</c:if></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
+							</c:if></a> <img src="<c:url value="resources/images/arrow.png" />"><a
 							href="<c:url value="/bananas${locale}" />" class="roboto4"><c:if
 								test="${!empty categoryList[5].id}">
 								<c:choose>
@@ -205,7 +205,7 @@
 									<c:when test="${lang eq 'es'}">${categoryList[5].name_es}</c:when>
 									<c:otherwise>${categoryList[5].name}</c:otherwise>
 								</c:choose>
-							</c:if></a> <img src="<c:url value="/resources/images/arrow.png" />"><a
+							</c:if></a> <img src="<c:url value="resources/images/arrow.png" />"><a
 							href="<c:url value="/logistics${locale}" />"
 							class="roboto4 lastrob"><c:if
 								test="${!empty categoryList[6].id}">
@@ -215,13 +215,13 @@
 									<c:otherwise>${categoryList[6].name}</c:otherwise>
 								</c:choose>
 							</c:if></a>
-					</div> <img src="<c:url value="/resources/images/l7b.png" />" hspace="0"></span>
+					</div> <img src="<c:url value="resources/images/l7b.png" />" hspace="0"></span>
 
 
-				<table cellspacing="0" cellpadding="0" id="submain">
+				<table cellpadding="0" id="submain">
 					<tr valign="top">
 						<td width="30%" id="lft"><img
-							src="<c:url value="/resources/images/arrow2.png" />"
+							src="<c:url value="resources/images/arrow2.png" />"
 							class="h1but">
 							<div class="h1">
 								<a href="<c:url value="/warehouse${locale}" />" class="roboto5"> <c:if test="${!empty category}">
@@ -245,9 +245,9 @@
 									</a></li>
 									</c:forEach>
 								
-							</div> <img src="<c:url value="/resources/images/tld.png" />"
+							</div> <img src="<c:url value="resources/images/tld.png" />"
 							hspace="0" style="float: left;"> <img
-							src="<c:url value="/resources/images/trd.png" />" hspace="0"
+							src="<c:url value="resources/images/trd.png" />" hspace="0"
 							style="float: right;">
 
 
@@ -267,7 +267,7 @@
 											onfocus="if(this.value='<spring:message code="label.sitesearch" />')this.value='';" />
 
 										<div>
-											<img src="/resources/images/search.gif"
+											<img src="resources/images/search.gif"
 												style="position: absolute; margin-top: -19px; margin-left: 5px;">
 										</div>
 										<div style="padding-top: 15px">
@@ -283,9 +283,9 @@
 
 
 
-							</div> <img src="<c:url value="/resources/images/bld.png" />"
+							</div> <img src="<c:url value="resources/images/bld.png" />"
 							hspace="0" style="float: left;"><img
-							src="<c:url value="/resources/images/brd.png" />" hspace="0"
+							src="<c:url value="resources/images/brd.png" />" hspace="0"
 							style="float: right;">
 							<div class="b"></div></td>
 						<td width="5%"></td>
@@ -328,33 +328,33 @@
 								<div id="gallery" style="display:none;margin-top:50px;">
 	
 								<img alt="Preview Image 1"
-									 src="<c:url value="/resources/images/thumbs/thumb1.jpg" />"
-									 data-image="<c:url value="/resources/images/big/1.jpg" />"
+									 src="<c:url value="resources/images/thumbs/thumb1.jpg" />"
+									 data-image="<c:url value="resources/images/big/1.jpg" />"
 									 data-description="Imperial DAF">
 								
 								<img alt="Preview Image 2"
-									 src="<c:url value="/resources/images/thumbs/thumb2.jpg" />"
-									 data-image="<c:url value="/resources/images/big/2.jpg" />"
+									 src="<c:url value="resources/images/thumbs/thumb2.jpg" />"
+									 data-image="<c:url value="resources/images/big/2.jpg" />"
 									 data-description="Imperial DAF">
 									 
 								<img alt="Preview Image 3"
-									 src="<c:url value="/resources/images/thumbs/thumb3.jpg" />"
-									 data-image="<c:url value="/resources/images/big/3.jpg" />"
+									 src="<c:url value="resources/images/thumbs/thumb3.jpg" />"
+									 data-image="<c:url value="resources/images/big/3.jpg" />"
 									 data-description="Imperial DAF">
 									
 								<img alt="Preview Image 4"
-									 src="<c:url value="/resources/images/thumbs/thumb4.jpg" />"
-									 data-image="<c:url value="/resources/images/big/4.jpg" />"
+									 src="<c:url value="resources/images/thumbs/thumb4.jpg" />"
+									 data-image="<c:url value="resources/images/big/4.jpg" />"
 									 data-description="Imperial DAF">
 								
 								<img alt="Preview Image 5"
-									 src="<c:url value="/resources/images/thumbs/thumb5.jpg" />"
-									 data-image="<c:url value="/resources/images/big/5.jpg" />"
+									 src="<c:url value="resources/images/thumbs/thumb5.jpg" />"
+									 data-image="<c:url value="resources/images/big/5.jpg" />"
 									 data-description="Imperial DAF">
 										
 								<img alt="Preview Image 6"
-									 src="<c:url value="/resources/images/thumbs/thumb6.jpg" />"
-									 data-image="<c:url value="/resources/images/big/6.jpg" />"
+									 src="<c:url value="resources/images/thumbs/thumb6.jpg" />"
+									 data-image="<c:url value="resources/images/big/6.jpg" />"
 									 data-description="Imperial DAF">
 									 			 
 							</div>

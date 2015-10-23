@@ -50,11 +50,11 @@
 				<div class="lang">
 					<span><img src="/resources/images/l2.png" hspace="0">
 						<div>
-							<a href="/search?q=${q}&lang=ru"><img id="ru"
+							<a href="?lang=ru"><img id="ru"
 								src="/resources/images/flag_rus.gif"
 								alt="<spring:message code="label.ru" />"
 								title="<spring:message code="label.ru" />"></a><a
-								href="/search?q=${q}&lang=en"><img id="en"
+								href="?lang=en"><img id="en"
 								src="/resources/images/flag_eng.gif"
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
@@ -93,7 +93,7 @@
 
 
 				<div class="menu">
-					<div style="width: 100%;">
+					<div style="width: 95%;">
 						<ul>
 
 							<li style="text-align: left;"><a
