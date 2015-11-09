@@ -86,6 +86,7 @@ public class ImperialController {
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("coordinatesList", imperialService.listCoordinates());
+		map.put("newsList", imperialService.listNews());
 		map.put("subscribe", new Subscribe());
 		
 		return "index";

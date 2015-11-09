@@ -54,7 +54,7 @@
 
 <title><spring:message code="label.imperial" /></title>
 </head>
-<body>
+<body class="main">
 
 	<table cellspacing="0" cellpadding="0" id="main">
 		<tr>
@@ -74,11 +74,11 @@
 								title="<spring:message code="label.en" />"></a>
 						</div> <img src="/resources/images/r2.png" hspace="0"></span>
 				</div> <c:if test="${lang eq 'ru'}">
-					<script type="text/javascript">
+					<script>
 						$('img#ru').attr('class', 'cur');
 					</script>
 				</c:if> <c:if test="${lang eq 'en'}">
-					<script type="text/javascript">
+					<script>
 						$('img#en').attr('class', 'cur');
 					</script>
 				</c:if>
@@ -239,10 +239,18 @@
 							<h3 class="roboto3">
 								<spring:message code="label.lastnews" />
 							</h3>
-							<div id="sidebar">
-								<ul class="spy">
-
-								</ul>
+							<div class="submenu">
+									<c:if test="${!empty newsList}">
+										<c:forEach items="${newsList}" var="news">
+										<li><a
+											href="<c:url value="/news/${news.id}${locale}" />">
+											<c:choose>
+											<c:when test="${lang eq 'en'}">${news.name_en}</c:when>
+											<c:when test="${lang eq 'es'}">${news.name_es}</c:when>
+											<c:otherwise>${news.name}</c:otherwise>
+										</c:choose></a></li>
+										</c:forEach>
+									</c:if>
 							</div> <a href="<c:url value="/news${locale}" />"
 							style="color: #9acfe9; display: block; margin: 37px 47px 41px;"><spring:message
 									code="label.allnews" /></a> <img src="/resources/images/tl.png"

@@ -247,7 +247,8 @@ body.dark #top {
 	height: 100%;
 }
 
-body.dark div.submenu a {
+body.dark div.submenu a,
+body.main div.submenu a {
 	border-color: #6e7dbc;
 }
 
