@@ -42,6 +42,13 @@ public class NewsDAOImpl implements NewsDAO {
 	
 	@Override
 	@SuppressWarnings("unchecked")
+	public List<News> listLastNews(){
+		return sessionFactory.getCurrentSession().createQuery("from News ORDER BY created DESC limit 5")
+				.list();
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
 	public List<News> listNewsfromSubcategory(Integer id) {
 		return sessionFactory.getCurrentSession().createQuery("from News where subcategory.id =" + id)
 				.list();

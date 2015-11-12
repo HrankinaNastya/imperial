@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import ua.imperial.entities.Category;
 import ua.imperial.entities.Coordinates;
@@ -61,18 +60,18 @@ public class ImperialController {
 		
 	}
 	
-	public String getLang(Locale locale){
+	public Integer getLang(Locale locale){
 		
 		if (locale.getDisplayLanguage().equals("русский")){
-			return "ru";
+			return 1;
 		}
 		else if (locale.getDisplayLanguage().equals("английский")){
-			return "en";
+			return 2;
 		}
 		else if (locale.getDisplayLanguage().equals("испанский")){
-			return "es";
+			return 3;
 		}
-		else return "ru";
+		else return 1;
 		
 	}
 	
@@ -86,7 +85,7 @@ public class ImperialController {
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
 		map.put("coordinatesList", imperialService.listCoordinates());
-		map.put("newsList", imperialService.listNews());
+		map.put("newsList", imperialService.listLastNews());
 		map.put("subscribe", new Subscribe());
 		
 		return "index";

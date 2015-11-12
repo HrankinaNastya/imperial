@@ -17,7 +17,7 @@
 <meta name="robots" content="ALL" />
 
 
-<<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 <link href="<c:url value="/resources/css/main.css?v=0.5" />"
 	rel="stylesheet" media="screen">
