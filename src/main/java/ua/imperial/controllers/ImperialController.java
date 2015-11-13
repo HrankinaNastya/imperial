@@ -60,20 +60,22 @@ public class ImperialController {
 		
 	}
 	
-	public Integer getLang(Locale locale){
+
+	public String getLang(Locale locale){
 		
 		if (locale.getDisplayLanguage().equals("русский")){
-			return 1;
+			return "ru";
 		}
 		else if (locale.getDisplayLanguage().equals("английский")){
-			return 2;
+			return "en";
 		}
 		else if (locale.getDisplayLanguage().equals("испанский")){
-			return 3;
+			return "es";
 		}
-		else return 1;
+		else return "ru";
 		
 	}
+	
 	
 	@RequestMapping("/")
 	public String home(Locale locale, Map<String, Object> map) {
