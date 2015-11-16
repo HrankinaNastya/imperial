@@ -140,18 +140,6 @@
 											</c:choose>
 										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
 									hspace="0"></a></li>
-							<li style="text-align: right;"><a
-								href="<c:url value="/warehouse${locale}" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
-											test="${!empty categoryList[9].id}">
-											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[9].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[9].name_es}</c:when>
-												<c:otherwise>${categoryList[9].name}</c:otherwise>
-											</c:choose>
-										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
-									hspace="0"></a></li>
-							
 
 						</ul>
 					</div>

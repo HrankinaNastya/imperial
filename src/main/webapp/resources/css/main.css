@@ -585,7 +585,7 @@ div.menu ul {
 	list-style: none; /* remove the bullets */
 	margin: 0;
 	padding: 0; /* no need for margins or padding */
-	width: 668px; /* important for later */
+	width: 568px; /* important for later */
 }
 
 div.menu ul li {

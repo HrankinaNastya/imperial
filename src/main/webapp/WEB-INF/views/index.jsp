@@ -73,11 +73,11 @@
 								alt="<spring:message code="label.en" />"
 								title="<spring:message code="label.en" />"></a>
 						</div> <img src="/resources/images/r2.png" hspace="0"></span>
-				</div> <c:if test="${lang eq 'ru'}">
+				</div> <c:if test="${lang.num == 0}">
 					<script>
 						$('img#ru').attr('class', 'cur');
 					</script>
-				</c:if> <c:if test="${lang eq 'en'}">
+				</c:if> <c:if test="${lang.num == 1}">
 					<script>
 						$('img#en').attr('class', 'cur');
 					</script>
@@ -114,8 +114,8 @@
 									src="/resources/images/l4.png" hspace="0"><b><c:if
 											test="${!empty categoryList[0].id}">
 											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[0].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[0].name_es}</c:when>
+												<c:when test="${lang.num == 1}">${categoryList[0].name_en}</c:when>
+												<c:when test="${lang.num == 2}">${categoryList[0].name_es}</c:when>
 												<c:otherwise>${categoryList[0].name}</c:otherwise>
 											</c:choose>
 										</c:if> </b><img src="/resources/images/r4.png" hspace="0"></a></li>
@@ -123,8 +123,8 @@
 									src="/resources/images/l2.png" hspace="0"><b><c:if
 											test="${!empty categoryList[1].id}">
 											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[1].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[1].name_es}</c:when>
+												<c:when test="${lang.num == 1}">${categoryList[1].name_en}</c:when>
+												<c:when test="${lang.num == 2}">${categoryList[1].name_es}</c:when>
 												<c:otherwise>${categoryList[1].name}</c:otherwise>
 											</c:choose>
 										</c:if></b><img src="/resources/images/r2.png" hspace="0"></a></li>
@@ -132,8 +132,8 @@
 									src="/resources/images/l2.png" hspace="0" alt=""><b><c:if
 											test="${!empty categoryList[2].id}">
 											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[2].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[2].name_es}</c:when>
+												<c:when test="${lang.num == 1}">${categoryList[2].name_en}</c:when>
+												<c:when test="${lang.num == 2}">${categoryList[2].name_es}</c:when>
 												<c:otherwise>${categoryList[2].name}</c:otherwise>
 											</c:choose>
 										</c:if></b><img src="/resources/images/r2.png" hspace="0"></a></li>
@@ -142,23 +142,11 @@
 									src="/resources/images/l2.png" hspace="0"><b><c:if
 											test="${!empty categoryList[3].id}">
 											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[3].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[3].name_es}</c:when>
+												<c:when test="${lang.num == 1}">${categoryList[3].name_en}</c:when>
+												<c:when test="${lang.num == 2}">${categoryList[3].name_es}</c:when>
 												<c:otherwise>${categoryList[3].name}</c:otherwise>
 											</c:choose>
 										</c:if></b><img src="/resources/images/r2.png" hspace="0"></a></li>
-							<li style="text-align: right;"><a
-								href="<c:url value="/warehouse${locale}" />"><img
-									src="<c:url value="/resources/images/l2.png" />" hspace="0"><b><c:if
-											test="${!empty categoryList[9].id}">
-											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[9].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[9].name_es}</c:when>
-												<c:otherwise>${categoryList[9].name}</c:otherwise>
-											</c:choose>
-										</c:if></b><img src="<c:url value="/resources/images/r2.png" />"
-									hspace="0"></a></li>
-							
 						</ul>
 					</div>
 				</div>
@@ -179,8 +167,8 @@
 									<a href="<c:url value="/ecuador${locale}" />"><c:if
 											test="${!empty categoryList[4].id}">
 											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[4].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[4].name_es}</c:when>
+												<c:when test="${lang.num == 1}">${categoryList[4].name_en}</c:when>
+												<c:when test="${lang.num == 2}">${categoryList[4].name_es}</c:when>
 												<c:otherwise>${categoryList[4].name}</c:otherwise>
 											</c:choose>
 										</c:if></a>
@@ -199,8 +187,8 @@
 									<a href="<c:url value="/bananas${locale}" />"><c:if
 											test="${!empty categoryList[5].id}">
 											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[5].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[5].name_es}</c:when>
+												<c:when test="${lang.num == 1}">${categoryList[5].name_en}</c:when>
+												<c:when test="${lang.num == 2}">${categoryList[5].name_es}</c:when>
 												<c:otherwise>${categoryList[5].name}</c:otherwise>
 											</c:choose>
 										</c:if></a>
@@ -222,8 +210,8 @@
 									<a href="<c:url value="/logistics${locale}" />"><c:if
 											test="${!empty categoryList[6].id}">
 											<c:choose>
-												<c:when test="${lang eq 'en'}">${categoryList[6].name_en}</c:when>
-												<c:when test="${lang eq 'es'}">${categoryList[6].name_es}</c:when>
+												<c:when test="${lang.num == 1}">${categoryList[6].name_en}</c:when>
+												<c:when test="${lang.num == 2}">${categoryList[6].name_es}</c:when>
 												<c:otherwise>${categoryList[6].name}</c:otherwise>
 											</c:choose>
 										</c:if></a>
@@ -245,8 +233,8 @@
 										<li><a
 											href="<c:url value="/news/${news.id}${locale}" />">
 											<c:choose>
-											<c:when test="${lang eq 'en'}">${news.name_en}</c:when>
-											<c:when test="${lang eq 'es'}">${news.name_es}</c:when>
+											<c:when test="${lang.num == 1}">${news.name_en}</c:when>
+											<c:when test="${lang.num == 2}">${news.name_es}</c:when>
 											<c:otherwise>${news.name}</c:otherwise>
 										</c:choose></a></li>
 										</c:forEach>
@@ -304,8 +292,8 @@
 								<div align="justify">
 									<c:if test="${!empty category}">
 										<c:choose>
-											<c:when test="${lang eq 'en'}">${category.content_en}</c:when>
-											<c:when test="${lang eq 'es'}">${category.content_es}</c:when>
+											<c:when test="${lang.num == 1}">${category.content_en}</c:when>
+											<c:when test="${lang.num == 2}">${category.content_es}</c:when>
 											<c:otherwise>${category.content}</c:otherwise>
 										</c:choose>
 									</c:if>

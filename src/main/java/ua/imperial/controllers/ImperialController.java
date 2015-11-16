@@ -19,6 +19,7 @@ import ua.imperial.entities.Category;
 import ua.imperial.entities.Coordinates;
 import ua.imperial.entities.Fact;
 import ua.imperial.entities.Feedback;
+import ua.imperial.entities.Language;
 import ua.imperial.entities.Navigation;
 import ua.imperial.entities.News;
 import ua.imperial.entities.Page;
@@ -60,7 +61,7 @@ public class ImperialController {
 		
 	}
 	
-
+		
 	public String getLang(Locale locale){
 		
 		if (locale.getDisplayLanguage().equals("русский")){
@@ -80,9 +81,9 @@ public class ImperialController {
 	@RequestMapping("/")
 	public String home(Locale locale, Map<String, Object> map) {
 		
-
+		map.put("lang", new Language(locale));
 		map.put("locale", getLocale(locale));
-		map.put("lang", getLang(locale));
+		
 
 		map.put("category", imperialService.getCategory(1));
 		map.put("categoryList", imperialService.listCategory());
